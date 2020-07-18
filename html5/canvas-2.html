@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Canvas graphics</title>
+    </head>
+    <body>
+        <canvas id="CanvasEx" >
+            <p style="color:red; font-size:20px;font-family:tahoma;">OOps your Browser not supporing canvas element Update your browser</p>
+        </canvas>
+        <script type="text/javascript">
+        var canvas=document.getElementById('CanvasEx');
+        var ctx=canvas.getContext('2d');
+        ctx.fillStyle='#FFcc00';
+        ctx.fillRect(0,5,80,110);
+        ctx.fillStyle='#FF9900';
+        ctx.fillRect(25,0,120,50);
+        ctx.fillStyle='#FF00cc';
+        ctx.fillRect(100,35,120,60);
+
+        </script>
+    </body>
+</html>

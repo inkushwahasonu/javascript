@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Attribute of input tag</title>
+    </head>
+    <body>
+        <form autocomplete="off" action="http://localhost:8080">
+            Name : <input type="text" tabindex="1" name="personname" required="required" pattern="^[A-Za-z ]*$"></br>
+            Landline :<input type="text" tabindex="3" name="landline" autofocus="autofocus"></br>
+            Mobile : <input type="text" tabindex="2" name="mobile" pattern="^[789]\d{9}$"></br>
+            email : <input type="text" tabindex="4" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"></br>
+            <input type="checkbox" checked="checked"> Recive new movie ticket.</br>
+            <input type="radio"  checked="checked"> Recive new movie ticket.</br>
+            attachment<input type="file" multiple="multiple"></br>
+            Age<input type="number" min="18" max="60"></br>
+            Age<input type="number" min="1000" max="10000" step="100"></br>
+            
+            Search Courses : <input type="search" list="list1"><br>
+            <datalist id="list1">
+                <option>Java</option>
+                <option>.Net</option>
+                <option>Blackchain</option>
+                <option>Angular JS </option>
+                <option>HTML,CSS.JAVASCRIPT</option>
+                <option>node js</option>
+                <option>AWS</option>
+            </datalist>
+            
+            <input type="submit"></br>
+
+        </form>
+    </body>
+</html>

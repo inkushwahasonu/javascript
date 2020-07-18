@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>gradiant</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" >
+            <p>OOps your browser is not supporting  canvas tag please update your browser..!!</p>
+        </canvas>
+
+        <script type="text/javascript">
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");
+
+        //create linear Gradient
+        var grd=ctx.createLinearGradient(0,0,250,0);
+        grd.addColorStop(0,"green");
+        grd.addColorStop(1,"red");
+        //Fill Color
+        ctx.fillStyle=grd;
+        ctx.fillRect(10,10,200,80)
+        </script>
+
+
+<br/><br><br/>  
+
+
+<canvas id="yourCanvas" >
+        <p>OOps your browser is not supporting  canvas tag please update your browser..!!</p>
+    </canvas>
+
+<script type="text/javascript">
+    var c=document.getElementById("yourCanvas");
+    var ctx=c.getContext("2d");
+
+    //create linear Gradient
+    var grd=ctx.createRadialGradient(115,50,5,90,60,100);
+    grd.addColorStop(0,"green");
+    grd.addColorStop(1,"red");
+    //Fill Color
+    ctx.fillStyle=grd;
+    ctx.fillRect(10,10,200,80)
+    </script>
+    </body>
+</html>

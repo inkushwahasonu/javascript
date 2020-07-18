@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Canvas graphics</title>
+    </head>
+    <body>
+        <canvas id="MyCanvas" width="200px" height="100px" style="border:2px solid #FF00FF;">
+            <p style="color:red; font-size:20px;font-family:tahoma;">OOps your Browser not supporing canvas element Update your browser</p>
+        </canvas>
+        <script type="text/javascript">
+        var c=document.getElementById("MyCanvas");
+        var ctx=c.getContext("2d");
+        //ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(200,100);
+
+        ctx.moveTo(0,100);
+        ctx.lineTo(200,0)
+
+        
+        ctx.stroke();
+
+        </script>
+    </body>
+</html>

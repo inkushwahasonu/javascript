@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>meter and progress</title>
+</head>
+<body>
+   <label>5% full out of 10%</label><br/>
+    <meter value="5" max="10">
+        <p style="color:green;font-family:tahoma;font-size:30px">OOps your browser is not supporting update and try</p>
+    </meter>    <!--if your browser not support meter tag : print this massage-->
+
+    <br/><br/><br/>
+    <label>100% full out of 100%</label><br/>
+    <meter high="80" low="69" value=100 max="100">
+            <p style="color:red;font-family:tahoma;font-size:30px">OOps your browser is not supporting update and try</p>
+        </meter>
+
+        <br/><br/><br/>
+    <label> Warnning  : 90% full out of 100%</label><br/>
+    <meter high="80"  value="90" max="100">
+            <p style="color:red;font-family:tahoma;font-size:30px">OOps your browser is not supporting update and try</p>
+        </meter>
+
+        <br/><br/><br/>
+    <label> 0.3% full out of 0.5%</label><br/>
+    <meter value="0.3" high="0.9" low="0.1" optimum="0.5">
+    </meter>
+
+
+    <br/><br/><br/>
+    <label>5% full out of 10%</label><br/>
+    <progress value='5' max='10'>
+
+    </progress>
+</body>
+</html>
