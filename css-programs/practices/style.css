@@ -1,0 +1,17 @@
+*{
+    font-family:'Roboto', sans-serif;
+}
+.main-nav{
+    background-color: #7E57C2;
+}
+.main-nav ul li{
+    display: inline-block;
+    padding: 30px;
+    
+}
+.main-nav ul li a{
+    color: #fff;
+}
+a{
+    text-decoration: none;
+}
