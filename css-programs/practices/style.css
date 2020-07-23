@@ -25,3 +25,17 @@ body{
 a{
     text-decoration: none;
 }
+
+
+/*  hero   */
+
+
+.hero{
+    height:400px;
+    
+    background-image: url(media/06.jpg);
+    background-size: cover;
+}
+
+
+
