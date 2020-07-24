@@ -22,6 +22,12 @@ body{
     padding: 30px;
     line-height: 50px;
 }
+
+/* 
+   a:hover
+   a:vigited
+*/
+
 a{
     text-decoration: none;
 }
