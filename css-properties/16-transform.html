@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transforms</title>
+</head>
+<style>
+    .box{
+        width: 400px;
+        padding: 30px;
+        background-color: blue;
+        font-family: Segoe UI ;
+        color: #fff;
+        text-align: center;
+        transition: all 1s ease-in-out 250ms;
+    }
+    .box1:hover{
+        transform: translate(300px,400px);
+    }
+    .box2:hover{
+        transform: scale(2) translate(300px);
+    }
+    .box3:hover{
+        transform: skew(20deg);
+    }
+    .box4:hover{
+        transform: skew(-20deg);
+    }
+    .box5:hover{
+        transform: rotate(45deg);
+    }
+    
+</style>
+<body>
+    <div class="box box1">
+        <h3>transforms me 1</h3>
+        <h5> transform: translate(300px,400px);</h5>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic temporibus esse quam cum officiis debitis doloribus corrupti ipsum eveniet dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam possimus quo vitae molestiae voluptatem, numquam nihil aspernatur excepturi nobis!
+        </p>
+    </div><br>
+
+    <div class="box box2">
+        <h3>transforms me 2</h3>
+        <h5> transform: scale(2) translate(300px);</h5>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic temporibus esse quam cum officiis debitis doloribus corrupti ipsum eveniet dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam possimus quo vitae molestiae voluptatem, numquam nihil aspernatur excepturi nobis!
+        </p>
+    </div><br>
+
+    <div class="box box3">
+        <h3>transforms me 3</h3>
+        <h5>transform: skew(20deg);</h5>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic temporibus esse quam cum officiis debitis doloribus corrupti ipsum eveniet dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam possimus quo vitae molestiae voluptatem, numquam nihil aspernatur excepturi nobis!
+        </p>
+    </div><br>    
+
+        <div class="box box4">
+            <h3>transforms me4</h3>
+            <h5>transform: -skew(20deg);</h5>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic temporibus esse quam cum officiis debitis doloribus corrupti ipsum eveniet dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam possimus quo vitae molestiae voluptatem, numquam nihil aspernatur excepturi nobis!
+            </p>
+        </div><br>    
+
+            <div class="box box5">
+                <h3>transforms me5</h3>
+                <h5>transform: rotate(45deg);</h5>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic temporibus esse quam cum officiis debitis doloribus corrupti ipsum eveniet dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam possimus quo vitae molestiae voluptatem, numquam nihil aspernatur excepturi nobis!
+                </p>
+            
+    </div>
+</body>
+</html>
