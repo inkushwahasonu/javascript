@@ -1,26 +1,24 @@
-*{
-    font-family:'Roboto', sans-serif;
+* {
+  font-family: "Roboto", sans-serif;
 }
-body{
-    margin: 0px;
+body {
+  margin: 0px;
 }
-.main-nav{
-    background-color: #7E57C2;
+.main-nav {
+  background-color: #7e57c2;
 }
-.main-nav ul{
-    margin: 0px;
-    height: 50px;
-   
+.main-nav ul {
+  margin: 0px;
+  height: 50px;
 }
-.main-nav ul li{
-    display: inline-block;
-    /* background-color: blue; */
-    
+.main-nav ul li {
+  display: inline-block;
+  /* background-color: blue; */
 }
-.main-nav ul li a{
-    color: #fff;
-    padding: 30px;
-    line-height: 50px;
+.main-nav ul li a {
+  color: #fff;
+  padding: 30px;
+  line-height: 50px;
 }
 
 /* 
@@ -28,66 +26,63 @@ body{
    a:visited
 */
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-
 
 /*  hero   */
 
-
-.hero{
-    position: relative;
-    height:400px;
-    background-image: url(media/06.jpg);
-    background-size: cover;
+.hero {
+  position: relative;
+  height: 400px;
+  background-image: url(media/06.jpg);
+  background-size: cover;
 }
-.hero-content{
-    position: absolute;
-    color: red;
-    left: 40px;
-    bottom: 180px;
+.hero-content {
+  position: absolute;
+  color: red;
+  left: 40px;
+  bottom: 180px;
 }
-.btn{
-    background:#2196F3;
-    padding:  15px 43px;
-    color: #fff;
-    font-weight: 500;
-    border: 0px;
-    border-radius: 3px;
-    font-size: 18px;
-    margin-top: 30px;
+.btn {
+  background: #2196f3;
+  padding: 15px 43px;
+  color: #fff;
+  font-weight: 500;
+  border: 0px;
+  border-radius: 3px;
+  font-size: 18px;
+  margin-top: 30px;
 }
-
 
 /*  section   */
-.section{
-    padding-top: 40px;
+.section {
+  padding-top: 40px;
 }
-.section-title{
-    text-align: center;
+.section-title {
+  text-align: center;
 }
 
 /*  flex  */
 
-.flex-container{
-    display: flex;
+.flex-container {
+  display: flex;
 }
-.flex-item{
-    padding: 40px;
+.flex-item {
+  padding: 40px;
 }
-.flex-item img{
-    width: 100%;
-    height: 150px;
+.flex-item img {
+  width: 100%;
+  height: 150px;
 }
-.section-icon{
-    height: 100px;
+.section-icon {
+  height: 100px;
 }
-.flex1{
-    flex: 1;
+.flex1 {
+  flex: 1;
 }
-.form{
-    width: 85%;
-    margin-bottom: 18px;
-    font-size:22px;
+.form {
+  width: 85%;
+  margin-bottom: 18px;
+  font-size: 22px;
 }
