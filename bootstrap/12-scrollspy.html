@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollspy</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+  
+  <div class="bd-example">
+    <div class="row">
+      <div class="col-4">
+        <nav id="navbar-example" class="navbar navbar-light bg-light flex-column">
+          <a href="#" class="navbar-brand">NAvbar</a>
+          <nav class="nav nav-pills flex-column">
+            <a href="#item-1" class="nav-link">Item 1 </a>
+            <nav class="nav nav-pills flex-column">
+              <a href="#item-1-1" class="nav-link ml-3 my-1">Item 1-1</a>
+              <a href="#item-1-2" class="nav-link ml-3 my-1">Item 1-2</a>
+            </nav>
+            <a href="#item-2" class="nav-link">Item 2</a>
+            <a href="#item-3" class="nav-link">Item 3</a>
+            <nav class="nav nav-pills flex-column">
+              <a href="#item-3-1" class="nav-link ml-3 my-1">Item 3-1</a>
+              <a href="#item-3-2" class="nav-link ml-3 my-1">Item 3-2</a>
+            </nav>
+          </nav>
+        </nav>
+      </div>
+      <div class="col-8">
+        <div data-spy="scroll" data-target="#navbar-example" data-offset="0" class="scrollspy-example-2" style="height: 400px; overflow-y: auto;">
+        <h4 id="item-1">Item 1</h4>
+        <p>Item 1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellat iusto laborum itaque sint odio, beatae libero, accusamus cumque odit explicabo dolorem iure iste delectus assumenda, ea mollitia unde illum maiores soluta! Ipsam ipsum, iusto quod adipisci ullam velit, debitis, cupiditate magnam impedit praesentium similique cumque amet sapiente voluptate in. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, aliquid!</p>
+        <h5 id="item-1-1">item 1-1</h5>
+        <p>Item 1-1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellat iusto laborum itaque sint odio, beatae libero, accusamus cumque odit explicabo dolorem iure iste delectus assumenda, ea mollitia unde illum maiores soluta! Ipsam ipsum, iusto quod adipisci ullam velit, debitis, cupiditate magnam impedit praesentium similique cumque amet sapiente voluptate in.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, qui?</p>
+        <h5 id="item-1-2">item 1-2</h5>
+        <p>Item 1-2  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellat iusto laborum itaque sint odio, beatae libero, accusamus cumque odit explicabo dolorem iure iste delectus assumenda, ea mollitia unde illum maiores soluta! Ipsam ipsum, iusto quod adipisci ullam velit, debitis, cupiditate magnam impedit praesentium similique cumque amet sapiente voluptate in.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, qui?</p>
+        <h4 id="item-2">Item 2</h4>
+        <p>Item 2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellat iusto laborum itaque sint odio, beatae libero, accusamus cumque odit explicabo dolorem iure iste delectus assumenda, ea mollitia unde illum maiores soluta! Ipsam ipsum, iusto quod adipisci ullam velit, debitis, cupiditate magnam impedit praesentium similique cumque amet sapiente voluptate in. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, aliquid!</p>
+        <h4 id="item-3">Item 3</h4>
+        <p>Item 3 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellat iusto laborum itaque sint odio, beatae libero, accusamus cumque odit explicabo dolorem iure iste delectus assumenda, ea mollitia unde illum maiores soluta! Ipsam ipsum, iusto quod adipisci ullam velit, debitis, cupiditate magnam impedit praesentium similique cumque amet sapiente voluptate in.</p>
+        <h5 id="item-3-1">item 3-1</h5>
+        <p>Item 3-1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellat iusto laborum itaque sint odio, beatae libero, accusamus cumque odit explicabo dolorem iure iste delectus assumenda, ea mollitia unde illum maiores soluta! Ipsam ipsum, iusto quod adipisci ullam velit, debitis, cupiditate magnam impedit praesentium similique cumque amet sapiente voluptate in.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, qui?</p>
+        <h5 id="item-3-2">item 3-2</h5>
+        <p>Item 3-2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellat iusto laborum itaque sint odio, beatae libero, accusamus cumque odit explicabo dolorem iure iste delectus assumenda, ea mollitia unde illum maiores soluta! Ipsam ipsum, iusto quod adipisci ullam velit, debitis, cupiditate magnam impedit praesentium similique cumque amet sapiente voluptate in.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, qui?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.js"></script>
+</body>
+</html>
