@@ -1,3 +1,6 @@
+// double to int 
+
+
 #include<iostream>
 using namespace std;
 int main()
