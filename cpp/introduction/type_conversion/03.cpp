@@ -10,9 +10,13 @@ int main()
   cout << " int value 1 : " << int_value1 << endl ;
   int int_value2 = int(double_value);
   cout << " int value 2 : " << int_value2 << endl ;
-  //cout << int(double_value) << endl ;
-  //cout  << (int)double_value << endl ;
-  //cout << double_value << endl ;
+  
+  
+  /*
+  cout << int(double_value) << endl ;
+  cout  << (int)double_value << endl ;
+  cout << double_value << endl ; 
+  */
 
 
   return 0;
