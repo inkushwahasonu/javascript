@@ -1,3 +1,5 @@
+// if-else.....else-if
+
 #include<iostream>
 using namespace std ;
 int main ()
