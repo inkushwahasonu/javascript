@@ -1,4 +1,4 @@
-// funcdtion overloading using defrent type of oarameters
+// funcdtion overloading using defrent type of parameters
 
 #include<iostream>
 using namespace std;
