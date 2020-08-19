@@ -1,4 +1,4 @@
-// enumeration type
+// enumeration type  (enum)
 
 #include<iostream>
 using namespace std;
