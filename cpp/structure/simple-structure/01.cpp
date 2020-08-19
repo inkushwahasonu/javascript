@@ -20,4 +20,4 @@ int main(){
   cout <<"age : "<<p1.age<< endl;
   cout<<"salary : "<< p1.salary;
   return 0;
-}
+} 
