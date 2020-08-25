@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>numeric conversion , unary</title>
+  </head>
+  <body>
+    <p>numeric conversion --></p>
+
+    <script>
+      // no effect on numbers
+      let x = 1;
+      alert(+x); /// = 1
+      let y = -2;
+      alert(+y); // = -2
+      // converts non numbers
+      alert(+true); // =1
+      alert(+""); // = o
+
+      let apples = "2";
+      let oranges = "3";
+      alert(apples + oranges); // = 23   , the binary + concatinates strings
+
+      //both value converted to numbers before the binary plus
+      alert(+apples + +oranges); // = 5
+    </script>
+  </body>
+</html>
