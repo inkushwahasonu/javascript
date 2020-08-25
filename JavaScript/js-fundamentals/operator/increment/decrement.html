@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>increment/ decrement</title>
+  </head>
+  <body>
+    <p>increment / decrement ( prefix => ++x, postfix => x++)</p>
+
+    <script>
+      let counter = 2;
+      counter++; // work the same as counter = counter + 1 , but is shorter
+      alert(counter); // = 3
+      counter--; // decrement
+      alert(counter);
+
+      let a = 4;
+      let b = ++a; // assign after increment
+      alert(a); // = 5
+      alert(b); // = 5
+
+      let x = 3;
+      let y = x++; // assign before increment
+      alert(x);
+      alert(y);
+
+      let count = 0;
+      count++;
+      ++count;
+      alert(count); // = 2
+
+      // If we’d like to increase a value and immediately use the result of the operator, we need the prefix form:
+      let num = 5;
+      alert(++num); // = 6
+
+      // If we’d like to increment a value but use its previous value, we need the postfix form:
+      let net = 5;
+      alert(net++); // = 5
+      alert(net); // = 6
+
+      // (same as ) increment and decrement in other operation
+
+      let number1 = 1;
+      alert(2 * ++number1); // 4
+      let number2 = 1;
+      alert(2 * number2++); // 2
+    </script>
+  </body>
+</html>
