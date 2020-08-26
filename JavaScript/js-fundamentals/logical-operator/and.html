@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&& and operator</title>
+  </head>
+  <body>
+    <p>&& AND operator</p>
+
+    <script>
+      // priorty  false value
+
+      alert(true && true); // true
+      alert(true && false); // false
+      alert(false && true); // false
+      alert(false && false); // false
+
+      let hour = 12;
+      let minute = 30;
+      if (hour == 12 && minute == 30) {
+        alert("the time is 12:30");
+      }
+
+      if (1 && 0) {
+        //evaluated as true && false
+        alert("won't work , because the result is false");
+      }
+
+      // AND “&&” finds the first falsy value
+      // if the first operand is truthfully,
+      // AND returns the second operand:
+      alert(1 && 0); /// 0
+      alert(1 && 5); //  5
+      // if first operand is false,
+      // AND returns it . The second operand is ignored
+      alert(null && 5); // null
+      alert(0 && "no matter what"); // 0
+      // We can also pass several values in a row. See how the first falsy one is returned:
+      alert(1 && 2 && null && 3); // null
+      // When all values are truthy, the last value is returned:
+      alert(1 && 2 && 3); // 3
+
+      let x = 1;
+      x > 0 && alert("Greator then zero!");
+      //is equal to
+      let y = 1;
+      if (x > 0) alert("greater than zero");
+    </script>
+  </body>
+</html>
