@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>comparisons</title>
+  </head>
+  <body>
+    <script>
+      // boolean comparisons
+      let a = 2;
+      let b = 6;
+      alert(a > b); // false
+      alert(b > a); // true
+      alert(a == b); // false
+      alert(a != b); // true
+
+      let result = 5 > 4; // assign the result of the comparison
+      alert(result); // true
+
+      // string comparisons
+
+      alert("Z" > "A"); // true
+      alert("Glow" > "Glee"); // true
+      alert("Bee" > "Be"); // true
+
+      //  comparison of different types
+      alert(true == 1); // true
+      alert(false == 0); // false
+      alert("2" > 1); // true
+      alert("01" == 1); // true
+
+      let p = 0;
+      alert(Boolean(a)); // false
+
+      let q = "0";
+      alert(Boolean(q)); // true
+
+      alert(p == q); // true!
+
+      // strict equality
+
+      alert(0 == false); // true
+      alert("" == false); // true
+      alert(0 === false );  // false
+
+
+
+      // comparison with null and undefined 
+       alert( null === undefined) ;  //false 
+       alert(null == undefined);   // true
+
+       alert(nul > 0);  //flase
+       alert(null == 0); // false
+       alert(null >= 0);  // true
+
+       alert(undefined > 0);   // false
+       alert(undefined < 0);   // false
+       alert(undefined == 0);   // false
+    </script>
+  </body>
+</html>
