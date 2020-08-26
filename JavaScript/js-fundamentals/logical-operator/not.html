@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>! NOT operator</title>
+  </head>
+  <body>
+    <p>! NOT operator</p>
+
+    <script>
+      alert(!true); // false
+      alert(!0); // true
+
+      alert(!"not-empty string"); // false
+      alert(!!"not-empty string"); // true
+      alert(!!null); // false
+
+      alert(Boolean("non-empty string")); // true
+      alert(Boolean(null)); // false
+    </script>
+  </body>
+</html>
