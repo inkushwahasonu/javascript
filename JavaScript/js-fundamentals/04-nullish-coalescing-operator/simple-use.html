@@ -7,25 +7,34 @@
   </head>
   <body>
     <p>Nullish coalescing operator '??'</p>
+    <h1>to check </h1>
+    <h2>value woun't be null or undefined.</h2>
+    <h3>if here first value will be null or undefined than program wil not exicute.</h3>
 
     <script>
-      let firstName = null;
-      let lastName = null;
-      let nicName = "SuperCoder";
-      alert(firstName ?? lastName ?? nicName ?? "Anonymous"); //SuperCoder
+      
+        let firstName = null;
+      
+        let lastName = null;
+      
+         let nicName = "SuperCoder";
+       
+        alert(firstName ?? lastName ?? nicName ?? "Anonymous"); //SuperCoder
+         alert(`hi`);
 
       let height = 0;
       alert(height || 100); /// 100
-      alert(height ?? 100); // 0
+      
+      alert(height ?? 100); // 0    // here first value shoun.t be null or undefined
 
       // Precedence
-      let height = null;
+      let height1 = null;
       let width = null;
       // important : use parenthese
-      let area = (height ?? 100) * (width ?? 50);
+      let area = (height1 ?? 100) * (width ?? 50);
       alert(area); // 5000
 
-      //let x = 1&&2??3;  // Syntex error
+      let x = 1&&2??3;  // Syntex error
 
       let y = (1 && 2) ?? 3; // works
       alert(y); // 2
