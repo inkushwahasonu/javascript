@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for loop</title>
+  </head>
+  <body>
+    <p>for loop</p>
+    <script>
+      for (let i = 0; i <= 5; i++) {
+        alert(i);
+      }
+      //  alert(i);      syntex error
+      // but
+
+      let i = 3;
+      for (i = 3; i <= 6; i++) {
+        alert(i);
+      }
+      alert(i); //  7         ( because last incriment don't display in the  for loop.     that will be 7 here.   )
+
+      //skipping parts
+
+      let x = 0; // we have already declareed and assigned.
+      for (; x < 3; x++) {
+        alert(x);
+      }
+      alert(x);
+
+      let p = 2;
+      for (; p < 6; ) {
+        alert(p++);
+      }
+      // for(;;)     repeats without limmits
+
+      // continue to the next iteration
+      for (let i = 0; i < 10; i++) {
+        if (i % 2 == 0) continue;
+        alert(i); // 1,3,5,7,9
+      }
+
+      // or
+
+      for (let i = 0; i<10; i++){
+        if(i%2){
+          alert(i);
+        }
+      }
+
+
+      // labels for break/ continue
+
+      for(let i = 0; i<3; i++){
+        for(let j=0; j<3; j++){
+          let input = prompt(`value at coords(${i},${j})`,'' );
+          // what if we want to exit from here to done(below)
+
+        }
+      }
+      alert(`done`);
+
+
+      outer: for( let i = 0; i<3; i++){
+        for (let j = 0; j < 3; j++) {
+          let input = prompt(`Value at coords (${i},${j})`,'');
+
+          //if an empty string or canceled, then break out of both loops
+          if(!input) break outer;    // (*)
+
+          // do something with the value
+          
+        }
+      }
+      alert(`done!`);
+    </script>
+  </body>
+</html>

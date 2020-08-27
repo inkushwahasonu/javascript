@@ -22,6 +22,17 @@
       let x = 3;
       while (x) alert(x--);
       while(x) alert(--x);
+
+
+      // breaking the loop
+
+      let sum = 0 ;
+      while (true){
+      let value = +prompt("enter a number",'');
+      if(!value)break;  // when you entered NaN 
+      sum +=value;
+      }
+      alert(`Sum: ` + sum);
     </script>
   </body>
 </html>
