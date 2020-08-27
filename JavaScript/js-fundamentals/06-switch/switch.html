@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch statement</title>
+  </head>
+  <body>
+    <p>switch case</p>
+    <script>
+      // simple syntax
+
+      let a = 2 * 2;
+      switch (a) {
+        case 3:
+          alert("Toos mall");
+          break;
+        case 4:
+          alert("Exactly!");
+          break;
+        case 5:
+          alert("Too large");
+          break;
+        default:
+          alert("I don't know such values");
+      }
+
+      // if there is no break then the exicution continues with the next case without any checks.
+
+      let b = 2 + 2;
+      switch (b) {
+        case 3:
+          alert("to small");
+        // break ;
+        case 4:
+          alert("exatly");
+        //break;
+        case 5:
+          alert("too big");
+        // break;
+        default:
+          alert("I don't know such values");
+          break;
+      }
+
+      // '''''''''''''''''''
+      let x = "1";
+      let y = 0;
+      switch (+x) {
+        case y + 1:
+          alert(" this run because +x is 1, exactly equals y+1");
+          break;
+        default:
+          alert(" this doesn't run.");
+      }
+
+      // Groupng of case
+
+      let p = 3;
+      switch (p) {
+        case 4:
+          alert("Right!");
+          break;
+        case 3: // (*) grouped two cases
+        case 5:
+          alert("wrong!");
+          alert("Whi dont you take it ?");
+          break;
+
+        default:
+          alert("the result is strange , Really.");
+          break;
+      }
+
+      ///   type matters
+
+      let arg = prompt(" Enter a value?");
+      switch (arg) {
+        case '0':
+        case '1':
+          alert("One or Zero");
+          break;
+        case '2':
+        case '3':
+          alert("two or three");
+          break;
+        case 4:
+          alert("never exicutes");
+        default:
+          alert("An un known value");
+      }
+    </script>
+  </body>
+</html>
