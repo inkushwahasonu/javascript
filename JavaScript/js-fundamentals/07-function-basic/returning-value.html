@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function sum(a, b){
+  return a + b;
+}
+
+let result = sum(4 , 6);
+alert(result);       // 10
+
+//'''''''''''''''''''''''''''
+
+function checkAge(age){
+  if (age>=18){
+    return true;
+  }
+  else{
+    return confirm('do you have permition from your parents ?');
+  }
+}
+let age = prompt('How old are you ?',  18);
+let message = checkAge(age) ? 'Access granted': 'Access denie';
+alert(message);
+
+
+
+// ''''''''''''''''''''''''''''
+
+function doNothing(){ /*empty*/}
+alert(doNothing()===undefined);  // true
+
+
+// ''''''''''''''''''''''''''''''''
+
+function doNothings(){
+  return;
+}
+alert(doNothings()===undefined);  // true
+
+
+
+  </script>
+</body>
+</html>

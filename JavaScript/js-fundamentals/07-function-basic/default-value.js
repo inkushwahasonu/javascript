@@ -19,3 +19,18 @@ function showData(text){
   console.log(text);
 }
 showData();
+
+
+//'''''''''''''''''''''''''''
+console.log(',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,')
+// ''''''''''''''''''''''''''
+ 
+// // if there,s  nno count parameter , show " unknown"
+
+// function showCount(count){
+//   console.log(count ?? 'unKnown');      // dont suport null or undefined firsty
+// }
+
+// showCount(0);   // 0
+// showCount(null);   // unknown
+// showCount();      // unknown
