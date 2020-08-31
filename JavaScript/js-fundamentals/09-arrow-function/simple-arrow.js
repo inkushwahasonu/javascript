@@ -28,8 +28,7 @@ let sayHi = () => console.log("Hello User..");
 sayHi();
 
 /*-- ----- */ console.log(
-  "---------Arrow function  --cheak permition-------------"
-);
+  "---------Arrow function  --cheak permition-------------");
 
 const { createInterface } = require("readline");
 const readline = createInterface({

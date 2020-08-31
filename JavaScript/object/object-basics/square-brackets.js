@@ -7,3 +7,5 @@ console.log(user["like bird"]);
 
 delete user["like bird"];
 console.log(user["like bird"]);
+
+
