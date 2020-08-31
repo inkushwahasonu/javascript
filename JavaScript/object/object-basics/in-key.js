@@ -13,7 +13,7 @@ console.log(user.noSuuchProperty === undefined);   // true
 
 // chech property in your function
 // "key" in object
-/******* */ console.log("---'key' in object-----( ' property  / key ' in object )------------");
+/******* */ console.log("---'key' in object-----( ' property  / key ' in object )-----");
 
 
 let user1 = { name : " John" , age : 30};
