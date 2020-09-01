@@ -30,7 +30,7 @@ let user1 = {
 
 let detail = Object.assign({}, user1);
 
-console.log(detail.size == user1.size) ;  //  true----- check clonning is true of false
+console.log(detail.size == user1.size) ;  //  true----- check cloning is true of false
 console.log(user1.name);                // rohan
 console.log(detail.name);               // rohan
 console.log(detail.size.height);        // 182
