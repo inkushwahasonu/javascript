@@ -9,7 +9,7 @@
 
   console.log(student.address);   // delhi
   console.log(user5.name);         // undefined
-  03-object-assign
+  
   for(let detail in student){
     // console.log(detail);    //  name : "soma" ,age : 24 collage : "rvm univ" address : " delhi"
     console.log( student[detail]);   // soma  24  rvm univ  delhi
@@ -43,7 +43,7 @@ let sunil = { name : "sonu"};
 
 
 // object.assign to replace for..in loop for simple cloning
- /******/ console.log("------------------------0------------------- object.assign to replace for..in loop for simple cloning--------------------");
+ /******/ console.log("------------------------03------------------- object.assign to replace for..in loop for simple cloning--------------------");
   let telif = {name : "sukant", age : 30};
   let firsen = Object.assign({}, telif);
  console.log(firsen);             //name : " sukant", age : 30
