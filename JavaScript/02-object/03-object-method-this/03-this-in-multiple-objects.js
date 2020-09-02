@@ -1,4 +1,4 @@
-// this in two objects   (“this” is not bound)
+// this in two objects   (“this” keyword is not bound)
 
 
 /***** */ console.log("---------------01 ------------- this in two objects   (“this” is not bound)--------------");
