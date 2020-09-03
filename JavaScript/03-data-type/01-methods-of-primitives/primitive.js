@@ -32,6 +32,11 @@ sohan.sayHi();
 
  /**     */ console.log("----------------------------------02-------------primitive as an object-----------");
 
- let str = "Hello world";
+ /****  */console.log("(.toUpperCase())  ,  for example : console.log(string.toUpperCase())");
 
- console.log(str.toUpperCase());     // Hello
+ let string = "Hello world";
+
+ console.log(string.toUpperCase());     // Hello
+
+
+ 
