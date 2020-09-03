@@ -22,4 +22,4 @@ console.log(0b11111111); //   255   binary number
 
   let a = 0b11111111;
   let b = 0o377;
-  console.log( a == b );    // true   ( 255 == 255)
+  console.log( a == b );    // true   ( 255 == 255`)
