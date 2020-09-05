@@ -63,9 +63,23 @@ console.log("-----------------------05-----------------unshift--- methods-------
 
 let fruits5 =[ "Apple", "Orange", "Pear"];
 console.log(fruits5);
-fruits5.pop();             console.log(fruits5);   
-fruits5.shift();           console.log(fruits5);
-fruits5.push("Pear");      console.log(fruits5);
-fruits5.unshift("Apple");  console.log(fruits5);
+fruits5.pop();             console.log(fruits5);  // "Pear" removed  
+fruits5.shift();           console.log(fruits5);  // "Apple" removed
+fruits5.push("Pear");      console.log(fruits5);  // "pear"  add
+fruits5.unshift("Apple");  console.log(fruits5);  // "Apple" add
 
 
+
+
+
+// internal methods
+/**    */ console.log("---------------06--------internal method--------------------------");
+// inserte or delete
+
+
+let fruits6 = ["Banana"];
+let arr = fruits6;        // copy by refrence ( two variables refrence the same array)
+console.log(arr);        // 'Banana'
+console.log(arr == fruits6); // true
+arr.push("Pear");   // modifi the array by refrence
+console.log(fruits);   // 'Banana' , 'Pear'
