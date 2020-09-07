@@ -1,7 +1,4 @@
 
-
-
-
 // Symbol.itrator
 /** */ console.log('-------------------------------01------------ Symbol.itrator-------------------------------');
 
@@ -10,7 +7,7 @@ let range = {
   to : 5
 };
 
-// 1. call to for..of initially calls this
+//   1. call to for..of initially calls this
 range[Symbol.iterator] = function (){
   // ...... it returns the itrator object :
   // 2. Onword, for..of works only with this itrator, asking it for next values
