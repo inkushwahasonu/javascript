@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access date components</title>
+</head>
+<body>
+  <h1>Access date components</h1>
+  <ul>
+    <li>getFullYear()</li>
+    <li>getMonth()</li>
+    <li>getDate</li>
+    <li>getHours()</li>
+    <li>getHours()</li>
+    <li>getMinutes()</li>
+    <li>getSeconds()</li>
+    <li>getMilliseconds()</li>
+  </ul>
+  <br><br><br>
+
+  <h2>Additionally, we can get a day of week</h2>
+  <ul>
+    <li>getDay()</li>
+
+    <script>
+      // current date
+      let date = new Date();
+      
+      // the hour in your current time zone
+      alert(date.getHours());
+      alert(date.getMinutes());
+
+      // the hour in UTC+0 time zone (London time without daylight savings)
+      alert(date.getUTCHours());
+      alert(date.getUTCMinutes());
+
+
+
+
+
+
+      // ------------------------------------------------------------------------------------------------------
+      // Besides the given methods, there are two spacial ones that do not have a UTC - variant :
+
+      // getTime()imeZoneOffset() 
+       
+      // if you are in timezone UTC-1, outputs 60
+      // if you are in timezone UTC+3, outputs - 180
+      alert(new Date().getTimezoneOffset());        
+    </script>
+  </ul>
+</body>
+</html>
