@@ -1,27 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // new Date()       :creation of date
+      /**
+       * --01-----new Date()      date and time-------
+      */
+      let now = new Date();
+      alert(now); // Fri Sep 11 2020 17:30:06 GMT+0530 (India Standard Time)
 
-// new Date()       :creation of date 
-/*** */ console.log("----------------------------01---------------new Date()              date and time--------------------");
+      /**
+       * --02-------new date(milliseconds)---
+       * / 
+      // 0 means 01.01.1970 UTC+0
+      let Jan01_1970 = new Date(0);
+      alert(Jan01_1970); // Thu Jan 01 1970 05:30:00 GMT+0530 (India Standard Time)
 
-let now = new Date();
-alert(now);
+      // now add 24 hours, get 02.01.1970 UTC+0
+      let Jan02_1970 = new Date(24 * 3600 * 1000);
+      alert(Jan02_1970); //Fri Jan 02 1970 05:30:00 GMT+0530 (India Standard Time)
 
-/*** */ console.log("-----------------------02-------------------new date(milliseconds)-----------------------");
-// 0 means 01.01.1970 UTC+0
-let Jan01_1970 = new Date(0);
-alert( Jan01_1970 );
+      // Date before 01.01.1969
 
-// now add 24 hours, get 02.01.1970 UTC+0
-let Jan02_1970 = new Date(24 * 3600 * 1000);
-alert( Jan02_1970 );
+
+            //-------------------------------------------------------------------------------------
+
+      /**
+       * ------03---------negativetimestamps"
+      */ 
+
+      let Dec31_1969 = new Date(-24 * 3600 * 1000);
+      alert(Dec31_1969);
+
+
+            //-------------------------------------------------------------------------------------
+
+      // new Date(datestring);
+      /**
+       * --04-----------new Date(datestring)"
+       * */ 
+      let date = new Date("2017-01-26");
+      alert(date);
+      // The time is not sate , so it's assumed to be midnight GMT and
+      // is adjusted according to the timezone the code is run in
+      // So result count be
+      // The Jan 26 2017 11:00:00 GMT+1100 (Australian Eastern Daylight  time)
+      // or
+      // Wed Jan 25 2017 16:00:00 GMT-0800-0800 (Pacific Standard Time)
+      //-------------------------------------------------------------------------------------
+
+
+       // new Date(year, month, date, hours, minutes, seconds, ms) 
+       /**
+        *new Date(year, month, date, hours, minutes, seconds, ms) 
+        */
+
+        let dateString = new  Date(2020, 0, 23, 4, 5, 1, 45);
+        alert(dateString);
   </script>
-</body>
+  </body>
 </html>
