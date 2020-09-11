@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+// new Date()       :creation of date 
+/*** */ console.log("----------------------------01---------------new Date()              date and time--------------------");
+
+let now = new Date();
+alert(now);
+
+/*** */ console.log("-----------------------02-------------------new date(milliseconds)-----------------------");
+// 0 means 01.01.1970 UTC+0
+let Jan01_1970 = new Date(0);
+alert( Jan01_1970 );
+
+// now add 24 hours, get 02.01.1970 UTC+0
+let Jan02_1970 = new Date(24 * 3600 * 1000);
+alert( Jan02_1970 );
+  </script>
+</body>
+</html>
