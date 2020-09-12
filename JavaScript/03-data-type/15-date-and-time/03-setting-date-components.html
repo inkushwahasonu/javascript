@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>The following methods allow to set date/time components.</h1>
+    <ul>
+      <li>setFullYear(year, [month], [date] )</li>
+      <li>setMonth(month, [date])</li>
+      <li>setDate(date)</li>
+      <li>setHours(hours, [min], [sec], [ms])</li>
+      <li>setMinutes(min, [sec], [ms])</li>
+      <li>setSeconds(sec, [ms])</li>
+      <li>setMilliseconds(ms)</li>
+      <li>
+        setTime(milliseconds)
+        <h1>sets the whole date by millisonds since 01.01.1970 UTC</h1>
+      </li>
+    </ul>
+
+    <script>
+      /**
+       * setFullYear(year, [monts],[date])
+       * setMonth(month, [date]) 
+       * setDate(date)
+       * setHours(hour, [min], [sec], [ms])
+       * setMinuts(min, [sec], [ms])
+       * setSeconds(sec, [ms])
+       * setMilliseconds(ms);
+       * setTime(milliseconds)      ( sets the  whole date by milliseconds since 01.01.1970 utc )
+       */
+
+
+      let today = new Date();
+      today.setHours(0);
+      alert(today);       //  still today, but the hour is changed to 0
+
+      today.setHours(0, 0, 0, 0);
+      alert(today);                 // still today, now 00:00:00 sharp.
+    </script>
+  </body>
+</html>
