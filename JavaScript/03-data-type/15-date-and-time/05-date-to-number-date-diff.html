@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>date to number, date diff</title>
+</head>
+<body>
+  <script>
+    let date = new Date();
+    alert(+date);          // the number of milliseconds, same as date.getTime()
+
+
+
+
+
+
+    // the importantent side effect : dates can be subtracted, the result is their difference in ms.
+    // that can be used for time measurements:
+
+    let start = new Date();  // start measuring time
+
+    // do the job
+    for (let i = 0; i < 100000; i++){
+      let doSomething = i * i * i;
+    }
+
+    let end = new Date();  // end measuring time
+    alert(`the loop took ${end - start} ms`);
+  </script>
+</body>
+</html>
