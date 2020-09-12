@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>autocorrection</title>
+</head>
+<body>
+  <script>
+    //  Out-of-range date components are distributed automatically
+    let date = new Date(2013, 0, 32);    // 32 Jan 2013 ?!?
+    alert(date);  // .. is 1st Feb 2013!
+    //----------------------------------------------------
+    let date2 = new Date(2016, 1, 28);
+    date2.setDate(date2.getDate()+ 2);
+    alert(date2);     // 1 Mar 2016
+    
+    // correction in date
+    // let's get the date for "70 seconds after now"
+
+    let date3 = new Date();
+    date3.setSeconds(date3.getSeconds() + 70);
+    alert(date3)       // 70 second after of correct time
+
+
+    // we can also zero or even negative values. For example
+
+    let date4 = new Date(2016, 0, 2);   // 2 Jan 2016
+    date4.setDate(1);    // set day 1 of month
+    alert(date4);
+
+    date5.setDate(0);     // min day is 1, so the last day of the previous month is assumed
+    alert(date5);        // 31 Dec 2015
+  </script>
+</body>
+</html>
