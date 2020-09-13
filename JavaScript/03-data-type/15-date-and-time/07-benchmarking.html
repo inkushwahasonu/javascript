@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benchmarking</title>
+</head>
+<body>
+  <script>
+    // banchmarking
+    // such performance measurements are often called "benchmarks".
+    
+
+    // we have date1 and date2, which function faster returns their defference in ms?
+
+    function diffSubtract(date1, date2){
+      return date2 - date1;
+    }
+
+    // or
+    function diffGetTime(date1, date2){
+      return date2.getTime() - date1.getTime();
+    }
+
+    function bench(f){
+      let date1 = new Date(0);
+      let date2 = new Date();
+
+      let start = Date.now( );
+      for (let i = 0; i < 100000; i++) f(date1, date2);
+        return Date.now() - start;
+      }
+      alert ('Time of diffSubtract : ' + bench(diffSubtract) + 'ms');
+      alert('Time of diffGetTime :' + bench(diffGetTime) + 'ms');
+
+
+    ////------------------------------------------------------------------------------------
+      
+      
+      
+      
+      function diffSubtract2(date1, date2) {
+        return date2 - date1;
+      }
+      function diffGetTime2(date1, date2){
+        return date2.getTime() - date1.getTime()
+      }
+
+      function bench2(f){
+        let date1 = new Date(0);
+        let date2 = new Date();
+
+        let start = date.now();
+        for (let i = 0; i < 100000; i++) f(date1, date2);
+        return Date.now() - start;
+      }
+
+
+      let time1 = 0;
+      let time2 = 0;
+
+      // run bench(upperSlice) and bench (upperLoop) each 10 times alternating
+      for ( let i = 0; i< 10; i++){
+        time1 += bench2(diffSubtract2);
+        time2 += bench2(diffGetTime2);
+      }
+
+      slert('Total time for diffSubtracts : ' + time1);
+      alert('Total time for diffGetTime : ' + time2);
+
+
+  </script>
+</body>
+</html>
