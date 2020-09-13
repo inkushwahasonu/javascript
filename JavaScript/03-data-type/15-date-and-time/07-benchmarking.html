@@ -34,8 +34,10 @@
       alert('Time of diffGetTime :' + bench(diffGetTime) + 'ms');
 
 
+
+
     ////------------------------------------------------------------------------------------
-      
+      // For more reliable benchmarking, the whole pack of benchmarks should be rerun multiple time.
       
       
       
@@ -43,14 +45,14 @@
         return date2 - date1;
       }
       function diffGetTime2(date1, date2){
-        return date2.getTime() - date1.getTime()
+        return date2.getTime() - date1.getTime();
       }
 
       function bench2(f){
         let date1 = new Date(0);
         let date2 = new Date();
 
-        let start = date.now();
+        let start = Date.now();
         for (let i = 0; i < 100000; i++) f(date1, date2);
         return Date.now() - start;
       }
@@ -65,7 +67,7 @@
         time2 += bench2(diffGetTime2);
       }
 
-      slert('Total time for diffSubtracts : ' + time1);
+      alert('Total time for diffSubtracts : ' + time1);
       alert('Total time for diffGetTime : ' + time2);
 
 
