@@ -48,9 +48,9 @@ function makeCounter2(){
   };
 
   counter2.count = 0;
-  return;
+  return counter2;
 }
 
-let counter5= makeCounter2();
-counter.count = 10;
-console.log(counter() ); // 10
+let counter3= makeCounter2();
+counter3.count = 10;
+console.log(counter3() ); // 10
