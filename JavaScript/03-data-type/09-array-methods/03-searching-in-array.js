@@ -45,3 +45,4 @@ let users1 = [
 ];
 let someUsers = users.filter(item => item.id < 3);
 console.log(someUsers.length);    // 2
+
