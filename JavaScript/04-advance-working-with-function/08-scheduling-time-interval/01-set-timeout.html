@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>setTimeout</title>
+</head>
+<body>
+  <script>
+
+
+// setTimeout 
+
+// delay : 1000 ms = 1 second
+
+function sayHii(){
+ alert("Hello , 1000 ms");
+}
+
+setTimeout(sayHii, 1000);
+// setTimeout(sayHii, 10000);
+
+
+/**** */ console.log("------------------------------------------------------");
+
+// with arguments 
+
+function sayHi(phrase, who) {
+  alert(phrase + ', ' + who + ' 4000 ms');
+}
+
+setTimeout(sayHi, 4000, "Hello", "John");   // Hello, John
+
+
+/**** */ console.log("------------------------------------------------------");
+
+
+setTimeout("alert(`Hello  , 8000 ms`)", 8000);
+
+/**** */ console.log("------------------------------------------------------");
+
+setTimeout(() => alert ('Hello, 10000 ms'), 10000);
+
+
+/**** */ console.log("------------------------------------------------------");
+
+//wrong
+// setTimeout(sayHi(), 1000);
+
+
+
+
+  </script>
+</body>
+</html>
