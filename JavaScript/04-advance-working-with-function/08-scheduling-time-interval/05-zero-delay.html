@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zero Delay</title>
+</head>
+<body>
+  <script>
+
+// zero delay setTimeout
+// there's a spacial use case : setTimeout(func, 0), or just setTimeout(func)
+
+
+
+
+
+// zero delay is in fact not zero ( in a browser)
+// in the browser . there's a limitation of how often nested timers can run. The Html5 standerd says:
+// "after five nested timers, the interval is forces to be at least 4 milliseconds."
+
+
+let start = Date.now();
+let times = [];
+setTimeout(function run(){
+  times.push(Date.now() - start);   // remember delay from the previous call
+
+  if (start + 100 < Date.now()) alert(times);// show the delays after 100ms
+  setTimeout(run);    // else re-sechedule
+});
+
+
+
+
+
+// an example of the output:
+// 1,1,1,1,9,15,20,24,30,35,40,45,50,55,59,64,70,75,80,85,90,95,100
+
+  </script>
+</body>
+</html>
