@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clearTimeout</title>
+  </head>
+  <body>
+    <script>
+      // canceling with clearTimeout
+      let timerId = setTimeout(() => alert("never happens"), 1000);
+      alert(timerId); // timer identifier
+
+      clearTimeout(timerId);
+      alert(timerId); // same identifier (doesn't become null after canceling)
+    </script>
+
+    <p>
+      As we can see from alert output, in a browser the timer identifier is a
+      number. In other environments, this can be something else. For instance,
+      Node.js returns a timer object with additional methods. Again, there is no
+      universal specification for these methods, so that’s fine. For browsers,
+      timers are described in the timers section of HTML5 standard.
+    </p>
+  </body>
+</html>
