@@ -89,3 +89,4 @@ let say = user7.say.bind(user7);
 
 say("Hello");    // Hello, rishi("helle" argument is passed to say)
 say("Bye");    // Bye, rishi ( "Bye"  is passed to say)
+
