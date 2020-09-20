@@ -1,3 +1,5 @@
+"use strict";
+
 // prototypal inheritance
 
 let animal = {
@@ -125,7 +127,7 @@ let user = {
     [this.name, this.surname] = value.split(" ");
   },
 
-  
+
     get fullName(){
       return `${this.name} ${this.surname}`;
     }
