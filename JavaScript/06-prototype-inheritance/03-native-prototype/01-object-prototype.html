@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>object.prototype</title>
+  </head>
+  <body>
+    <script>
+      // Native prototype
+
+      // Object.prototype     (pre-defined method)
+      // That’s a built-in toString method
+
+      let obj = {};
+      alert(obj); // [object Object]
+
+      //--------------------------------------------------------------
+
+      let obj2 = {};
+      alert(obj2.__proto__ === Object.prototype); // true
+      alert(obj2.toString === obj2.__proto__.toString); // true     (That’s a built-in toString method)
+      alert(obj2.toString === Object.prototype.toString); // true
+
+      //------------------------------------------------------
+
+      alert(Object.prototype.__proto__); // null
+    </script>
+  </body>
+</html>
