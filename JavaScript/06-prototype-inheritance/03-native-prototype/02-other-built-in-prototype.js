@@ -1,3 +1,11 @@
+// othger built-in prototype 
+// function, array, date-number
+
+
+
+
+
+
 let arr = [1, 2, 3];
 
 // it inherits from Array.prototype
@@ -21,3 +29,11 @@ console.log(arr2);    // 1,2,3  <-- the result of Array.prototype.toString
 function f(){}
   console.log(f.__proto__ == Function.prototype);   // true
   console.log(f.__proto__.__proto__ == Object.prototype);  // true,  inherit from objects
+
+
+
+
+
+
+
+  
