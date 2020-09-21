@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vary-plain object</title>
+  </head>
+  <body>
+    <script>
+      // "very plain" object
+
+      // s we Know, objects can be used as associative arrays to store key/value pairs .
+
+      // let obj = {};
+      // let key = prompt("what's the key?", "__proto__");
+      // object[key] = "some value";
+      // alert(obj[key]);    // [object Object], not "some value"!
+
+      //-------------------------------------------------------------------
+
+      let obj2 = Object.create(null);
+      let key2 = prompt("What's the key?", "__proto__");
+      obj2[key2] = "some value";
+      alert(obj2[key2]); // "some value"
+
+      //---------------------------------------------------------------
+      /*
+let obj = Object.create(null);
+alert(obj); // Error   (no toString)
+*/
+      //--------------------------------------------------------
+
+      let chineseDictionary = Object.create(null);
+      chineseDictionary.hello = "你好";
+      chineseDictionary.bye = "再见";
+      alert(Object.keys(chineseDictionary)); // hello, bye
+      
+    </script>
+  </body>
+</html>
