@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise chaining</title>
+</head>
+<body>
+  <script>
+    new Promise(function(resolve,reject){
+      setTimeout(() => resolve(1), 1000);
+    }).then(function(result){
+
+      alert(result);    // 1
+      return result * 2;
+    }).then(function(result){
+
+      alert(result);      // 2
+      return result * 2;
+
+    }).then(function(result){
+
+      alert(result);   // 4
+      return result * 2;
+    });
+
+
+
+    // ------------------------------------------
+
+    let promise2 = new Promise(function ( resolve,reject){
+      setTimeout(() => resolve(1), 1000);
+    });
+
+    promise2.then(function(result){
+      alert(result);   // 1
+      return result * 2;
+    });
+
+    promise2.then(function(result){
+      alert(result);   // 1
+      return result * 2;
+    });
+
+    promise2.then(function(result){
+      alert(result);   // 1
+      return result * 2;
+    });
+    
+  </script>
+</body>
+</html>
