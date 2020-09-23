@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch</title>
+  </head>
+  <body>
+    <script>
+      fetch("/article/promise-chaining/user.json")
+        // .then below runs when the remote server responds
+        .then(function (response) {
+          // response.text() returns a new promise that resolves with the full response text
+          //when it loads
+          return response.text();
+        })
+        .then(function (text) {
+          // ...and here's the content of the remote file
+          alert(text); // {"name": "iliakan", "isAdmin" : true}
+        });
+
+      //----------------------------------------------------------------------
+
+      // same as above, but response.json() parses the remote content as JSON
+      fetch("/article/promise-chaining/user.json")
+        .then((response) => response.json())
+        .then((user) => alert(user.name)); // iliakan, got user name
+
+      //----------------------------------------------------------------
+
+      // make a request for user.json
+      fetch("/article/promise-chaning/user.json")
+        // Load it as json
+        .then((response) => response.json())
+        // Make a request to Github
+        .then((user) => fech(`https : // api.github.com/users/${user.name}`))
+        // load the response as json
+        .then((response) => response.json())
+        // Show the avatar image ( githubUser.avatar_url) for 3 seconds
+        .then((githubUser) => {
+          let img = document.createElement("img");
+          img.scr = githubUser.avatar_url;
+          img.className = "promise-avatar-example";
+          document.body.append(img);
+          setTimeout(() => img.remove(), 3000);
+        });
+
+      //----------------------------------------------------
+
+      fetch("/article/promise-chaining/user.json")
+        .then((response) => response.json())
+        .then((user) => fetch(` http:// api.github.com/users/${user.name} `))
+        .then((response) => response.json())
+        .then(
+          (githubUser) =>
+            new Promise(function (resolve, reject) {
+              let img = document.createElement("img");
+              img.src = githubUser.avatar_url;
+              img.className = "promise-avatar-example";
+              document.body.append(img);
+
+              setTimeout(() => {
+                img.remove();
+                resolve(githubUser);
+              }, 3000);
+            })
+        )
+        // triggers after 3 seconds
+        .then((githubUser) => alert(`Finished showing ${githubUser.name}`));
+
+      //---------------------------------------------------------------------------
+
+      function loadJson(url) {
+        return fetch(url).then((response) => response.json());
+      }
+
+      function loadGithubUser(name) {
+        return fetch(`https://api.github.com/users/${name}`).then((response) =>
+          response.json()
+        );
+      }
+
+      function showAvatar(githubUser) {
+        return new Promise(function (resolve, reject) {
+          let img = document.createElement(`img`);
+          img.src = githubUser.avatar_url;
+          img.className = "promise-avatar-example";
+          document.body.append(img);
+
+          setTimeout(() => {
+            img.remove();
+            resolve(githubUser);
+          }, 3000);
+        });
+      }
+
+      // user them :
+
+      loadJson("/article/promise-chaining/user.json")
+        .then((user) => loadGithubUser(user.name))
+        .then(showAvatar)
+        .then((githubUser) => al(`Finished showing ${githubUser.name}`));
+
+      //---
+    </script>
+  </body>
+</html>
