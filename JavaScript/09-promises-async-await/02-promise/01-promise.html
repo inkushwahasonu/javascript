@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise....</title>
+</head>
+<body>
+  <script>
+
+//  Promise
+
+let promise = new Promise (function(resolve, rejuct){
+  // the function is exicuted automatically when the promise is constructed
+
+  // after 1 second signal that teh job is done with the  result " done"
+  setTimeout(() => resolve("done 1"), 1000);
+});
+
+
+
+
+
+//---------------------------------------------------------------
+// use of ".then"
+
+let promise2 = new Promise(function(resolve, reject){
+  setTimeout(() => resolve("done! 2"), 1000);
+});
+
+// resolve runs the first fuction in  .then
+promise2.then(
+  result => alert(result),//Document show " done!" after 1 second
+  error => alert(error )   // dosen't run
+);
+
+
+
+//------------------------------------------------------------------------
+
+let promise3 = new Promise(function(resolve, reject){
+  setTimeout(() => reject(new Error("Whoops! 3")), 1000)
+});
+
+// reject runs the second function in .then
+promise3.then(
+  result => alert(result),  // doesn't run
+  error => alert(error)     // show " error : Whoops!" after 1 second
+);
+
+
+
+//-----------------------------------------------------------------
+
+
+let promise4  = new Promise(resolve => {
+  setTimeout(() => resolve("done! 4"), 1000);
+});
+
+promise4.then(alert);    // show "done!" after 1 second
+
+
+
+
+//--------------------------------------------------------------------
+
+// catch
+
+
+let promise5 = new Promise((resolve, reject) =>{
+  setTimeout(() => reject(new Error("Whoops! 5")), 1000);
+});
+
+// .catch(f) is the same as promise.then(null, f)
+promise5.catch(alert);   // show "Error : Whoops! after 1 second
+
+
+
+
+// ---------------------------------------------------------------------------
+
+// finally
+
+new Promise((resolve, reject) =>{
+  setTimeout(() => resolve("result"), 2000)
+})
+.finally(() => alert("Promise ready"))
+.then(result => alert(result));          // <-----  .then handles the result
+//------------------------------------------------------------------
+
+new Promise ((resolve, reject) => {
+  throw new Error("error");
+})
+
+.finally(() => alert("promise ready"))
+.catch(err => alert(err));               // <--   .catch handles the error object
+
+
+//-------------------------------------------------------------------------------------------------
+
+</script>
+</body>
+</html>
