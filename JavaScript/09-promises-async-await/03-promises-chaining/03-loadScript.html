@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loadScript</title>
+  </head>
+  <body>
+    <script>
+      loadScript("/article/promise-chaining/one.js")
+        .then(function (script) {
+          return loadScript("/article/promise-chaining/two.js");
+        })
+        .then(function (script) {
+          return loadScript("/article/promise-chaining/three.js");
+        })
+        .then(function (script) {
+          // use functions declared in scripts
+          // to show that they indeed loaded
+          one();
+          two();
+          three();
+        });
+
+      //---------------------------------------------------------------------------------
+
+      loadScript("/article/promise-chaining/one.js")
+        .then(function (script) {
+          return loadScript("/article/promise-chaining/two.js");
+        })
+        .then(function (script) {
+          return loadScript("/article/promise-chaining/three.js");
+        })
+        .then(function (script) {
+          // use functions declared in scripts
+          // to show that they indeed loaded
+          one();
+          two();
+          three();
+        });
+
+      //----------------------------------------------------------------------
+      loadScript("/article/promise-chaining/one.js")
+        .then((script) => loadScript("/article/promise-chaining/two.js"))
+        .then((script) => loadScript("/article/promise-chaining/three.js"))
+        .then((script) => {
+          // scripts are loaded, we can use functions declared there
+          one();
+          two();
+          three();
+        });
+
+      //----------------------------------------------------------------
+
+      loadScript("article/promise-chaining/one.js").then((script1) => {
+        loadScript("/article/promise-chaining/two.js").then((script2) => {
+          loadScript("article/promise-chaining/three.js").then((script3) => {
+            // this function has access to variables script1, scropt2 and script3
+            one();
+            two();
+            three();
+          });
+        });
+      });
+
+      //------------------------------------------------------------------------------
+      // Thenables
+      // To be precise, a handler may return not exactly a promise, but a so-called “thenable” object – an arbitrary object that has a method .then. It will be treated the same way as a promise.
+
+      class Thenable{
+        constructor(num){
+          this.num = num;
+        }
+        then(resolve, reject){
+          alert(resolve);        // function() { native code}
+          // resolve with this.num*2 after the 1 second
+          setTimeout(() => resolve(this.num * 2), 1000);
+        }
+      }
+
+      new Promise(resolve => resolve(1))
+      .then(result =>{
+        return new Thenable(result);
+      })
+      .then(alert);    // show 2 after 1000ms
+    </script>
+  </body>
+</html>
