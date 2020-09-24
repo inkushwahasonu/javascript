@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise.all</title>
+</head>
+<body>
+  <script>
+    Promise.all([
+      new Promise(resolve => setTimeout(() => resolve(1), 1000)),     // 1
+      new Promise(resolve => setTimeout(() => resolve(2), 1000)),     // 2
+      new Promise(resolve => setTimeout(() => resolve(3), 1000))      // 3
+    ]).then(alert); // 1, 2, 3 when promises are ready : each promise contributes an member
+
+    //-------------------------------------------------------------------------
+
+    let urls = [
+      'https://api.github.com/users/iliakan',
+      'https://api.github.com/users/remy',
+      'https://api.github.com/users/jeresig'
+    ];
+    // map every url to the promise of the fetch
+    let requests = urls.map(url => fetch(url));
+
+    // Promose.all waits until all jobs are resolved
+    Promise.all(requests)
+    .then(responses => responses.forEach(
+      response => alert(`${response.url}: ${response.status}`)
+    ));
+
+    //--------------------------------------------------------------------
+
+
+    let names = ['iliakan', 'remy', 'jeresig'];
+
+    let requests2 = names.map(name => fetch(`https://api.github.com/users/${name}`));
+    Promise.all(requests2)
+    .then(responses => {
+      // all responses are resolved successfully
+      for(let response of responses){
+        alert(`${response.url}: ${response.status}`);   // shows 200
+      }
+      return responses;
+    })
+    // map array of responses into an array of response.json() to read their content
+    .then(responses => Promise.all(responses.map(r => r.json())))
+    // all JSON answers are parsed: "users" is the array of them
+    .then(users => users.forEach(user => alert(user.name)));
+
+
+
+    //--------------------------------------------------------------------------------------
+
+    Promise.all([
+      new Promise((resolve, reject) => setTimeout(() => resolve(1), 1000)),
+      new Promise((resolve, reject) => setTimeout(() => reject(new Error("Whoops!")), 1000)),
+      new Promise((resolve, reject) => setTimeout(() => resolve(3), 1000))  
+    ]).catch(alert);   // Error : Whoops!
+   
+
+   //----------------------------------------------
+   // Promise.all(iterable) allows non-promise "regular" values in iterable
+
+   promise.all([
+     newPromise((resolve, reject) =>{
+       setTimeout(() => resolve(1), 1000)
+     }),
+     2,
+     3
+   ]).then(alert);  // 1, 2, 3
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>unhandled rejection</title>
+</head>
+<body>
+  <script>
+    new Promise(function() {
+      noSuchFunction();  //  Error here ( no such function)
+    })
+    .then(() => {
+      // successful promise handlers, one of more
+    }); // without .catch at the end!
+
+    //-----------------------------------------------------
+    window.addEventListener('unhandledrejection', function (event){
+      // the event object has two special properties:
+      alert(event.promise);    // [object Promise] - the promise that generated the error
+      alert(event.reason);   // Error Whoops! - the unhandled error object
+    });
+
+    new Promise(function(){
+      throw new Error("Whoops!");
+    });  // no catch to handle the error
+  </script>
+</body>
+</html>
