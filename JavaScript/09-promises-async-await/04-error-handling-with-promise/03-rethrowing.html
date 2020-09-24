@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rethroing</title>
+</head>
+<body>
+  <Script>
+    // the execution : catch -> then
+    new Promise((resolve, reject) =>{
+      throw new Error("Whoops!");
+    }).catch(function(error){
+      alert("the error is handled, continue normally");
+    }).then(() => alert("Next successful handler runs"));
+
+
+    //--------------------------------------------
+
+    // the execution : catch -> catch
+    new Promise((resolve, reject) => {
+      throw new Error("Whoops!");
+    }).catch(function(error){
+      if (error instanceof URIError){
+        // handle it
+      } else{
+        alert("can't handle such error");
+         throw error;  // throwing this or another error jumps to the  next catch
+      }
+    }).then(function(){
+      /* doesn't run here*/
+    }).catch(error =>{
+      alert(`the unknown error has occurred : ${error}`);
+      // don't return anything => execution goes the normal way
+    });
+
+  </Script>
+</body>
+</html>
