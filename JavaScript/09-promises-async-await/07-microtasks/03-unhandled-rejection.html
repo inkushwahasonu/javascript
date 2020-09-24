@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+// Unhandled rejection
+//rember the unhandledrejection event from the article Error handling with promises
+// now we can see exaxtly how javascript find out that there was an unhandled rejection.
+
+
+// An "unhandled rejection" occurs when a promise error is not handled at end of the microtask queue.
+
+
+
+let promise = Promise.reject(new Error("Promise Failed! 1"));
+promise.catch(err => alert('caught 1 '));
+
+// odesn't run : error handeled
+
+window.addEventListener('unhandledrejection', event => alert(event.reason));
+
+
+//----------------------------------------------------------------------------------
+// But if we forget to add .catch, then, after the microtask queue is empty, the engine triggers the event:
+
+let promise =Promise.reject(new Error("Promise Failed! 2"));
+// Promise Failed!
+window.addEventListener('unhandledrejection', event => alert(event.reason));
+
+
+
+
+// ----------------------------------------------------------------------------
+// What if we handle the error later? Like this:
+
+
+let promise3 = Promise.reject(new Error('Promise Failed! 3'));
+setTimeout(() => promise3.catch(err => alert('caught 3')), 1000);
+// error : Promise Failed
+window.addEventListener('unhandledrejection', event => alert(event.reason));
+
+
+  </script>
+</body>
+</html>
