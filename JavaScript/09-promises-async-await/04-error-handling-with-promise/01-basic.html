@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error handling with promises</title>
+</head>
+<body>
+  <script>
+
+    fetch('https://no-such0server.blabla')   // rejects
+    .then(response => response.json())
+    .catch(err => alert(err))               // TypeError : failed to fetch(the text may vary)
+
+
+    //-------------------------------------------------------------------
+    fetch('/article/promise-chaining/user.json')
+    .then(response => response.json())
+    .then(user => fetch(`https://api.github.com/users/${user.name}`))
+    .then(response => response.json())
+    .then(githubUser => new Promise((resolve, reject) =>{
+      let img = document.createElement('img');
+      img.src = githubUser.avatar_url;
+      img.className = "promise-avatar-example";
+      document.body.append(img);
+
+      setTimeout(() => {
+        img.remove();
+        resolve(githubUser);
+      }, 3000);
+    }))
+    .catch(error => alert(error.message))
+  </script>
+</body>
+</html>
