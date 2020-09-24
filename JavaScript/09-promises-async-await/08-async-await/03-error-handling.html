@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error handling</title>
+</head>
+<body>
+  <script>
+    async function f(){
+      try {
+        let response = await fetch('http://no-such-url');
+      } catch(err){
+        alert(err);     // TypeError : failed to fetch
+      }
+    }
+    f();
+
+
+    //---------------------- 02 -------------------------------------------------
+
+    async function ff() {
+      try {
+        let response = await fetch('/no-user-here');
+        let user = await response.json();
+      }catch(err){
+        // catches errors both in fetch and response.json
+        alert(err);
+      }
+    }
+    ff();
+
+    //------------------- 03 -----------------------------------
+
+    async function fff(){
+      let response = await fetch('http://no-such-url');
+    }
+    // fff() become a rejected promise
+    f().catch(alert);   // TypeError : failed to fetch 
+    
+    //---------------------------------------------------------------
+    
+  </script>
+</body>
+</html>
