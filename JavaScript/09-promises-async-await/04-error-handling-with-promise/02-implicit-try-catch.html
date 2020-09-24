@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>implicit try...catch</title>
+</head>
+<body>
+  <script>
+    new Promise((resolve, reject) => {
+      throw new Error ("Whoops! 1");
+    }).catch(alert);  // Error : Whoops!
+
+
+    //-----------------------------------------------------
+    
+    new Promise((resolve, reject) => {
+      reject(new Error("Whoops! 2"));
+    }).catch(alert);      // Error : Whoops!
+
+
+    //--------------------------------------
+
+    new Promise((resolve, reject) =>{
+      resolve("ok 3" );
+    }).then((result) => {
+      throw new Error("Whops! 3");    // rejects the promise 
+    }).catch(alert);         // Error : Whoops!
+
+    //------------------------------------------------
+
+    new Promise((resolve, reject) => {
+      resolve("ok 4");
+    }).then((result) => {
+      blabla();   // no such function
+    }).catch(alert);  // ReferenceError : blabla is not defined
+    
+
+  </script>
+</body>
+</html>
