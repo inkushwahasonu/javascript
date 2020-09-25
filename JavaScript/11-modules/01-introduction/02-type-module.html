@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>type = module</title>
+  </head>
+  <body>
+    <p>variable</p>
+    <script type="module">
+      // the variable is only visible in this module script
+      let user = "Json";
+    </script>
+
+    <p>not visible variable from another script</p>
+    <script type="module">
+      alert(user); // error : is not defined
+    </script>
+
+    <p>import meta</p>
+    <script type="module">
+      //  import meta
+      alert(import.meta.url); // script url (url of html page for an inline script)
+    </script>
+
+    <p>in a module, "this" is undefined</p>
+    <script>
+      alert(this); // window
+    </script>
+    <script type="module">
+      alert(this); // undefined
+    </script>
+
+    <p>buttot in script</p>
+    <script type="module">
+      alert(typeof button);          // object: the script can 'see' the button below
+        // as modules are deferred, the script runs after the whole page is loaded
+    </script>
+
+    <p>compare to regular script below</p>
+<script>
+  alert(typeof button);  // Error: button is undefined, the script can't see elements below
+    // regular scripts run immediately, before the rest of the page is processed
+</script>
+<button id="button">Button</button>
+  </body>
+</html>
