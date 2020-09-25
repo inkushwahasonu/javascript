@@ -47,3 +47,4 @@ for (let code of generateAlphaNum()){
   str2 +=String.fromCharCode(code);
 }
 console.log(str2);       // 0..9A..Za..z
+
