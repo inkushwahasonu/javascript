@@ -18,9 +18,9 @@ generator.next(4);   // --> pass the result into the generator
 /*** */console.log("------------------------------------------------");
 
 function* gen2() {
-  let ask1 = yield "2+2 = ?";
+  let ask1 = yield "2 + 2 = ?";
   console.log(ask1);   // 4
-  let ask2 = yield "3*3 =?";
+  let ask2 = yield "3 * 3 = ?";
   console.log(ask2);    // 9
 }
 
