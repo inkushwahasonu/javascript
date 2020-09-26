@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>proxy limitations</title>
+  </head>
+  <body>
+    <script>
+      // proxy limitation
+
+      /*
+let map = new Map();
+let proxy = new Proxy(map, {});
+proxy.set('test', 1);           // error
+*/
+
+      let map = new Map();
+      let proxy = new Proxy(map, {
+        get(target, prop, receiver) {
+          let value = Reflect.get(...arguments);
+          return typeof value == "function" ? value.bind(target) : value;
+        },
+      });
+      proxy.set("test", 1);
+      console.log(proxy.get("test")); // 1
+
+      // private fields
+      /** */ console.log("-------------------------private fields---");
+
+      /*
+class User{
+  #name = "Guest";
+  getName() {
+    return this.#name;
+  }
+}
+let user = new User();
+user =new Proxy(user,{});
+console.log(user.getName());   // error
+
+*/
+
+      class User {
+        #name = "Guest";
+
+        getName() {
+          return this.#name;
+        }
+      }
+      let user2 = new User();
+
+      user2 = new Proxy(user2, {
+        get(target, prop, receiver) {
+          let value = Reflect.get(...arguments);
+          return typeof value == "function" ? value.bind(target) : value;
+        },
+      });
+
+      alert(user2.getName()); // Guest
+    </script>
+  </body>
+</html>
