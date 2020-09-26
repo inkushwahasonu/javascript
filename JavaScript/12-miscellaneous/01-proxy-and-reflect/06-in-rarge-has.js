@@ -13,3 +13,4 @@ range = new Proxy(range, {
 
 console.log(5 in range);   // true
 console.log(50 in range);   // false
+
