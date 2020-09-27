@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refrence type</title>
+</head>
+<body>
+  <script>
+    let user = {
+      name : "John",
+      hi() {alert(this.name);},
+      bye(){alert("Bye");}
+    };
+    user.hi() ;   // works
+
+    //now let's call user.hi or user.bye depending on the name
+    (user.name == "John" ? user.hi : user,bye)();   // Error!
+
+
+    //---------------------------------------------------------------
+// REfrence type explained
+
+let user2 = {
+  name : "John",
+  hi() {alert(this.name);}
+}
+// split getting and calling the method in two lines
+let hi = user.hi;
+hi();  // Error, because this is undefined
+
+
+
+// To make user.hi() calls work, JavaScript uses a trick – the dot '.' returns not a function, but a value of the special Reference Type.
+
+  </script>
+</body>
+</html>
