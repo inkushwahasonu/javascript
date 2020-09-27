@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eval</title>
+</head>
+<body>
+  <script>
+
+// Eval : run a code String
+
+// the built-in eval function allows to execute a string of code 
+
+let code = 'alert("Hello")';
+eval(code);  // Hello
+
+let value = eval('1+1');
+alert(value);  // 2
+
+let value2 = eval('let i = 0; ++i');
+alert(value2);  // 1
+
+
+
+let a = 1 ;
+function f(){
+  let a = 2;
+  eval('alert(a)');   // 2
+}
+f();
+
+
+// remember : 'use strict' is enabled in runnable examples by default
+eval("let x = 5; function ff(){}");
+alert(typeof x);   // undefined (no such variable)
+// function ff is also not visible
+  </script>
+</body>
+</html>
