@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BigInt</title>
+  </head>
+  <body>
+    <script>
+      // math operator
+      // BigInt can mostly be used like a regular number, for example:
+
+      alert(1n + 2n); // 3
+      alert(5n / 2n); // 2
+      // alert(1n + 2);    // error : cannot mix Binary and other type number
+      //--------------------------------------
+      let bigint1 = 1n;
+      let number1 = 2;
+
+      // number to bigint
+      alert(bigint1 + BigInt(number1)); // 3
+      // bigint to number
+      alert(Number(bigint1) + number1); // 3
+
+      //---------------------------------------------
+      /*
+      let bigint = 1n;
+      alert( +bigint);  // error
+      */
+
+
+      //-----------------------------------------
+      // comparisons
+      alert(2n > 1n);   // true
+      alert(2n > 1);    // true
+
+      alert(1 == 1n);   // true
+      alert(1 === 1n) ;  // ralse
+
+      //---------------------------------------
+      // Boolean operations
+
+      alert(1n || 2);    // 1 ( 1n is considered truthy)
+      alert(0n || 2);    // 2 (0n is considered falsy)
+    </script>
+  </body>
+</html>
