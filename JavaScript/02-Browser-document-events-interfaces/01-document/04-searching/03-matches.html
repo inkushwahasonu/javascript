@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>matches</title>
+</head>
+<body>
+  <a href="http://example.com/file.zip">...</a>
+  <a href="http://ya.ru">...</a>
+  <script>
+    // can be any collection insted of document.body.children
+    for (let elem of document.body.children){
+      if (elem.matches('a[href$="zip"]')){
+        alert("the archive refrence : " + elem.href);
+      }
+    }
+  </script>
+</body>
+</html>
