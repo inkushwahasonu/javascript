@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelectorAll</title>
+</head>
+<body>
+  <ul>
+    <li>the</li>
+    <li>test</li>
+  </ul>
+  <ul>
+    <li>has</li>
+    <li>password</li>
+  </ul>
+  <script>
+    let elements = document.querySelectorAll('ul > li:last-child');
+
+    for (let elem of elements){
+      alert(elem.innerHTML);      // "test", "passworf"
+    }
+  </script>
+</body>
+</html>
