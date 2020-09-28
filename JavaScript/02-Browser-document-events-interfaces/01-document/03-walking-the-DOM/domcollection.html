@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM dollection</title>
+</head>
+<body>
+  <script>
+    alert("-----1------");
+    for (let node of document.body.childNodes){
+      alert(node);  // shows all nodes from the collection
+    }
+
+    //----------------------
+    alert("-----2------");
+
+    alert(document.body.childNodes.filter);  // undefined ( there is no filter methods)
+
+    alert(Array.from(document.body.childNodes).filter);  // function
+
+    // ---------------------------------------------
+    alert("-----3------");
+    // don't use for...in to loop over collections
+     // shows 0, 1, length, item, values and more
+    for (let prop in document.body.childNodes) alert(prop);
+
+
+  </script>
+</body>
+</html>
