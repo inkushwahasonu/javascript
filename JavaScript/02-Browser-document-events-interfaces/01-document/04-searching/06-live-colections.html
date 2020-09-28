@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>live collections</title>
+</head>
+<body>
+  <!-- All methods "getElementsBy*" return a live collection. Such collections always reflect the current state of the document and “auto-update” when it changes. -->
+
+  <div class="">first div</div>
+
+  <script>
+    let divs = document.getElementsByTagName('div');
+    alert(divs.length);   // 1
+  </script>
+
+  <div class="">Second</div>
+  <script>
+    alert(divs.length);   // 2
+  </script>
+
+  <!-- ------------------------------------------------------------------------- -->
+
+  <ul><li><p>Hi</p></li></ul>
+  <script>
+    let uls= document.querySelectorAll('ul');
+    alert(uls.length); // 1
+  </script>
+
+<ul><li><p>Bye</p></li></ul>
+  <script>
+    alert(uls.length);   // 1
+  </script>
+</body>
+</html>
