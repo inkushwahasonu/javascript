@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document.getElementById or just id</title>
+  </head>
+  <body>
+    <div class="" id="elem">
+      <div class="" id="elem-content">Element</div>
+    </div>
+
+    <script>
+      // get the element
+      let elem = document.getElementById("elem");
+
+      // make its background red
+      elem.style.background = "red";
+    </script>
+
+
+
+<!-- ----------------also the global variable named by id that refrences the element------------------------------------------------ -->
+    <div class="" id="elem2">
+      <div class="" id="elem2-content">element of div-2  for direct call</div>
+    </div>
+    <script>
+      elem2.style.background='green';
+    </script>
+
+<!-- That's unless we declare a javascript variable with the same, then it takes precedence -->
+
+<div class="" id="elemvar"></div>
+<script>
+  let elemvar = 5;   // now elemvar is 5, not a refrence to <div id="elem">
+  alert(elemvar);   // 5
+</script>
+  </body>
+</html>
