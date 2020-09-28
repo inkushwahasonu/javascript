@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sibling and parent</title>
+</head>
+<body>
+  <script>
+    // parent of <body> is <html>
+alert( document.body.parentNode === document.documentElement ); // true
+
+// after <head> goes <body>
+alert( document.head.nextSibling ); // HTMLBodyElement
+
+// before <body> goes <head>
+alert( document.body.previousSibling ); // HTMLHeadElement
+
+  </script>
+
+  <script>
+
+
+/*
+The links are similar to those given above, just with Element word inside:
+
+children – only those children that are element nodes.
+firstElementChild, lastElementChild – first and last element children.
+previousElementSibling, nextElementSibling – neighbor elements.
+parentElement – parent element.
+*/
+
+//--------------------------------------------
+// 
+alert(document.documentElement.parentNode);  // document
+alert ( document.documentElement.parentElement)   // null
+  </script>
+
+<div class=""></div>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<div class=""></div>
+<div class=""></div>
+<h1><p></p></h1>
+  <script>
+    //----------------------------------------------------------
+
+for(let elem of document.body.children){
+  alert(elem);   // DIV, UL, DIV, SCRIPT
+}
+  </script>
+</body>
+</html>
