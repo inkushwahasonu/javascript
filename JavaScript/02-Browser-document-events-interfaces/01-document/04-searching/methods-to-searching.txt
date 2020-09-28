@@ -1,0 +1,11 @@
+there are 6 main methods to search for nodes in DOM :
+
+
+Method               	    Searches by...	   Can call on an element?	  Live?
+
+querySelector	            CSS-selector        	✔	                        -
+querySelectorAll	        CSS-selector	        ✔	                        -
+getElementById	          id	                  -                        	-
+getElementsByName	        name	                -	                        ✔
+getElementsByTagName	    tag or '*'          	✔	                        ✔
+getElementsByClassName	  class	                ✔	                        ✔
