@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getElementBy*</title>
+</head>
+<body>
+  <!-- there are other methods to look for nodes by a tag, class,etc. -->
+
+
+  <table id="table">
+    <tr>
+      <td>Your age :</td>
+
+      <td>
+        <label for="">
+          <input type="radio" name = "age" value = "young" checked>less the 18
+        </label>
+        <label for="">
+          <input type="radio" name = "age" value = "mature" >18 to 50
+        </label>
+        <label for="">
+          <input type="radio" name = "age" value = "senior" >more than 60
+        </label>
+      </td>
+    </tr>
+  </table>
+
+
+
+
+  <script>
+    let inputs = table.getElementsByTagName('input');
+    for (let input of inputs) {
+      alert(input.value + ': '+input.checked);
+    }
+  </script>
+</body>
+</html>
