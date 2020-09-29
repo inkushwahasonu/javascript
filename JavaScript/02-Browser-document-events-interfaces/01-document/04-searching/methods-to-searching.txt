@@ -9,3 +9,5 @@ getElementById	          id	                  -                        	-
 getElementsByName	        name	                -	                        ✔
 getElementsByTagName	    tag or '*'          	✔	                        ✔
 getElementsByClassName	  class	                ✔	                        ✔
+
+// that are the basic methods
