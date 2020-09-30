@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>attribute's accessiblity</title>
+</head>
+<body something = "non-standerd">
+  <!-- All attributes are accessible by using the following methods:-
+  1: elem.hasAttribute(name) - checks for existence
+  2: elem.getAttribute(name) - gets the value
+  3: elem.setAttribute(name, value) - sets the value
+  4: elem.removeAttribute(name) - remove the attribute -->
+
+  <script>
+    alert(document.body.getAttribute('something'));  // non-standerd
+  </script>
+
+  <div id="elem" about ="Element"></div>
+<script>
+  alert(elem.getAttribute('About')); // (1) 'Elephant', reading
+  elem.setAttribute('Test', 123);    // (2), writing
+  alert(elem.outerHTML);      // (3), see if the attribute is in HTML (yes)
+
+  for (let attr of elem.attributes){     // (4) list all
+  alert(`${attr.name} = ${attr.value}`);
+
+  }
+
+  /*
+1 : getAttribute('About') – the first letter is uppercase here, and in HTML it’s all lowercase. But that doesn’t matter: attribute names are case-insensitive.
+2 : We can assign anything to an attribute, but it becomes a string. So here we have "123" as the value.
+3 : All attributes including ones that we set are visible in outerHTML.
+4 : The attributes collection is iterable and has all the attributes of the element (standard and non-standard) as objects with name and value properties.
+
+  */ 
+</script>
+</body>
+</html>
