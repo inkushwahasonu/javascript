@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non-standards attributes, dataset</title>
+</head>
+<body    data-about="Elephants">
+  <!-- mak the div to show "name here " -->
+<div show-info="name"    style="background-color: yellow;"></div>
+  <!-- and age here  -->
+  <div show-info = "age"     style="background-color: red;"></div>
+
+  <script>
+    // the code finds an element with the mark and shows what's requested
+    let user = {
+      name : "pete",
+      age : 25
+    };
+
+    for(let div of document.querySelectorAll('[show-info]')){
+      // insert the corresponding info into the field
+      let field = div.getAttribute('show-info');
+      div.innerHTML = user[field];   // first pete into " name", then 25 into "age"
+    }
+  </script>
+
+
+
+<!-- ------------------------------------------- -->
+
+<style>
+  /*style rely on the custom attribute "order-state" */
+  .order[order-state="pending"]{
+    color:blue;
+  }
+  .order[order-state="canceled"]{
+    color:red;
+  }
+</style>
+
+<div class="order" order-state="new">
+  A new order.
+</div>
+<div class="order" order-state="pending">
+  A pending order.
+</div>
+<div class="order" order-state="canceled">
+  A canceled order.
+</div>
+
+<!-- ------------------------------- -->
+<script>
+  alert(document.body.dataset.about);   // Elephants
+</script>
+
+<!-- --------------------------------------- -->
+<p>-------------------------------------------------------------------</p>
+<style>
+  .order[data-order-state = "new"] {
+    color: green;
+  }
+
+  .order[data-order-state = "pending"] {
+    color : blue;
+  }
+  .border[data-order-state = "canceled"]{
+    color : red;
+  }
+</style>
+
+<div id="order" class="order" data-order-state = "new">
+  A new order.
+</div>
+
+<script>
+  // read
+  alert(order.dataset.orderState);   // new
+
+  // modify    
+  order.dataset.orderState = "pending";  // 
+</script>
+</body>
+</html>
