@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML attribute</title>
+</head>
+<body id="text" type ="..." something="non-standard"   >
+  <script>
+    alert(document.body.id);   // test
+    // non-standerd attribute does not yield a property
+    alert(document.body.something)    // undefined
+
+  </script>
+
+  <input type="text" id="input">
+  <script>
+    alert(input.type);   // text
+    alert(text.type);   // undefined : DOM property not created, becouse it's non-standard
+  </script>
+</body>
+</html>
