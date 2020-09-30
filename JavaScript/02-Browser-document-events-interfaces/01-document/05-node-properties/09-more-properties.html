@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More Properties</title>
+</head>
+<body>
+  <!-- 
+    DOM elements also have additional properties, in particular those that depend on the class:
+
+1 : value – the value for <input>, <select> and <textarea> (HTMLInputElement, HTMLSelectElement…).
+2 : href – the “href” for <a href="..."> (HTMLAnchorElement).
+3 : id – the value of “id” attribute, for all elements (HTMLElement).
+   …and much more…
+   -->
+
+   <input type="text" id="elem" value="value">
+   <script>
+     alert(elem.type);   // text
+     alert(elem.id);      // elem
+     alert(elem.value);   // value
+   </script>
+</body>
+</html>
