@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tag : nodeName and tagName</title>
+  </head>
+  <body>
+    <script>
+      alert(document.body.nodeName); // BODY
+      alert(document.body.tagName); // BODY
+      //----------------------------------------------
+    </script>
+
+    <!-- comments....  -->
+
+    <script>
+      // for comment
+      alert(document.body.firstChild.tagName); // undefined (not an element)
+      alert(document.body.firstChild.nodeName);  // #comment    ( or text)
+   
+
+      // for document
+      alert(document.tagName); // undefined ( not an element)
+      alert(document.nodeName);   // #document
+    </script>
+  </body>
+</html>
