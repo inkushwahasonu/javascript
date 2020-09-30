@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>outerHTML : full HTML of the element</title>
+</head>
+<body>
+  <p id="elem">Hello <b>World</b></p>
+  
+  <script>
+    alert(elem.outerHTML);   // <p id="elem">Hello <b>World</b></p>
+  </script>
+
+
+<div>Hello, world!</div>
+<script>
+  // -----------------------------
+
+  let div = document.querySelector('div');
+    
+    // replace div.outerHTML with <p>...<p>
+    div.outerHTML = '<p> A new element</p>';
+    
+    // wow! 'div' is still the same!
+    alert(div.outerHTML);            //<div>Hello, world!</div> 
+</script>
+</body>
+</html>
