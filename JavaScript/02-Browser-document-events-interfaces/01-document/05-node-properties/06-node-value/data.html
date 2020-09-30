@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nodeValue/data : text node content</title>
+</head>
+<body>
+  Hello
+  <!-- Comment is here -->
+  <script>
+    let text = document.body.firstChild;
+    alert(text.data);   //Hello
+
+    let comment = text.nextSibling;
+    alert(comment.data); // Comment
+  </script>
+  
+</body>
+</html>
