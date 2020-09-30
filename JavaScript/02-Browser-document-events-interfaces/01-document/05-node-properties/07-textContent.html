@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>textContent : pure text</title>
+</head>
+<body>
+  <div id="news">
+    <h1>headline!</h1>
+    <p>Martians attack people!</p>
+  </div>
+
+  <script>
+    // Headline! Martians Attack people!
+    alert(news.textContent);
+  </script>
+
+<!--
+With innerHTML we’ll have it inserted “as HTML”, with all HTML tags.
+With textContent we’ll have it inserted “as text”, all symbols are treated literally.
+ -->
+
+
+  <div id="elem1"></div>
+  <div id="elem2"></div>
+  <script>
+    let name = prompt("What's your name?", "<b>Winnie-the-pooh!</b>");
+    elem1.innerHTML = name;
+    elem2.textContent = name;
+  </script>
+</body>
+</html>
