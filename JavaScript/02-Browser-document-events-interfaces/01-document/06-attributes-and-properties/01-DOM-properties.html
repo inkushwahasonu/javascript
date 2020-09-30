@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM properties</title>
+</head>
+<body>
+ <script>
+   document.body.myData = {
+     name : 'Caesar',
+     title : 'Imperator'
+   };
+   alert(document.body.myData.title);  // Imperator
+
+//----------------------------------------------------
+   document.body.sayTagName = function(){
+     alert(this.tagName);
+   };
+   document.body.sayTagName();  // BODY (the value of "this" in the method is document.body )
+
+//------------------------------------------------------
+Element.prototype.sayHi = function(){
+  alert(`Hello, Im ${this.tagName}`);
+};
+
+document.documentElement.sayHi();  // Hello, I'm HTML
+document.body.sayHi();   // Hello, I'm BODY
+
+ </script>
+</body>
+</html>
