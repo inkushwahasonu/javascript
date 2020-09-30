@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>the "hidden" property</title>
+</head>
+<body>
+  <div>Both dives below are hidden</div>
+  <div hidden> with the attribute "hidden"</div>
+  <div id="elem">JavaScript assign the property "hidden</div>
+
+  <script>
+    elem.hidden= true ;        // Both divs below are hidden
+  </script>
+
+  <!-- here is a blinking element -->
+  <div id="elem2">A blinking element.</div>
+  <script>
+    setInterval(() => elem2.hidden = !elem2.hidden, 1000);
+  </script>
+</body>
+</html>
