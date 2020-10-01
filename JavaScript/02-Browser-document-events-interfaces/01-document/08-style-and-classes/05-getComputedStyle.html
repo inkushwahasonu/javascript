@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>computed style : getComputedStyle</title>
-    <style>body {color: red; margin: 10px;}</style>   
-</head>
-<body>
-   The red text Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolore hic, quos doloribus, excepturi enim cum maiores nulla, illo corporis beatae reprehenderit accusantium ad consequatur debitis in vitae nihil! Officiis, illum sit. Explicabo deleniti, voluptatibus delectus in optio error nisi nam? Repudiandae voluptas iure modi.
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>computed style : getComputedStyle</title>
+    <style>
+      body {
+        color: red;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    The red text Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+    dolore hic, quos doloribus, excepturi enim cum maiores nulla, illo corporis
+    beatae reprehenderit accusantium ad consequatur debitis in vitae nihil!
+    Officiis, illum sit. Explicabo deleniti, voluptatibus delectus in optio
+    error nisi nam? Repudiandae voluptas iure modi.
 
-   <script>
-     alert(document.body.style.color);   // empty
-     alert(docment.body.style.marginTip);  // empty
-   </script>
-    
+    <script>
+      alert(document.body.style.color); // empty
+      alert(docment.body.style.marginTip); // empty
+    </script>
+
     <script>
       let computedStyle = getComputedStyle(document.body);
 
       // now we can read the margin and the color from it
-      alert(computedStyle.marginTop);   // 5px
-      alert(computedStyle.color);       // rbg(255, 0,0)
+      alert(computedStyle.marginTop); // 5px
+      alert(computedStyle.color); // rbg(255, 0,0)
     </script>
- 
 
- <script>
-   let style = getComputedStyle(document.body);
-   alert(style.margin);   // empty string in Firefox
- </script>
-</body>
+    <script>
+      let style = getComputedStyle(document.body);
+      alert(style.margin); // empty string in Firefox
+    </script>
+  </body>
 </html>
