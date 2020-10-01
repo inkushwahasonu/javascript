@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>width/height of the document</title>
+</head>
+<body>
+<!-- To reliably obtain the full document height, we should take the maximum of these properties: -->
+  <script>
+    let scrollHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+    alert('Full document height, with scrolled out part: ' + scrollHeight);
+  </script>
+
+
+
+</body>
+</html>
