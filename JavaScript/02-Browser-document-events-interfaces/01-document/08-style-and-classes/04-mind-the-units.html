@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Mind the units</title>
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, quisquam in repellat maiores voluptatum molestiae aut labore voluptatem adipisci consectetur eligendi, blanditiis alias doloremque, ut a enim? Soluta ipsum vero nesciunt aut illum nostrum sed tenetur vitae atque, molestias sit tempora. Possimus consectetur iusto aliquid voluptatibus, est ullam repellat alias tempore commodi, quae laborum voluptas cupiditate?</p>
+  <script>
+
+    
+    // doesn't
+    document.body.style.margin = 20;
+    alert(document.body.style.margin);   // ''  ( empty string , the assignment is ignored)
+
+    // now add the CSS unit (px) - and it works
+    document.body.style.margin = '60px';
+    alert(document.body.style.margin);  // 20px
+    alert(document.body.style.marginTop);  // 20px
+    alert(document.body.style.marginLeft);  // 20px  
+  </script>
+</body>
+</html>
