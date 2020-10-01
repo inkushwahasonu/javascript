@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>className and classList</title>
+</head>
+<body class="main page">
+  <script>
+    alert(document.body.className);  // main page
+
+    document.body.classList.add('article');
+
+    alert(document.body.className);    // main page article
+
+    for (let name of document.body.classList){
+      alert(name);    
+    }
+  </script>
+</body>
+</html>
