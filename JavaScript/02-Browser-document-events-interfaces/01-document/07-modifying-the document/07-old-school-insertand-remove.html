@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Old-school insert/remove methods</title>
+</head>
+<body>
+  <ol id="list">
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+  </ol>
+  <script>
+    let newLi = document.createElement('li');
+    newLi.innerHTML = 'Hello, world!';
+
+    list.appendChild(newLi);
+
+
+    
+  </script>
+<!-- ----------------------- OR -------------------- -->
+<p>------------------------------ OR ---- insert before ------------------------</p>
+<ol id="list2">
+  <li>0</li>
+  <li>1</li>
+  <li>2</li>
+</ol>
+
+<script>
+  let newLi2 = document.createElement('li');
+    newLi2.innerHTML = 'Hello, world!';
+    list2.insertBefore(newLi2, list2.children[1]);
+</script>
+
+
+<!-- -------------------- -->
+<p>----------------- remove any list-------------------</p>
+
+<ol id="list3">
+  <li>0</li>
+  <li>1</li>
+  <li>2</li>
+</ol>
+<script>
+  let li = list3.firstElementChild;
+  list3.removeChild(li);
+</script>
+</body>
+</html>
