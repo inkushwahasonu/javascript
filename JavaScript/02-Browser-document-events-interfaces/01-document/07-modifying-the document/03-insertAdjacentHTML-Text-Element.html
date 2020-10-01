@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>insertAdjacentHTML/Text/Element</title>
+</head>
+<body>
+  <!-- The first parameter is a code word, specifying where to insert relative to elem. Must be one of the following: -->
+<!-- 
+  "beforebegin" – insert html immediately before elem,
+"afterbegin" – insert html into elem, at the beginning,
+"beforeend" – insert html into elem, at the end,
+"afterend" – insert html immediately after elem.
+ -->
+
+
+
+ <div id = "div"></div>
+ <script>
+   div.insertAdjacentHTML('beforebegin', '<p>Hello</p>');
+   div.insertAdjacentHTML('afterend', '<p>Bye</p>');
+ </script>
+<!-- 
+  <p>Hello</p>
+<div id="div"></div>
+<p>Bye</p>
+ -->
+
+<!-- --------------------------------------------------------------- -->
+
+
+<p>-------------------------------------------------------------------</p>
+
+
+<style>
+  .alert{
+    padding : 15px;
+    border: 1px solid #d6e9c6;
+    border-radius : 4px;
+    color : #3c763d;
+    background-color: #dff0d8;
+  }
+</style>
+
+<script>
+  document.body.insertAdjacentHTML("afterbegin", `<div class ="alert">
+  <strong>Hi htere!</strong> you've read an important message. </div>`);
+  
+</script>
+
+
+
+</body>
+</html>
