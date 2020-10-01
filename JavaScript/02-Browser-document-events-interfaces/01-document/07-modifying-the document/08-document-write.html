@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document.write</title>
+</head>
+<body>
+  
+  <p>Somewhere in the page...</p>
+  <script>
+    document.write('<b>Hello from JS</b>');
+  </script>
+  <p>The end</p>
+
+  <!-- --------------------------------- -->
+  <p>--------------------------------------</p>
+
+  <p>After one second the contents of this page will be replayced...</p>
+  <script>
+    // document.write after 1 second
+    // that's after the page loaded, so it erases the existing content
+    setTimeout(() => document.write('<b>...By this.</b>'), 1000);
+  </script>
+</body>
+</html>
