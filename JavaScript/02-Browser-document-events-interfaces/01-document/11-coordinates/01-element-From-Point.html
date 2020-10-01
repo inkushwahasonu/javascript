@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>elementFontPoint(x,y)</title>
+</head>
+<body>
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia, error excepturi vitae animi nostrum perferendis eaque eum ipsum velit consequuntur accusantium laudantium, vero numquam earum fuga sapiente rerum quisquam adipisci possimus suscipit ullam.
+  <script>
+    let centerX = document.documentElement.clientWidth / 2;
+    let centerY = document.documentElement.clientHeight / 2;
+    let elem = document.elementFromPoint(centerX, centerY);
+    elem.style.background = "red";
+    alert(elem.tagName);
+  </script>
+
+  
+</body>
+</html>
