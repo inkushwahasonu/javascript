@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>addEventListener</title>
+</head>
+<body>
+  <ul>
+    <li>
+      <h1>event</h1>
+      <p>event name, eg. "click"</p>
+    </li>
+    <li>
+      <h1>handler</h1>
+      <p>the handler function</p>
+    </li>
+    <li>
+      <h1>options</h1>
+      <p>An additional optional object with properties</p>
+    </li>
+  </ul>
+
+
+  <!-- ------------------------------------- -->
+
+  <input type="button" id="elem" value="Click me">
+
+  <script>
+    function handler1(){
+      alert('Thanks!');
+    };
+    function handler2(){
+      alert('Thanks again!');
+    }
+    elem.onclick = () => alert("Hello");
+    elem.addEventListener("click", handler1);  // Thanks!
+    elem.addEventListener("click", handler2);  // Tanks again!
+  </script>
+</body>
+</html>
