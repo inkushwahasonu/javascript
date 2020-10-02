@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event handlers</title>
+  </head>
+  <body>
+    <h1>HTML attribute---</h1>
+    <input
+      type="button"
+      value="Click me"
+      onclick="alert('Click!')"
+      type="button"
+    />
+
+    <!-- ---------------------------------------------------------- -->
+    <p>------------------------- -------------------------------</p>
+    <script>
+      function countRabbits() {
+        for (let i = 1; i <= 3; i++) {
+          alert("Rabbit number" + i);
+        }
+      }
+    </script>
+    <input type="button" onclick="countRabbits()" value="Count rabbits!" />
+
+    <!-- ------------------------------------------------ -->
+    <p>-------------------------------------------------------</p>
+    <h1>DOM property</h1>
+
+    <input type="button" id="elem" value="Click me" />
+    <script>
+      elem.onclick = function () {
+        alert("thank you");
+      };
+    </script>
+    <p>------------only html--------------------</p>
+
+    <input type="button" onclick="alert('Click!')" value="Button" />
+
+    <p>----------HTML + JS--------------------</p>
+
+    <input type="button" id="button" value="Button" />
+    <script>
+      button.onclick = function () {
+        alert("Click!");
+      };
+    </script>
+    <!-- -------------------------------------- -->
+    <p>
+      -----------for one onclick we can assign only one event handler---------
+    </p>
+
+    <input type="button" id="elem" onclick="alert('Before')" value="Click me" />
+    <script>
+      elem.onclick = function () {
+        // overwrites the existing handler
+        alert("After"); // only this will be shown
+      };
+    </script>
+  </body>
+</html>
