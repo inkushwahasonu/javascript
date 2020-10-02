@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object handlers : handleEvent</title>
+</head>
+<body>
+  <button id="elem"> Click me</button>
+  <script>
+    let obj = {
+      handleEvent(event){
+        alert(event.type + " at "+ event.currentTarget);
+      }
+    };
+    elem.addEventListener('click', obj);
+  </script>
+
+  <!-- ----------------------------- -->
+
+  <button id ="elem2">Click me</button>
+
+  <script>
+    class Menu{
+      handleEvent(event){
+        switch(event.type){
+          case 'mousedown':
+          elem2.innerHTML = "Mouse button pressed";
+          break;
+          case 'mouseup':
+          elem2.innerHTML += "...and released.";
+          break;
+        }
+      }
+    }
+    let menu =new Menu();
+    elem2.addEventListener('mousedown', menu);
+    elem2.addEventListener('mouseup', menu);
+  </script>
+<!-- --------------------------------- -->
+
+<button id="elem3">Click me</button>
+<script>
+  class Menu2{
+    handleEvent(event){
+      // mousrdown -> onMousedown
+      let method = 'on' + event.type[0].toUpperCase() + event.type.slice(1);
+      this[method](event);
+    }
+    onMousedown(){
+      elem3.innerHTML = "Mouse button pressed";
+    }
+    onMouseup(){
+      elem3.innerHTML += "...and relesed.";
+    }
+  }
+  let menu2 = new Menu2();
+  elem3.addEventListener('mousedown', menu2);
+  elem3.addEventListener('mouseup', menu2);
+</script>
+
+
+</body>
+</html>
