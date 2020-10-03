@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mouse event</title>
+</head>
+<body>
+  <ul>
+    <h1>MouseEvent & KeyboardEvent</h1>
+    <li>UIEvent</li>
+    <li>FocusEvent</li>
+    <li>MouseEvent</li>
+    <li>wheelEvent</li>
+    <li>keyBoardEvent</li>
+
+  </ul>
+    <script>
+      let event = new MouseEvent("click", {
+        bubble : true,
+        cancelable:true,
+        clientX : 100,
+        clientY: 100
+      });
+      alert(event.clientX);   //100
+    </script>
+<!-- --------------------------------- -->
+
+<script>
+  let event2 = new Event("click", {
+    bubbles : true,  // only bubbles and cacelable
+    cancelable : true, // work in the Event constructor
+    clientX : 100,
+    client : 100 
+  });
+  alert(event2.clientX);      // undefined  ,  the unknow property is ignored!
+</script>
+</body>
+</html>
