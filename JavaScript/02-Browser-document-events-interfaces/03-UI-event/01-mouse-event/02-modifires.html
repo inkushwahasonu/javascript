@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modifires : shift, alt, atrl and mete</title>
+</head>
+<body>
+  <h1>Modifiers: shift, alt, ctrl and meta</h1>
+  <ul>
+    <h4>Event properties</h4>
+    <li>shiftKey: Shift</li>
+    <li>altKey: Alt (or Opt for Mac)</li>
+    <li>ctrlKey: Ctrl</li>
+    <li>metaKey: Cmd for Mac</li>
+  </ul>
+
+
+  <button id="button">Alt+Shift+Click on me!</button>
+  <script>
+    button.onclick = function(event){
+      if(event.altKey && event.shiftKey){
+        alert('Hooray!');
+      }
+    };
+  </script>
+</body>
+</html>
