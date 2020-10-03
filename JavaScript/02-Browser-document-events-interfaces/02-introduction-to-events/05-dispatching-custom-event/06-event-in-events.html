@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>events-in-events are synchronous</title>
+</head>
+<body>
+  <button id="menu">Menu (click me)</button>
+  <script>
+    menu.onclick=function(){
+      alert(1);
+      menu.dispatchEvent(new CustomEvent("menu-open",{
+        bubbles:true 
+      }));
+      alert(2);
+    };
+
+    // triggers between 1 and 2
+    document.addEventListener('menu-open', () => alert('nested'));
+  </script>
+  
+</body>
+</html>
