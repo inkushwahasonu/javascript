@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coordinates : clientX/Y, pageX/Y</title>
+  </head>
+  <body>
+    <h1>Coordinates: clientX/Y, pageX/Y</h1>
+    <ol>
+      <p>All mouse events provide coordinates in two flavours:</p>
+      <li>Window-relative : clientX and clientY</li>
+      li Document-relative : pageX and pageY
+    </ol>
+
+    <input
+      onmouseover="this.value=event.clientX+':' + event.clientY"
+      value="Mouse over me"
+    />
+
+    <!-- ------------------------------------------------------- -->
+    <p>-----------------------------------------------------------</p>
+    <h1>preventing selection on mousedown</h1>
+    <span ondblclick="alert('double-clicked')">Double-click me</span> <br><br>
+    <!-- -------------------------------------------------- -->
+
+    Before...
+    <b ondblclick=" alert('click!')" onmousedown="return false">
+      DOuble-click me
+    </b>
+    ...After
+  </body>
+</html>
