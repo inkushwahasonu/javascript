@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event.defaultPrevented</title>
+</head>
+<body>
+  
+  <button>Right-click shows browser context menu</button>
+  <button oncontextmenu="alert('Draw our menu'); return false"> Right-click show our context menu</button>
+
+
+  <!-- ------------------------------------ -->
+
+  <p>Right -click here for the document context menu</p>
+  <button id="elem">Right-click here for the buttton context menu</button>
+
+  <script>
+    elem.oncontextmenu = function(event){
+      event.preventDefault();
+      alert("Button context menu");
+    };
+    document.oncontextmenu = function(event){
+      event.preventDefault();
+      alert("Document context menu");
+    };
+  </script>
+
+<!-- --------------------------------------- -->
+
+<p>Right-click for the document menu</p>
+<button id="elem2">Right-click for the button menu(fixed with event.stopPropagation)</button>
+
+<script>
+elem2.oncontextmenu = function(event){
+  event.prevetDefault();
+  event.stopPropagation();
+  alert("Button context menu");
+};
+
+document.oncontextmenu = function(event){
+  event.preventDefault();
+  alert("Document context menu");
+};
+</script>
+
+
+
+<!-- -------------------------------- -->
+
+<p>Rigth-click for the document menu (added a ckeck for event.defaultPrevented)</p>
+<button id="elem3"> Right-click for the button menu</button>
+
+
+<script>
+  elem3.oncontextmenu = function(event){
+    event.preventDefault();
+    alert("Button context menu");
+  };
+  document.oncontextmenu = furnction(event){
+    if(event.defaultPrevented) return;
+    event.preventDefault();
+    alert("Document context menu");
+  }
+</script>
+
+
+
+</body>
+</html>
