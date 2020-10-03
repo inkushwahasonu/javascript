@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>custom event</title>
+</head>
+<body>
+  <h1 id="elem">Hello for Jhon!</h1>
+  <script>
+    // additinal details come with the event to the handler
+    elem.addEventListener("hello", function(event){
+      alert(event.detail.name);
+    });
+
+    elem.dispatchEvent(new CustomEvent("hello",{
+      detail: { name : "John"}
+    }));
+  </script>
+</body>
+</html>
