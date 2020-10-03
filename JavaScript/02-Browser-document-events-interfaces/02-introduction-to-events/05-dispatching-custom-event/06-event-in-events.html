@@ -19,6 +19,20 @@
     // triggers between 1 and 2
     document.addEventListener('menu-open', () => alert('nested'));
   </script>
+
+  <!-- ----------------------------------- -->
+
+  <button id="menu2">Menu (click me)</button>
   
+  <script>
+  menu2.onclick = function(){
+    alert(1);
+    setTimeout(() => menu.dispatchEvent(new CustomEvent("menu-open",{
+      bubbles:true 
+    })));
+    alert(2);
+  };
+  document.addEventListener('menu-open', () => alert('nested'));
+  </script>
 </body>
 </html>
