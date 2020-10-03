@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bubbling</title>
+</head>
+<body>
+  <h1 id="elem">Hello from the script!</h1>
+
+  <script>
+    //catch on document...
+    document.addEventListener("hello", function(event){
+      alert("Hello from" + event.target.tagname);    // Hello from H1
+    });
+
+    // ... dispatch on elem!
+    let event = new Event("hello", {bubbles: true});
+    elem.dispatchEvent(event);
+
+    // handler on document will activate and display the message
+  </script>
+</body>
+</html>
