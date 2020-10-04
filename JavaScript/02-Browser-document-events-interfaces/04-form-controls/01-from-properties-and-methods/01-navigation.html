@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation : from and elements</title>
+</head>
+<body>
+  <form name="my">
+    <input name="one" value="1" >
+    <input name = "two" value ="2">
+  </form>
+
+  <script>
+    // get the form
+    let form = document.forms.my;   // <form name = "my"> element
+    
+    // get the element
+    let elem =form.elements.one;  //  < input name =" one"> element
+    alert(elem.value);   // 1
+  </script>
+
+
+<!-- ----------------------------------------------- -->
+<br><br>
+<form >
+  <input type ="radio" name="age" value="10" >
+  <input type="radio" name="age" value="20">
+</form>
+
+<script>
+  let form = document.forms[0];
+  let ageElements = form.elements.age;
+  alert(ageElement[0]); // [object HTMLInputElement]
+</script>
+
+
+<!-- ------------------------------------------------------------ -->
+<br><br>
+
+<form  id="form">
+  <fieldset name = "userFields">
+    <legend>info</legend>
+    <input type="text" name="login">
+  </fieldset>
+</form>
+
+<script>
+  alert(form.elements.login);   // <input name = "login">
+  let fieldset = form.elements.userFields;
+  alert(fieldset);  // HTMLFieldSetElement
+
+  // we can get the input by name both from the form and from the fieldset
+  alert(fieldset.element.elements.login == form.elements.login);   // true
+</script>
+
+
+<!-- ---------------------------------------------------------- -->
+<br><br>
+
+<form action="#" id="form">
+  <input  name="login" id="#">
+</form>
+
+<script>
+  alert(form.elements.login == form.login);  // true , the same <input>
+
+  form.login.name= "username";   // change the name of the input
+
+  // form.elements updated the name:
+  alert(form.elements.login);    // undefined
+  alart(form.elements.username);   // input
+
+  // form allows both names : the new one and the old one
+  alert(form.username == form.login)  ;  // true
+</script>
+</body>
+</html>
