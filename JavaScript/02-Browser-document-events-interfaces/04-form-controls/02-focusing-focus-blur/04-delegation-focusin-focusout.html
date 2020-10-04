@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delegation : focusin/focusout</title>
+  </head>
+  <body>
+    <!-- on focusing in the form -- add the class -->
+    form.onfocus
+
+    <form onfocus="this.className ='focused'">
+      <input type="text" name="name" value="Name" />
+      <input type="text" name="surname" value="Surname" />
+    </form>
+    <style>
+      .focused {
+        outline: 1px solid red;
+      }
+    </style>
+
+    <!-- ---------------------------------------------------- -->
+    <br /><br />
+    form.addEventListener
+
+    <form id="form1">
+      <input type="text" name="name" value="Name" />
+      <input type="text" name="surname" value="Surname" />
+    </form>
+
+    <style>
+      .focused {
+        outline: 1px solid red;
+      }
+    </style>
+    <script>
+      // put the handler on capturing phase (last argument true)
+      form1.addEventListener("focus", () => form1.classList.add("focused"), true);
+      form1.addEventListener("blue",() => form1.classList.remove("focused"),true);
+    </script>
+
+    <!-- --------------------------- -->
+    <br /><br />
+    focusin and focusout
+
+    <form action="" id="form2">
+      <input type="text" name="name" value="Name" />
+      <input type="text" name="surname" value="Surname" />
+    </form>
+
+    <style>
+      .focused {
+        outline: 1px solid red;
+      }
+    </style>
+
+    <script>
+      form2.addEventListener("focusin", () => form2.classList.add("focused"));
+      form2.addEventListener("focusout", () => form2.classList.remove("focused"));
+    </script>
+  </body>
+</html>
