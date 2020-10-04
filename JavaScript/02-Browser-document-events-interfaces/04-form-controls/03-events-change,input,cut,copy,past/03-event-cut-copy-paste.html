@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event : cut, copy, paste</title>
+</head>
+<body>
+  
+  <input type="text" id="input">
+  <script>
+    input.oncut =input.oncopy = input.onpaste = function(event){
+      alert(event.type + ' _ ' +event.clipboardData.getData('text/plain'));
+      return false;
+    };
+  </script>
+</body>
+</html>
