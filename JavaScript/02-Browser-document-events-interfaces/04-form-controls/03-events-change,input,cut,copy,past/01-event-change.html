@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event : change</title>
+</head>
+<body>
+  <p>The change event triggers when the element has finished changing.</p>
+
+
+
+
+  <input type="text" onchange="alert(this.value)">
+  <input type="button" value="Button">
+
+  <!-- --------------------------------------- -->
+<br><br>
+
+
+  <select  onchange="alert(this.value)">
+    <option value="">Select something</option>
+    <option value="Opt. 1">Option 1</option>
+    <option value="Opt. 2">Option 2</option>
+    <option value="Opt. 3">Option 3</option>
+  </select>
+</body>
+</html>
