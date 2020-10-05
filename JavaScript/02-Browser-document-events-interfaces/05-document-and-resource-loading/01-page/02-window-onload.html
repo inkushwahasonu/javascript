@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wondow.onload</title>
+</head>
+<body>
+  <script>
+    window.onload = function(){       // same as window.addEventListener('load', (event) =>{
+      alert('Page loaded');
+
+      //image is loaded at this time
+      alert(`Image size : ${img.offsetWidth}x${img.offsetHeight}`);
+    };
+  </script>
+
+  <img src="https://en.js.cx/clipart/train.gif?speed=1&cache=0" alt="" id="img">
+</body>
+</html>

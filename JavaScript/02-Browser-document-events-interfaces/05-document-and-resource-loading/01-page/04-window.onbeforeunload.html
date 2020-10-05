@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window.onbeforeunload</title>
+</head>
+<body>
+  <!-- --------------------------------- -->
+  <script>
+    window.onbeforeunload = function(){
+      return false;
+    };
+  </script>
+
+  <!-- ------------------------------------------ -->
+
+  <script>
+      window.onbeforeunload = function(){
+        return "There are unsaved changes. Leave now?";
+      };
+
+  </script>
+</body>
+</html>
