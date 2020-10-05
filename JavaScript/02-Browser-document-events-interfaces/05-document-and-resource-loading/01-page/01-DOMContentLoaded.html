@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOMContentLoaded</title>
+  </head>
+  <body>
+    <!-- DOMContentLoded -->
+    <script>
+      function ready() {
+        alert("DOM is ready");
+
+        // image is not yet loadet(unless it was cached), so the size is 0x0
+        alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
+      }
+      document.addEventListener("DOMContentLoaded", ready);
+    </script>
+
+    <img src="https://en.js.cx/clipart/train.gif?speed=1&cache=0" id="img" />
+
+    <!-- -------------------------------------- -->
+    <!-- DOMContentLoaded and script -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        alert("DOM ready!");
+      });
+    </script>
+
+    <script
+      script="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"
+    ></script>
+
+    <script>
+      alert("Librar loaded, inline script executed");
+    </script>
+
+    <!-- ------------------------------------------------------- -->
+    <!-- DOMContentLoaded and style -->
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script>
+      // the script doesn't not execute until the stylesheet is loaded
+      alert(getComputedStyle(document.body).marginTop);
+    </script>
+  </body>
+</html>
