@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic script</title>
+  </head>
+  <body>
+    <!-- Dynamic scripts behave as “async” by default. -->
+
+    <script>
+      let script = document.createElement("script");
+      script.src = "/article/script-async-defer/long.js";
+      document.body.append(script);
+    </script>
+
+    <!-- -------------------------------------- -->
+    <script>
+      function loadScript(src) {
+        let script = document.createElement("script");
+        script.src = src;
+        script.async = false;
+        document.body.append(script);
+      }
+
+      // long.js runs first because of async=false
+      loadScript("/article/script-async-defer/long.js");
+      loadScript("/article/script-async-defer/small.js");
+    </script>
+  </body>
+</html>
