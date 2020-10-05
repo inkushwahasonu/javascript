@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>readyState</title>
+</head>
+<body>
+  <script>
+   // current state
+console.log(document.readyState);
+
+// print state changes
+document.addEventListener('readystatechange', () => console.log(document.readyState));
+
+// error
+  </script>
+</body>
+</html>
