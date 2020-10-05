@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event : submit</title>
+</head>
+<body>
+  <form onsubmit="alert('submit!'); return false">
+  First : Enter in the input field <input type="text" value="text"><br>
+  Second : Click "submit":<input type="submit" value="Submit"> 
+  </form>
+
+  <!-- -------------------------------------------------- -->
+  <br><br>
+
+  <form onsubmit="return false">
+  <input type="text" size="30" value="Focus here and press enter">
+  <input type="submit" value="Submit" onclick="alert('click')">
+  </form>
+</body>
+</html>
