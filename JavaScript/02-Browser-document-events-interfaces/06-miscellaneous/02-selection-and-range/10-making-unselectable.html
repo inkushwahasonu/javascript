@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>making unselectable</title>
+</head>
+<body>
+  <style>
+    #elem{
+      user-select:none;
+    }
+  </style>
+  <div>Selectable <div id="elem">Unselectable</div> Selectable</div>
+
+
+  <!-- ---------------------------------------------------------------- -->
+
+
+  <div>Selectable <div id="elem2">Unselectable</div>Selectable</div>
+
+  <script>
+    elem2.onselectstart = () => false;
+  </script>
+</body>
+</html>
