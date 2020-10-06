@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use-case 1 : splitting CPU-hungry tasks</title>
+</head>
+<body>
+  
+  <script>
+    let i = 0;
+    let start = Date.now();
+    function count(){
+
+      // do a heavy job
+      for (let j = 0; j< 1e9; j++){
+        i++;
+      }
+      alert("Done in" + (Date.now()-start)+ 'ms');
+    }
+    count();
+  </script>
+
+
+
+<!-- ------------------------------------------ -->
+
+
+<script>
+  let k=0;
+  let start = Date.now();
+
+  function count2 () {
+    // do a piece of the heavy job
+    do{
+      k++;
+    }while(k%1e6 !=0);
+    if(k == 1e9){
+      alert("Done in" + (Date.now() - start) + 'ms');
+    }else{
+      setTimeout(count2);     // schedule the new call
+    }
+  }
+  count2();
+
+</script>
+
+
+<!--  --------------------------------------------->
+
+
+<script>
+  let l = 0;
+  let start = Date.now();
+  function count3(){
+    // move the scheduling to the beginning
+    if(l < 1e9 - 1e6){
+      setTimeout(count);  // schedule the new call
+    }
+    do{
+      l++;
+    }while(l % 1e6 !=0);
+    if (l == 1e6 != 0);
+    if(l == 1e9){
+      alert("Done in " + (Date.now() - start) + 'ms');
+    }
+  }
+  count3()
+</script>
+  
+</body>
+</html>
