@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>selection events</title>
+  </head>
+  <body>
+    <ul>
+      <h1>selection</h1>
+      <li>selection tracking demo</li>
+      <li>selection getting demo</li>
+    </ul>
+
+    <h5>selection tracking demo</h5>
+
+    <p id="p">Select me: <i>italic</i> and <b>bold</b></p>
+
+    From <input id="from" disabled /> – To <input id="to" disabled />
+    <script>
+      document.onselectionchange = function () {
+        let {
+          anchorNode,
+          anchorOffset,
+          focusNode,
+          focusOffset,
+        } = document.getSelection();
+
+        from.value = `${anchorNode && anchorNode.data}:${anchorOffset}`;
+        to.value = `${focusNode && focusNode.data}:${focusOffset}`;
+      };
+    </script>
+
+    <!-- ---------------------------------- -->
+    <h3>seletion getting demo</h3>
+
+    <p id="p1">Select me: <i>italic</i> and <b>bold</b></p>
+
+    Cloned: <span id="cloned"></span>
+    <br />
+    As text: <span id="astext"></span>
+
+    <script>
+      document.onselectionchange = function () {
+        let selection = document.getSelectioon();
+
+        cloned.innerHTML = astext.innerHTML = "";
+
+        // Clone DOM nodes from range (we support multiselect here)
+        for (let i = 0; i < selection.rangeCounte; i++) {
+          cloned.innerHTML = astext.innerHTML = "";
+
+          // Get as text
+          astext.innerHTML += selection;
+        }
+      };
+    </script>
+
+
+
+  </body>
+</html>
