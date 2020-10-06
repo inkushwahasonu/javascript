@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>moving cursor</title>
+</head>
+<body>
+  
+  <textarea  id="id" style="width: 80%; height: 60px;">
+  Focus on me , the cursor will be at position 10.
+  </textarea>
+
+  <script>
+    area.onfocus =() => {
+      //zero delay setTimeout to run after browser "focus" action finishes
+      setTimeout(() => {
+        // we can set any selection
+        // if start = end, the cursor it exactly at that place
+        area.selectionStart = area.selectionEnd = 10;
+      });
+    }
+  </script>
+</body>
+</html>

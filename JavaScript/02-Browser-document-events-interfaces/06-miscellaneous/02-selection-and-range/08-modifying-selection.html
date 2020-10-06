@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>modifying selection</title>
+</head>
+<body>
+  
+  <input  id="input" style="width: 200px;" value="select here and click the button">
+  <button id="button">Wrap selection in stars *...*</button>
+
+  <script>
+    button.onclick=() =>{
+      if(input.selectionStart == input.selectionEnd){
+        return;  // nothing is selected
+      }
+
+      let selected = input.value.slice(input.selectionStart, input.selectionEnd);
+      input.setRangeText(`*${selected}*`);
+    };
+  </script>
+</body>
+</html>

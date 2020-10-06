@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>selection in form controls</title>
+</head>
+<body>
+  <p>example: tracking selection</p>
+
+
+
+  <textarea  id="area" style="width: 80%; height: 60px;">
+  selecting in this text updates values below.
+  </textarea>
+  <br>
+  From <input  id="from"  disabled> -To <input id = "to" disabled>
+
+  <script>
+    area.onselect =function(){
+      from.value = area.selectionStart;
+      to.value =area.selectionEnd;
+    };
+  </script>
+</body>
+</html>
