@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>range</title>
+</head>
+<body>
+  <p id="p">Example : <i>italic</i> and <b>bold</b></p>
+
+  <script>
+    let range = new Range();
+    range.setStart(p, 0);
+    range.setEnd(p,2);
+
+    // toString of a range raturns its content as text (eithout tags)
+    alert(range);    // example: italic
+
+    // apply this for document selection (explained later)
+    document.getSelection().addRange(range);
+  </script>
+
+
+<!-- ---------------------------------- -->
+
+<p id="p2"> Example: <i>italic</i> and <b>bold</b></p>
+Form <input type="number" id="start" value=1> - to <input type="number" id="end" value=4>
+<button id="button">Click to select</button>
+<script>
+  button.onclick = () =>{
+    let range2 = new Range();
+    range2.setStart(p2,start.value);
+    range2.setEnd(p2, end.value);
+
+    // apply the selection, explained later
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(range2);
+  };
+</script>
+</body>
+</html>
