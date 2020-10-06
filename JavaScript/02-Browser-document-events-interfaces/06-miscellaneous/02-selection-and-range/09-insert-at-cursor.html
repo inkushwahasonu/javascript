@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>insert at cursor</title>
+</head>
+<body>
+  <input  id="input" style="width: 200px;" value="Text Text Text Text Text">
+  <button id="button">Insert "Hello" at cursor</button>
+
+  <script>
+    button.onclick =() => {
+      input.setRangeText("HELLO", input.selectionStart, input.selectionEnd, "end");
+      input.focus();
+    };
+  </script>
+</body>
+</html>
