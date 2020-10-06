@@ -8,9 +8,9 @@
 <body>
   
   <input  id="input" style="width: 200px;" value="select here and click the button">
-  <button id="button">Wrap selection in stars *...*</button>
+  <button id="button">Wrap selection in stars *...*</button> -->
 
-  <script>
+<script>
     button.onclick=() =>{
       if(input.selectionStart == input.selectionEnd){
         return;  // nothing is selected
@@ -20,5 +20,24 @@
       input.setRangeText(`*${selected}*`);
     };
   </script>
+
+
+<!-- ----------------------------------------------------------- -->
+<br><br>
+
+
+
+<input  id="input2" style="width: 200px;" value="replace THIS in text">
+  <button id="button2">Replace THIS</button>
+<script>
+  button2.onclick=() =>{
+    let pos = input2.value.indexOf("THIS");
+    if(pos >= 0){
+      input2.setRangeText("*THIS*", pos, pos  + 4, "select");
+      input2.focus();  // focus to make selection visible
+    }
+  };
+</script>
+
 </body>
 </html>
