@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>selecting</title>
+</head>
+<body>
+  
+  <p id="p">Example: <i>italic</i> and <b>bold</b></p>
+
+  <script>let range = new Range();
+  range.setStart(p.firstChild, 2);
+  range.setEnd(p.querySelector('b').firstChild, 3);
+
+  alert(range);   // ample : italic and bol
+  
+  // use this range for selection (explained later)
+  window.getSelection().addRange(range);
+  </script>
+</body>
+</html>
