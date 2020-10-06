@@ -11,28 +11,29 @@
 
     <!-- script.onload -->
     <script>
-      let script = document.createElement('script');
+      let script = document.createElement("script");
 
-// can load any script, from any domain
-script.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"
-document.head.append(script);
+      // can load any script, from any domain
+      script.src =
+        "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js";
+      document.head.append(script);
 
-script.onload = function() {
-  // the script creates a variable "_"
-  alert( _.VERSION ); // shows library version
-};
+      script.onload = function () {
+        // the script creates a variable "_"
+        alert(_.VERSION); // shows library version
+      };
     </script>
 
     <!-- script.onerror -->
     <script>
-      let script2 = document.createElement('script2');
-script2.src = "https://example.com/404.js"; // no such script
-document.head.append(script2);
+      let script2 = document.createElement("script2");
+      script2.src = "https://example.com/404.js"; // no such script
+      document.head.append(script2);
 
-script2.onerror = function() {
-  alert("Error loading " + this.src); // Error loading https://example.com/404.js
-
+      script2.onerror = function () {
+        alert("Error loading " + this.src); // Error loading https://example.com/404.js
       };
     </script>
   </body>
 </html>
+
