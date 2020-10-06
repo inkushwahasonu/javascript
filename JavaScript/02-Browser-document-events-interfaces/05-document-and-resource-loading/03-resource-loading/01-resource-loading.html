@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resource loading</title>
+  </head>
+  <body>
+    There are two events for it: - onload - successful loading - onerreo - an
+    error occurred
+
+    <!-- script.onload -->
+    <script>
+      let script = document.createElement('script');
+
+// can load any script, from any domain
+script.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"
+document.head.append(script);
+
+script.onload = function() {
+  // the script creates a variable "_"
+  alert( _.VERSION ); // shows library version
+};
+    </script>
+
+    <!-- script.onerror -->
+    <script>
+      let script2 = document.createElement('script2');
+script2.src = "https://example.com/404.js"; // no such script
+document.head.append(script2);
+
+script2.onerror = function() {
+  alert("Error loading " + this.src); // Error loading https://example.com/404.js
+
+      };
+    </script>
+  </body>
+</html>
