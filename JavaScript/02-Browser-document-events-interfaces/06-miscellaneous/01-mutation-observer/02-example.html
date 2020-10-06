@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>example of mutation observer</title>
+</head>
+<body>
+  
+  <div contentEditable id="elem"> Click and <b>edit</b>, please</div>
+
+  <script>
+    let observer = new MutationObserver(mutationRecords => {
+      console.log(mutationRecords);   // consol, log(the changes)
+    });
+
+    // obsurver everything except attributes
+    observer.observe(elem, {
+      childList:true, // observe direct children
+      subtree : true,  // and lower descendants too
+      characterDataOldValue: true // pass old data to callback
+    })    ;
+  </script>
+</body>
+</html>
