@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>selection methods</title>
+</head>
+<body>
+  
+  <p id="p">Select me: <i>italic</i>and <b>bold</b></p>
+
+  <script>
+    // select from 0th child of <p> to the last child
+    document.getSelection().setBaseAndExtent(p, 0, p,p.childNodes.length);
+  </script>
+
+  <p id="p2"> Select me : <i>italic</i> and <b>bold</b></p>
+
+  <script>
+    let range = new Range();
+    range.selectNodeContents(p2);  // or selectNode(p);   // clear exsting if any
+
+    document.getSelection().removeAllRanges(); // clear exsting selection if any
+    document.getSelection().addRange(range);
+  </script>
+</body>
+</html>
