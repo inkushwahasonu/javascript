@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>collection: window.frames</title>
+</head>
+<body>
+  
+  <iframe src="/" style="height:80px" name="win" id="iframe"></iframe>
+
+<script>
+  alert(iframe.contentWindow == frames[0]); // true
+  alert(iframe.contentWindow == frames.win); // true
+</script>
+
+
+<!-- ---------------------------------------------- -->
+<!-- Navigation links are:
+
+window.frames – the collection of “children” windows (for nested frames).
+window.parent – the reference to the “parent” (outer) window.
+window.top – the reference to the topmost parent window. -->
+
+
+
+<script>
+  window.frames[0].parent === window;   // true
+</script>
+
+
+
+<!-- ---------------------------------------------------------- -->
+
+<!-- We can use the top property to check if the current document is open inside a frame or not: -->
+
+
+
+<script>
+  if(window == top){     // current window == window.top?
+    alert('the script is in the topmost window. not in a frame');
+  }else{
+    alert('the script runs in a frame!');
+  }
+</script>
+
+
+</body>
+</html>

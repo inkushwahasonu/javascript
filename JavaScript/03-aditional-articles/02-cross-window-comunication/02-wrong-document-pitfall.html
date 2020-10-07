@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iframe : wrong document pitfall</title>
+</head>
+<body>
+  <iframe src="/" id = "iframe"></iframe>
+
+  <script>
+    let oldDoc = iframe.contentDocument;
+    iframe.onload = function() {
+      let newDoc = iframe.contentDocument;
+      // the loaded document is not the same as initial!
+      alert(oldDoc== newDoc) ; // false
+    };
+  </script>
+
+
+
+<!-- --------------------------------------- -->
+<br><br><br>
+<iframe src="/" id="iframe2"></iframe>
+
+<script>
+  let oldDoc = iframe2.contentDocument;
+
+  // every 100 = iframe2.contentDocument;
+
+  // every 100 ms check if the document is thw new one
+  let timer = setInterval(() =>{
+    let newDoc = iframe2.contentDocument;
+    if(newDoc == oldDoc) return;
+
+    alert("new document is here!");
+
+    clearTnterval(timer);   // cancel setInterval, don't need it any more
+  },100);
+</script>
+</body>
+</html>
