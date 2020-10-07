@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closing a popup</title>
+</head>
+<body>
+  
+  <script>
+    let newWindow = open('/', 'example', 'width=300, height=300');
+
+    newWindow.onload = function() {
+      newWindow.close();
+      alert(newWndow.closed);   // true
+    };
+  </script>
+</body>
+</html>
