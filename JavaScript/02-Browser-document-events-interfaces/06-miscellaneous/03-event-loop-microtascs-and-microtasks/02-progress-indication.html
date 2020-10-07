@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use case 2 : progress indication</title>
+  </head>
+  <body>
+    <div id="progress"></div>
+    <script>
+      function count() {
+        for (let i = 0; i < 1e6; i++) {
+          i++;
+          progrss.innerHTML = i;
+        }
+      }
+      count();
+    </script>
+    <!-- ------------------------------------------------------------ -->
+    <div id="progress1"></div>
+
+    <script>
+      let i = 0;
+      function count() {
+        // do a pice of the heavy job
+        do {
+          i++;
+          progress1.innerHTML = i;
+        } while (i % 1e3 != 0);
+
+        if (i < 1e7) {
+          setTimeout(count);
+        }
+      }
+      count();
+    </script>
+  </body>
+</html>
