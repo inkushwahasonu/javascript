@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>accessing popup from window</title>
+</head>
+<body>
+  <script>
+    // modify the content after loading
+
+    let newWindow = open('/', 'example', 'width=300,height=300')
+newWindow.focus();
+
+alert(newWindow.location.href); // (*) about:blank, loading hasn't started yet
+
+newWindow.onload = function() {
+  let html = `<div style="font-size:30px">Welcome!</div>`;
+  newWindow.document.body.insertAdjacentHTML('afterbegin', html);
+};
+  </script>
+</body>
+</html>
