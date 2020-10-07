@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessing window from popup</title>
+</head>
+<body>
+  
+  <script>
+    let newWin = window.open("about:blank", "hello", "width = 200, height=200");
+    newWin.document.write(
+      "<script>window.opener.document.body.innerHTML = 'Test' <\/script>"
+    );
+  </script>
+</body>
+</html>
