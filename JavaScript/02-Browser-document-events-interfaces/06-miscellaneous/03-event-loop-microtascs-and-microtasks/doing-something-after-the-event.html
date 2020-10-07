@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use case 3 : doing something after the event</title>
+</head>
+<body>
+  
+  <script>
+    menu.onclick = function(){
+
+// create a custom even with the clicked menu item data 
+let customEvent = new CustomEvent("menu-open",{
+  bubble: true 
+});
+
+// dispatch the custom event asynchronously
+setTimeout(() => menu.dispatchEvent(customEvent));
+};
+  </script>
+</body>
+</html>
