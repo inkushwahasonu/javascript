@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request headers</title>
+</head>
+<body>
+  
+<script>
+  let response = ftch(protectedUrl, {
+    headers:{
+      Authentication:'secret'
+    }
+  });
+</script>
+
+
+
+  <ol>
+    <h2>there's a list of forbidden HTTP headers that we can't set:</h2>
+    <li>Accept-Charset, Accept-Encoding</li>
+    <li>Access-COntrol-Request-Method</li>
+    <li>Connection</li>
+    <li>Content-Length</li>
+    <li>Cookie, Cookie2</li>
+    <li>Date</li>
+    <li>DNT</li>
+    <li>Expect</li>
+    <li>Host</li>
+    <li>Keep-Alive</li>
+    <li>Origin</li>
+    <li>Referer</li>
+    <li>TE</li>
+    <li>Trailer</li>
+    <li>Transfer-Encoding</li>
+    <li>Upgrade</li>
+    <li>via</li>
+    <li>Proxy-*</li>
+    <li>Sec-*</li>
+  </ol>
+</body>
+</html>
