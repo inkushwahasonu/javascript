@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blob to base64</title>
+</head>
+<body>
+  
+  <script>
+    let link = document.createElement('a');
+    link.download ='hello.txt';
+    let blob = new Blob(['Hello, world!'], {type: 'taxt/plain'});
+    let reader = new FileReader();
+    reader.readAsDataURL(blob); /// converts the blob to base 64 and calls onload
+
+    reader.onload = function(){
+      link.href = reader.result;  // data url
+      link.click();
+    };
+  </script>
+</body>
+</html>
