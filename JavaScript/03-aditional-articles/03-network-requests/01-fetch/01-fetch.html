@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fetch</title>
+</head>
+<body>
+  <script>
+    let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+let response = await fetch(url);
+
+let commits = await response.json(); // read response body and parse as JSON
+
+alert(commits[0].author.login);
+  </script>
+
+
+<script>
+  fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')
+  .then(response => response.json())
+  .then(commits => alert(commits[0].author.login));
+</script>
+
+<script>
+  let response2 = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits');
+
+let text2 = await response2.text(); // read response body as text
+
+alert(text2.slice(0, 80) + '...');
+</script>
+
+
+<script>
+  let response2 = await fetch('/article/fetch/logo-fetch.svg');
+
+let blob = await response2.blob(); // download as Blob object
+
+// create <img> for it
+let img = document.createElement('img');
+img.style = 'position:fixed;top:10px;left:10px;width:100px';
+document.body.append(img);
+
+// show it
+img.src = URL.createObjectURL(blob);
+
+setTimeout(() => { // hide after three seconds
+  img.remove();
+  URL.revokeObjectURL(img.src);
+}, 3000);
+</script>
+</body>
+</html>
