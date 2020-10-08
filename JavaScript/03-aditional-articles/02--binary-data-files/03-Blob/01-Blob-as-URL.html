@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blob as URL</title>
+</head>
+<body>
+  
+  <!-- download attribute forces the browser to download instead of navigating -->
+
+  <a href="#" download="helo.txt" id="link" >Download</a>
+
+  <script>
+    let blob = new Blob(["Hello, world!"], {type:'text/plain'});
+
+    link.href = URL.createObjectURL(blob);
+  </script>
+
+
+
+
+
+<!-- ------------------------------------------------------- -->
+
+
+
+
+<script>
+  let link = document.createElement('a');
+  link.download ='hello.txt';
+
+  let blob2 = new Blob(['Hello, world!'], {type: 'text/plain'});
+  link.href = URL.createObjectURL(blob2);
+  link.click();
+  URL.revokeObjectURL(link.href);
+</script>
+</body>
+</html>
