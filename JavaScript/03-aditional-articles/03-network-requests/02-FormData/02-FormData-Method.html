@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FormData Method</title>
+</head>
+<body>
+  <script>
+    let formData = new FormData();
+  formData.append('key1', 'value1');
+  formData.append('key2', 'value2');
+  
+  // List key/value pairs
+  for(let[name, value] of formData){
+    alert(`${name}= ${value}`);   // key1=value1, then key2=value2
+  }
+  </script>
+</body>
+</html>
