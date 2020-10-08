@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AbortController object</title>
+</head>
+<body>
+  
+  <script>
+    let controller = new AbortController();
+    let signal = controller.signal;
+
+    // the party that performs a cancelable operation
+    //gets "signal" object
+    // and sets the listener to trigger when controller.abort() is called
+    signal.addEventListener('abort', ()=> alert("abort!"));
+
+    // the other party, that cancels (at any point later):
+    controller.abort(); // abort!
+    // The event triggers and signal.aborted becomes true
+    alert(signal.aborted);  // true
+  </script>
+</body>
+</html>
