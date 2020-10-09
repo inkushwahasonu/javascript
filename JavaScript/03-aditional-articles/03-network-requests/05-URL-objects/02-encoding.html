@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>encoding</title>
+</head>
+<body>
+  <script>
+    // using some cyrillic characters for this example
+    let url = new URL ('https://ru.wikipedia.org/wiki/Tecт');
+    url.searchParams.set('key', 'ъ');
+    alert(url);  // https://ru.wikipedia.org/wiki/Tec%D1%82?key=%D1%8A
+  </script>
+</body>
+</html>
