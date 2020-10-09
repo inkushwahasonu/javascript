@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL</title>
+</head>
+<body>
+  <script>
+    let url1 = new URL ('https://javascript.info/profile/admin');
+    let url2 = new URL ('/profile/admin', 'https://javascript.info');
+
+    alert(url1); // https:// javascript.info/profile/admin
+    alert(url2);  // https:// javascript.info/profile/admin
+  </script>
+</body>
+</html>
