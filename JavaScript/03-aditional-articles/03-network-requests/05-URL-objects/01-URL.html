@@ -13,5 +13,34 @@
     alert(url1); // https:// javascript.info/profile/admin
     alert(url2);  // https:// javascript.info/profile/admin
   </script>
+
+
+
+<!-- ---------------------------------------------------- -->
+
+<script>
+  url3 = new URL('https://javascript.info/url');
+  alert(url3.protocol); // https:
+  alert(url3.host);     // javascript.info
+  alert(url3.pathname);   // / url
+
+</script>
+
+
+<script>
+  let url = new URL('https://google.com/search');
+  url.searchParams.set('q', 'test me!');  // added parameter with a space and !
+  alert(url); // https://google.com/search?q=test+me%21
+
+  url.searchParams.set('tbs', 'qdr:y');   // added parameter with a colon:
+
+  // parameters are automatically encoded
+  alert(url); // https://google.com/ search?q=test+me%21&tbs=qdr%3Ay
+
+  // iterate over search paramenters (decoded)
+  for(let[name, value] of url.searchParams){
+    alert(`${name} = ${value}`);   // q= test me !, then tbs = qdr:y
+  }
+</script>
 </body>
 </html>
