@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String only</title>
+</head>
+<body>
+  <script>
+    sessionStorage.user ={name :"John"};
+    alert(sessionStorage.user);   // [object Object]
+  </script>
+
+  <script>
+    sessionStorage.user = JSON.stringify({name:"John"});
+    
+    // sometime later
+    let user = JSON.parse(sessionStorage.user);
+    alert(user.name);  // john
+  </script>
+
+
+<script>
+  // added formatting options to JSON.stringify to make the object look nicer
+  alert(JSON.stringify(localStorage, null, 2));
+</script>
+</body>
+</html>
