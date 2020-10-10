@@ -8,8 +8,28 @@
 <body>
   
   <script>
-    document.cookie = "user=John";   // update onlt cookie name 'user'
-    alert(document.cookie);  // show all cookies
+    document.cookie = "user=John"; // update only cookie named 'user'
+alert(document.cookie); // show all cookies
+
   </script>
+
+
+
+<script>
+  // special characters (spaces), need encoding
+let name = "my name";
+let value = "John Smith"
+
+// encodes the cookie as my%20name=John%20Smith
+document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+
+alert(document.cookie); // ...; my%20name=John%20Smith
+</script>
+
+
+
+<script>
+  document.cookie = "user=John; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"
+</script>
 </body>
 </html>
