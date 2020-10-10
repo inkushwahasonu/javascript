@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object-like access</title>
+</head>
+<body>
+  <script>
+    // set key
+    localStorage.test = 2 ;
+
+    // get key
+    alert(localStorage.test);   // 2
+
+    // remove key
+    delete localStorage.test;
+  </script>
+
+
+<!-- --------------------------------- -->
+
+<!-- <script>
+  let key = 'length';
+  localstorage[key] = 5; // Error, can't assign length
+</script> -->
+</body>
+</html>
