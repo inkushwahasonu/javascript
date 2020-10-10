@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storage event</title>
+</head>
+<body>
+  <script>
+    // triggers on updates made to the same storage from other documents
+    window.onstorage = event => { // same as window.addEventListener('storage', () => {
+      if (event.key != 'now') return;
+      alert(event.key + ':' +event.newValue + "at" +event.url);
+  };
+  localStorage.setItem('now', Date.now());
+  </script>
+</body>
+</html>
