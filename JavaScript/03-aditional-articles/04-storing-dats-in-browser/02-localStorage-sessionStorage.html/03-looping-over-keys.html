@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>looping over keys</title>
+</head>
+<body>
+  <script>
+    for(let i=0; i<localStorage.length; i++) {
+  let key = localStorage.key(i);
+  alert(`${key}: ${localStorage.getItem(key)}`);
+}
+  </script>
+
+
+<!-- ------------------------------------------- -->
+
+<script>
+  // bad try
+  for(let key in localStorage){
+    alert(key);  // show getItem and other built-in stuff
+  }
+</script>
+
+
+<!-- -------------------------------------------------------- -->
+
+<script>
+  for(let key in localStorage){
+    if(!localStorage.hasOwnProperty(key)){
+      continue;  // skip key like "setItem", "getItem" etc
+    }
+    alert(`${key}: ${localStorage.getItem(key)}`);
+  }
+</script>
+
+<script>
+  for(let key in localStorge){
+    if(!localStorage.hasOwnProperty(key)){
+      continue; // skip key like "setItem", "getItem" etc
+    }
+    alert(`${key}: ${localStorage.getItem(key)}`);
+  }
+</script>
+
+<script>
+  let key = Object.keys(localStorage);
+  for(let key of keys){
+    alert(`${key}:${localStorage.getItem(key)}`);
+  }
+</script>
+</body>
+</html>
