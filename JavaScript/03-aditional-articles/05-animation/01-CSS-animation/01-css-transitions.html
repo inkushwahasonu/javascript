@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS transition</title>
+</head>
+<body>
+  <button id="color">Click me</button>
+
+  <style>
+    #color{
+      transition-property:background-color;
+      transition-duration: 3s;
+    }
+  </style>
+
+  <script>
+    color.onclick = function(){
+      this.style.backgroundColor='red';
+    };
+  </script>
+
+
+
+<!-- ------------------------------------------------------------ -->
+<br><br><br><br>
+
+
+
+<button id="growing">Click me</button>
+
+<style>
+  #growing{
+    transition:font-size 3s, color 2s
+  }
+</style>
+
+<script>
+  growing.onclick = function(){
+    this.style.fontSize = '36px';
+    this.style.color = 'red';
+  };
+</script>
+</body>
+</html>
