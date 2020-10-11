@@ -3,3 +3,5 @@ stripe.onclick = function() {
   stripe.style.transitionDelay = '-' + sec + 's';
   stripe.classList.add('animate');
 };
+  
+  
