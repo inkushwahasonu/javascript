@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rendering order</title>
+</head>
+<body>
+  <script>
+    customElements.define('user-info', class extends HTMLElement{
+      connectedCallback(){
+        alert(this.innerHTML);    // empty message
+      }
+    });
+  </script>
+  <user-info>John</user-info>
+</body>
+</html>
