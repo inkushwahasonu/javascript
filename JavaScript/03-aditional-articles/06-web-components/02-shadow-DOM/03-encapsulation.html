@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>encapsulation</title>
+</head>
+<body>
+  <style>
+    /* document style won't apply to the shadow tree inside #elem */
+    p { color: red;}
+  </style>
+  <div id="elem"></div>
+
+  <script>
+    elem.attachShadow({mode:'open'});
+    //shadow tree has its own style
+    elem.shadowRoot.innerHTML =` 
+    <style> p{ font-weight:bold;}</style>
+    <p>Hello, John!</p>
+    `;
+
+    // <p> is only visible from queries inside the shadow tree
+    alert(document.querySelectorAll('p').length);  // 0
+    alert(elem.shadowRoot.querySelectorAll('p').length);  // 1
+  </script>
+</body>
+</html>
