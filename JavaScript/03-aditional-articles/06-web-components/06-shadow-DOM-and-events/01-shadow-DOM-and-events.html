@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shadow DOM and events</title>
+</head>
+<body>
+  <user-card></user-card>
+  <script>
+    customElements.define('user-card', class extends HTMLElement{
+      connectedCallback(){
+        this.attachShadow({mode: 'open'});
+        this.shadowRoot.innerHTML = `<p>
+        <button>Click me </button>
+        </p>`;
+        this.shadowRoot.firstElementChild.onclick =e => alert("Inner target: " + e.target.tagName);
+      }
+    });
+
+    document.onclick =AnalyserNodee=>alert("Outer Target : " + e.target.tagName);
+  </script>
+</body>
+</html>
