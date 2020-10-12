@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shadow tree</title>
+</head>
+<body>
+  <script>
+    customElements.define('show-hello', class extends HTMLElement{
+      connectedCallback() {
+        const shadow = this.attachShadow({mode:'open'});
+        shadow.innerHTML=`<p>
+        Hello, ${this.getAttribute('name')}
+        </p>`;
+      }
+    });
+  </script>
+  <show-hello name="John"></show-hello>
+</body>
+</html>
