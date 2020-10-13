@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagy mode</title>
+</head>
+<body>
+  <script>
+    let regexp =/".+?"/g;
+    let str = 'a "witch" and her "broom " is one';
+    alert(str.match(regexp));   // witch. broom
+  </script>
+
+
+
+<script>
+  alert("123 456".match(/\d+ \d+?/)); // 123 4
+</script>
+
+</body>
+</html>
