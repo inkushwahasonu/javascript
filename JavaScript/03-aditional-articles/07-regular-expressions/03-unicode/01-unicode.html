@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicode : flag "u" and class \p{...}</title>
+</head>
+<body>
+  
+
+  <script>
+    alert('😄'.length);   // 2
+    alert('𝒳'.length);  // 2
+  </script>
+
+
+<!-- ---Unicode properties \p{...} ----------------------->
+
+
+<script>
+  let str = "A ბ ㄱ";
+
+  alert(str.match(/\p{L}/gu));   // A,ბ,ㄱ
+  alert(str.match(/\p{L}/g));  // null (no matches,a s there's no flag"u")
+</script>
+</body>
+</html>
