@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>character classes</title>
+</head>
+<body>
+  
+  <script>
+    // find the first digit of the phone number
+    
+    let str = "+7(903)-123-45-67";
+    let regexp = /\d/;
+    alert(str.match(regexp));  // 7
+  </script>
+
+
+<!-- ------------------------------------------------- -->
+
+
+<script>
+// add th 'g'  flag to find all digits:
+
+let str2 = "+7(903)-123-45-67";
+
+let regexp2 =/\d/g;
+
+alert(str2.match(regexp2));  // array of maches : 7,9,0,3,1,2,3,4,5,6,7
+
+// let's make the digits only phone number of them:
+alert(str2.match(regexp2).join(''));  // 79031234567
+</script>
+
+<!-- ------------------------ -->
+
+<script>
+// CSS\d matches a string CSS with a digit after it 
+
+let str3 = "Is there CSS4?";
+let regexp3 =/CSS\d/
+alert(str3.match(regexp));  // CSS4
+</script>
+
+<script>
+  alert("Ilove HTML5!".match(/\s\w\w\w\w\d/));  //  HTML5
+</script>
+</body>
+</html>
