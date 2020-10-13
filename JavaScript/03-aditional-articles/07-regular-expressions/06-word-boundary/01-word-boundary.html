@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>word boundary : \b </title>
+</head>
+<body>
+<script>
+  alert("hello, Java!".match(/\bJava\b/));  // Java
+  alert("Hello, JavaScript!".match(/\bJava\b/));   // null
+</script>
+
+<!-- ------------------------------ -->
+
+
+<script>
+  alert("Hello, Java!".match(/\bHello\b/));  // Hello
+  alert("Hello, Java!".match(/\bJava\b/));   // Java
+  alert("Hello. Java!".match(/\bHell\b/));    // null (no match)
+  alert("hello, Java!". match(/\bJava!\b/));    // null ( no match)
+
+
+  alert("1 23 456 78".match(/\b\d\d\b/g));   // 23.78
+  alert("12.34.56".match(/\b\d\d\b/g));  // 12, 34, 56
+</script>
+</body>
+</html>
