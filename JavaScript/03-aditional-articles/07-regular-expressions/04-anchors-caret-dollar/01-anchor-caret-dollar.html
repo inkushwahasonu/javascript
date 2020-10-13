@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anchors:string start ^ and end $</title>
+</head>
+<body>
+  
+  <script>
+    let str1 = "Mary had a little lamb";
+    alert(/^Mary/.test(str1));  // true
+
+
+    // ----------------------
+
+    let str2="it's fleece was white as snow";
+    alert(/snow$/.test(str2));   // true
+  </script>
+</body>
+</html>
