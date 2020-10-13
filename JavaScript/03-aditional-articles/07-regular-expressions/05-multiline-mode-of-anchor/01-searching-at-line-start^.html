@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Searching at line start ^</title>
+  </head>
+  <body>
+    <script>
+      let str = `1st place: Winnie
+2nd place: Piglet
+3rd place: Eeyore`;
+      alert(str.match(/^\d/gm)); // 1,2 ,3
+    </script>
+
+
+<!-- ---------------------------------------- -->
+
+<script>
+  let str2 = `1st place:Winnie
+2nd place:Piglet
+3rd place:Eeyore`;
+alert(str2.match(/^\d/g));   // 1
+</script>
+  </body>
+</html>
