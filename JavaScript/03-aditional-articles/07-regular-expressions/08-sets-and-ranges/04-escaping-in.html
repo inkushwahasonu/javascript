@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escaping in [...]</title>
+</head>
+<body>
+  <script>
+    //  No need to escape
+    let regexp =/[-().^+]/g;
+    alert("1 + 2 - 3".match(regexp));   /// Matches +,-
+  </script>
+
+
+
+
+<script>
+  // Escaped everythin
+
+  let regexp2 =/[\-\(\)\.\^+]/g;
+
+  alert("1 + 2 - 3".match(regexp2));  // also work: +,-
+</script>
+</body>
+</html>
