@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testing for a full match</title>
+  </head>
+  <body>
+    <script>
+      let goodInput = "12:34";
+      let badInput = "12:345";
+
+      let regexp = /^\d\d:\d\d$/;
+      alert(regexp.test(goodInput)); // true
+      alert(regexp.test(badInput)); // false
+    </script>
+  </body>
+</html>
