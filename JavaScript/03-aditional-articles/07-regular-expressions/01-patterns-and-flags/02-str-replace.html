@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REplacing: str.replace</title>
+</head>
+<body>
+  
+
+  <script>
+    // no flag g
+    alert("We will, we will". replace(/we/i, "I"));   // I will, we will
+
+    // with flag g
+    alert("We will, we will". replace(/we/ig, "I"));   // I will, I will
+  </script>
+
+  <script>
+    alert("I love HTML ". replace(/HTML/, "$& and JavaScript")) ;  // I HTML and JavaScript 
+  </script>
+</body>
+</html>
