@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>new RegExp</title>
+</head>
+<body>
+  <script>
+    let regexp = new RegExp("\d\.\d");
+    alert("Chapter 5.1".match(regexp));  // null
+
+
+    alert("\d\.\d");   // d.d
+  </script>
+
+
+<!-- --------------------------------- -->
+
+<script>
+  let regStr ="\\d\\.\\d";
+  alert(regStr);             // \d\.\d  (correct now)
+
+  let regexp2 = new RegExp(regStr);
+  alert("Chapter 5.1". match(regexp2));  // 5.1
+</script>
+</body>
+</html>
