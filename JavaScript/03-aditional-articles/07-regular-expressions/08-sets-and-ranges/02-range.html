@@ -11,5 +11,17 @@
   <script>
     alert("Exception 0xAF".match(/x[0-9A-F][0-9A-F]/g));  // xAF
   </script>
+
+
+<!-- Example: multi-language \w -->
+
+
+<script>
+  let regexp = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;
+  let str =`Hi 你好 12`;
+
+  //find all letters and digits
+  alert(str.match(regexp));     // H,i,你,好,1,2
+</script>
 </body>
 </html>
