@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>quantity {n}</title>
+</head>
+<body>
+  <script>
+    alert("I'm 12345 years old".match(/\d{5}/));   // "12345"
+  </script>
+
+
+
+<script>
+  alert("I'm not 12, but 1234 years old".match(/\d{3,5}/));   // "1234"
+</script>
+
+
+<script>
+  alert("I'm not 12 , but 345678 years old".match(/\d{3,}/)); // 345678
+</script>
+
+
+
+<script>
+  let str = "+7(903)-123-45-67";
+  let numbers = str.match(/\d{1,}/g);
+  alert(numbers);   // 7,903,123,45,67
+</script>
+
+</body>
+</html>
