@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alternativ approach</title>
+</head>
+<body>
+  
+
+  <script>
+    let regexp = /"[^"]+"/g;
+    let str = 'a "witch" and her "broom" is one';
+    alert(str.match(regexp));   // witch, broom
+  </script>
+
+
+<script>
+  let str2 ='<a href="link" class="doc">...';
+  letregexp2 = /<a href =".*" class ="doc">/g;
+
+  // works!
+  alert(str2.match(regexp2)); // <a href="link" class="doc">
+</script>
+
+
+<script>
+  let str3 = '...<a href = ".*" class="doc">...';
+  let regexp3 = /<a href =".*" class ="doc">/g;
+
+  // Whoops! Two links in one match!
+  alert(str3.match(regexp3));  //<a href="link1" class="doc">... <a href="link2" class="doc">
+</script>
+
+
+<script>
+  let str4 = '...<a href="link1" class="doc">... <a href="link2" class="doc">...';
+let regexp4 = /<a href=".*?" class="doc">/g;
+
+// Works!
+alert( str4.match(regexp4) ); // <a href="link1" class="doc">, <a href="link2" class="doc">
+</script>
+
+
+<script>
+  let str5 = '...<a href="link1" class="wrong">... <p style="" class="doc">...';
+let regexp5 = /<a href=".*?" class="doc">/g;
+
+// Wrong match!
+alert( str5.match(regexp5) ); // <a href="link1" class="wrong">... <p style="" class="doc">
+</script>
+
+
+<script>
+  let str8 = '...<a href="link1" class="wrong">... <p style="" class="doc">...';
+let str9 = '...<a href="link1" class="doc">... <a href="link2" class="doc">...';
+let regexp8 = /<a href="[^"]*" class="doc">/g;
+
+// Works!
+alert( str8.match(regexp8) ); // null, no matches, that's correct
+alert( str9.match(regexp8) ); // <a href="link1" class="doc">, <a href="link2" class="doc">
+</script>
+</body>
+</html>
