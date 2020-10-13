@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inverse classes</title>
+</head>
+<body>
+  <script>
+    // find all digit and find them
+
+    let str = "+7(903)-123-45-67";
+    alert(str.match(/\d/g).join('')) ; // 79031234567
+    alert(str.replace(/\D/g, ""));  // 79031234567
+  </script>
+
+
+<!--  Adot is "any character" -->
+
+<script>
+  alert("Z".match(/./));   // Z
+
+
+
+  let regexp= /CS.4/;
+  alert("CSS4".match(regexp));  // CSS4
+  alert("CS-4".match(regexp));  // CSS-4
+  alert("CS 4".match(regexp));  // CS 4 (space is also a character)
+
+  alert("CS4".match(/CS.4/));   // null, no match because there's no character for the dot
+</script>
+
+
+
+<script>
+  // Dot as literally any character with "s" flag
+
+  alert("A\nB".match(/A.B/));   // null ( no match)
+
+  alert("A\nB".match(/A.B/s)) ;  // A\nB(match!)
+</script>
+
+
+
+<script>
+  // pay attention to spaces
+
+  alert("1 - 5".match(/\d-\d/));  // null, no match!
+
+
+  alert("1 - 5".match(/\d - \d/))    ;   // 1 - 5, now id works
+  // or we can use \s class:
+  alert("1 - 5".match(/\b\s-\s\d/));  // 1 - 5, also works
+</script>
+</body>
+</html>
