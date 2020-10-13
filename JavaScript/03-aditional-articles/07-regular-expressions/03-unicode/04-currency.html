@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example:currency</title>
+</head>
+<body>
+  <script>
+    let regexp = /\p{Sc}\d/gu;
+    let str = ` Prices:$2, €1, ¥9`;
+    alert(str.match(regexp)); // $2,  €1, ¥9`
+  </script>
+</body>
+</html>
