@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escaping</title>
+</head>
+<body>
+  
+  <script>
+    alert("Chapter 5.1".match(/\d\.\d/));  // 5.1 (match!)
+    alert("Chapter 511".match(/\d\.\d/));  // null )looking for a real dot \.)
+
+
+    alert("function g()".match(/g\(\)/));  // "g()"
+
+
+    alert("1\\2".match(/\\/));   // \
+  </script>
+</body>
+</html>
