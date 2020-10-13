@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shorthands</title>
+</head>
+<body>
+  <script>
+    let str = "+7(903)-123-45-67";
+    alert(str.match(/\d+/g));   // 7.903,123,45,67
+
+  </script>
+
+
+
+
+<script>
+  let str2 = "Should I write color or colour?";
+  alert(str2.match(/colou?r/g));  // color, clour
+</script>
+
+
+
+<script>
+  alert("100 10 1".match(/\d0*/g));   // 100, 10, 1
+</script>
+
+
+
+<script>
+  alert("100 10 1".match(/\d0+/g));    // 100, 10
+  // 1 not mqtched, as 0+ requires at least one zero
+</script>
+</body>
+</html>
