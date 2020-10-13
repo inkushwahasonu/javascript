@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Searching : str.match</title>
+</head>
+<body>
+  <script>
+    let str = "We will, we will rock you";
+    alert(str.match(/we/gi));   // We, we (an array of 2 substrings that match)
+  </script>
+
+
+
+<!-- ------------------------------------ -->
+
+<script>
+  let str2 = "We will, we will rock you";
+
+  let result = str2.match(/we/i); // without flag g
+  alert(result [0]);  // We (1st match)
+  alert(result.length); // 1
+
+  // Details:
+  alert(result.index);  // 0(position of the match)
+  alert(result.input);  // We will, we will rock you (source string)
+</script>
+
+
+
+
+<!-- ----------------------------------------------- -->
+
+<script>
+  let matches = "JavaScript".match(/HTML/); // = null
+
+if (!matches.length) { // Error: Cannot read property 'length' of null
+  alert("Error in the line above");
+}
+</script>
+
+
+
+<!-- ------------------------------------------------------- -->
+
+
+<script>
+  let matches2 = "JavaScript".match(/HTML/) || [];
+
+  if(!matches2.length){
+    alert("No matches2");   // not it works
+  }
+</script>
+</body>
+</html>
