@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranges and flag "u"</title>
+</head>
+<body>
+  <script>
+    alert('𝒳 '.match(/[𝒳𝒴]/));   // show a strange character, like [?]
+    // (the search was performed incorrectly, half-character returned)
+  </script>
+
+
+
+<!-- ------------------------------------------- -->
+
+<script>
+  for(let i=0; i<'𝒳𝒴'.length; i++){
+    alert('𝒳𝒴'.charCodeAt(i));   // 553349,56499, 55349, 56500
+  }
+</script>
+
+
+<!-- ----------------------------------------- -->
+
+<script>
+  alert( '𝒳'.match(/[𝒳𝒴]/u) ); // 𝒳
+</script>
+
+
+<!-- ------------------------------------------- -->
+
+<script>
+  '𝒳'.match(/[𝒳-𝒴]/); // Error: Invalid regular expression
+</script>
+
+
+<!-- ------------------------------------------ -->
+
+ <script>
+  //  look for characters from 𝒳 to 𝒵
+  alert( '𝒴'.match(/[𝒳-𝒵]/u) );   // 𝒴
+ </script>
+</body>
+</html>
