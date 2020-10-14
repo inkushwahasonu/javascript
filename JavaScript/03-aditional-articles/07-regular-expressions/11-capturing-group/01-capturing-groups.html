@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>capturing groups</title>
+  </head>
+  <body>
+    <script>
+      // Example: gogogo
+      alert("Gogogo now!".match(/(go)+/gi)); //Gogogo
+
+      // example: domain
+      let regexp = /(\w+\.)+\w+/g;
+      alert("site.com my.site.com".match(regexp)); // site.com, my.site.com
+
+      // example: email
+      let regexp2 = /[-.\w]+@([\w-]+\.)+[\w-]+/g;
+      alert("my@mail.com @ his@site.com.uk".match(regexp2)); //  my@mail.com, his@site.com.uk
+
+      // Parentheses contents in the match
+
+      let str = "<h1>Hello, world!</h1>";
+      let tag = str.match(/<(.*?)>/);
+      alert(tag[0]); // <h1>
+      alert(tag[1]); // h1
+
+      // nested groups
+
+      let str2 = '<span class="my">';
+
+      let regexp3 = /<(([a-z]+)\s*([^>]*))>/;
+      let result = str2.match(regexp3);
+      alert(result[0]); // <span class="my">
+      alert(result[1]); // span class="my"
+      alert(result[2]); // span
+      alert(result[3]); // class="my"
+
+      // optional groups
+
+      let match = "a".match(/a(z)?(c)?/);
+
+      alert(match.length); // 3
+      alert(match[0]); // a (whole match)
+      alert(match[1]); // undefined
+      alert(match[2]); // undefined
+      
+
+      let match2 = 'ac'.match(/a(z)?(c)?/)
+
+      alert(match2.length);  // 3
+      alert(match2[0]);     // ac (whole match)
+      alert(match2[1]);     // undefined, because there's nothing for (z)?
+      alert(match2[2]);   // c
+    </script>
+  </body>
+</html>
