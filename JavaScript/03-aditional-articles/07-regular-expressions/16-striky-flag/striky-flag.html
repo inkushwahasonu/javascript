@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>striky flag "Y", searching at position</title>
+</head>
+<body>
+  <script>
+    // an example (with flag 'g')
+
+
+    let str ='let varName';
+    let regexp =/\w+/g;
+    alert(regexp.lastIndex);   // 0 (initially lastIndex = 0)
+
+    let word1 = regexp.exec(str);
+    alert(word1[0]);    // let (1st word)
+    alert(regexp.lastIndex);     // 3 (position after the match)
+
+    let word2 = regexp.exec(str);
+    alert(word2[0]);     // varName (2nd word)
+    alert(regexp.lastIndex);    // 11 (position after the match)
+    let word3 = regexp.exec(str);
+    alert(word3);    // null (no more matches)
+    alert(regexp.lastIndex);   // 0(resets at search end)
+  </script>
+
+
+<!-- ------------------------------------------------------------------ -->
+<script>
+  // we can get all matches in the loop
+
+  let str2 = 'let varName';
+let regexp2 = /\w+/g;
+
+let result;
+while (result = regexp2.exec(str2)) {
+
+  alert( `Found ${result[0]} at position ${result.index}`);
+
+    //Found let at position 0, then
+    // Found varName at position 4
+  }
+</script>
+
+
+<!-- --------------------------------- -->
+
+<script>
+  //  let's find a word, starting from position '4'
+
+
+
+  let str3 = 'let varName = "value"';
+
+  let regexp3 =/\w+/g;    // without flag "g", property lastIndex is ignored
+
+  regexp3.lastIndex = 4;
+  let word = regexp3.exec(str3);
+  alert(word);  // varName
+</script>
+
+
+<!-- ----------------------------------- -->
+
+
+<script>
+  let str4 = 'let varName = "value"';
+  let regexp4 =/\w+/g;
+  regexp4.lastIndex = 3;
+  let word4 = regexp4.exec(str4);
+  alert(word4[0]);   // varName
+  alert(word4.index);   // 4
+</script>
+
+
+
+<!-- --------------------------------------------------- -->
+
+
+<script>
+  let str5 = 'let varName = "value"';
+  let regexp5 =/\w+/y;
+
+  regexp5.lastIndex = 3;
+  alert(regexp5.exec(str5));   // null (there's a apace at position 3, not a word)
+
+  regexp5.lastIndex = 4;
+  alert(regexp5.exec(str5));   // varName   (word at position 4)
+</script>
+</body>
+</html>
