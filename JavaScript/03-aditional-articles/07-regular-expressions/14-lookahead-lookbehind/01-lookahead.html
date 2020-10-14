@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lookahead</title>
+</head>
+<body>
+  
+  <script>
+    let str ="1 turkey costs 30€";
+    alert(str.match(/\d+(?=€)/));
+    
+    alert(str.match(/\d+(?=\s)(?=.*30)/));    // 1      // 30, the number 1 is ignored, as it's not followes by €
+  </script>
+</body>
+</html>
