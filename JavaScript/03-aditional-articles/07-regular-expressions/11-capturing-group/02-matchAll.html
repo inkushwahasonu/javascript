@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Searching for all matches with groups:matchAll</title>
+</head>
+<body>
+  <script>
+    let str = '<h1> <h2>';
+    let tags = str.match(/<(.*?)>/g);
+    alert(tags);   // <h1>, <h2>
+  </script>
+
+
+<script>
+  let results = '<h1> <h2>'.matchAll(/<(.*?)>/gi);
+
+  // results - is not an array, but an iterable object
+  alert(results);   // [object RegExp String Iterator]
+  alert(results[0]);  // undefined
+  results =Array.from(results);  // let's turn it into array
+  alert(results[0]);   //<h1>, h1 (1st tag)
+  atert(results[1]);   // <h2>, h2 (2nd tag)
+</script>
+
+<script>
+  let results2 = '<h1> <h2>'.matchAll(/<(.*?)>/gi);
+  for(let result of results2){
+    alert(result);
+    // first alert: <h1>, h1
+    // second:<h2>,h2
+  }
+</script>
+
+<script>
+  let results3 ='<h1> <h2>'.matchAll(/<(.*?)>/gi);
+  let [tag1, tag2]=results;
+  alert(tag[0]);   // <h1>
+  alert(tag1[1]);   // h1
+  alert(tag1.index);  // 0
+  alert(tag1.input);  // <h1> <h2>
+</script>
+</body>
+</html>
