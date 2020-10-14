@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non-capturing groups with ? :</title>
+</head>
+<body>
+  <script>
+
+    let str = "Gogogo John!";
+
+    // ?: excludes 'go' from capturing
+    let regexp= /(?:go)+ (\w+)/i;
+    let result = str.match(regexp);
+
+    alert(result[0]);   // Gogogo John  (full match)
+    alert(result[1]);   // John
+    alert(result.length);   // 2 (no more items in the array)
+  </script>
+</body>
+</html>
