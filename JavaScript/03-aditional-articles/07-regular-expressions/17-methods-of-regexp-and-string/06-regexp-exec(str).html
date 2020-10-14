@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>regexp.exec(str)</title>
+</head>
+<body>
+
+  <script>
+    let str = 'More about javaScript at https: //javascript.info';
+    let regexp =/javascript/ig;
+
+    let result;
+
+    while (result = regexp.exec(str)){
+      alert(` Found ${result[0]} at position ${result.index}`);
+
+      // Found Javascript at position 11, then
+      // Found javascript at position 33
+    }
+  </script>
+
+  <!-- -------------------------------------- -->
+  
+
+
+  <script>
+    let str2 = 'Hello, world!';
+
+    let regexp2 = /\w+/g;  // without flag "g", lastIndex property is ignored
+    regexp2.lastIndex = 5;  // search from 5th position (from the comma)
+
+    alert(regexp2.exec(str2));  // world
+  </script>
+
+
+
+<!-- --------------------------------------------------- -->
+
+
+<script>
+  let str3 ='Hello, world!';
+
+  let regexp3 = /\w+/y;
+  regexp3.lastIndex =5; // search exactly at position 5
+  alert(regexp3.exec(str3));   // null
+</script>
+</body>
+</html>
