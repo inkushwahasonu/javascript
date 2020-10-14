@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>regexp.test(str)</title>
+</head>
+<body>
+  
+  <script>
+    let str = "I love JavaScript";
+
+    // these two tests do the same
+    alert(/love/i.test(str));  // true
+    alert(str.search(/love/i) != -1);     // true
+  </script>
+
+
+<!-- ----------------------------------- -->
+
+<script>
+
+  let str2 ="Bla-bla-bla";
+  alert(/love/i.test(str2));   // false
+  alert(str2.search(/love/i) != -1);   // false
+</script>
+
+<!-- ---------------------------------------------- -->
+
+<script>
+  let regexp3 = /love/gi;
+
+  let str3 = "I love Javascript";
+
+  // start the search from position 10:
+  regexp3.lastIndex = 10;
+  alert(regexp3.test(str3));   // false ( no match)
+</script>
+
+
+
+<!-- ----------------------------------------------- -->
+
+<script>
+  let regexp = /javascript/g;   // (regexp just created: regexp.lastIndex =0)
+
+  alert(regexp.test("javascript"));   // true(regexp.lastIndex10 now)
+  alert(regexp.test("javascript"));  // false
+</script>
+</body>
+</html>
