@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backrefrence by number: \N </title>
+</head>
+<body>
+  
+  <script>
+    let str =`He said : "She's the one!".`;
+    let regexp =/['"](.*?)['"]/g;
+
+    // the result is not what we'd like to have
+    alert(str.match(regexp));   // "She"
+  </script>
+
+  <script>
+    let str2 =` He said: "She's the one!".`;
+    let regexp2 =/(['"])(.*?)\1/g;
+    alert(str2.match(regexp2));   // "She's the one!"
+  </script>
+</body>
+</html>
