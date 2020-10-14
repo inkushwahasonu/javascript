@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>capturing groups</title>
+</head>
+<body>
+  <script>
+    let str = "1 turkey costs 30€";
+    let regexp = /\d+(?=(€|kr))/;     // extra parentheses around €|kr
+    alert(str.match(regexp));    // 30, €
+
+
+
+    // and here is the same for lookbehind
+
+    let str2 ="1 turkey costs $30";
+    let regexp2 =/(?<=(\$|€))\d+/;
+    alert(str2.match(regexp2));      // 30, $
+  </script>
+</body>
+</html>
