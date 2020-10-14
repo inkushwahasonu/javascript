@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>regexp for time</title>
+</head>
+<body>
+  <script>
+    let regexp =/([01]\d|2[0-3]):[0-5]\d/g;
+    alert("00:00 10:10 23:59 25:99 1:2".match(regexp)); // 00:00, 10:10, 23:59
+  </script>
+</body>
+</html>
