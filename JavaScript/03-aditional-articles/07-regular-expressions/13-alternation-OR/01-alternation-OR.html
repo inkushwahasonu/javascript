@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alternation(OR) | </title>
+</head>
+<body>
+  <script>
+
+    let regexp = /html|php|css|java(script)?/gi;
+
+    ;let str ="First HTML appeared, then CSS, then JavaScript";
+    alert(str.match(regexp));   // 'HTML', 'CSS', 'JavaScript'
+  </script>
+</body>
+</html>
