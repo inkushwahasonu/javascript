@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>capturing groups in replacement</title>
+</head>
+<body>
+  <script>
+    let str ="John Bull";
+    let regexp =/(\w+) (\w+)/;
+    alert(str.replace(regexp, '$2, $1'));  // Bull,
+  </script>
+
+
+
+<script>
+  let regexp2 = /(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})/g;
+  let str2 = "2019-10-30, 2020-01-01";
+  alert(str2.replace(regexp2,'$<day>.$<month>.$<year>'));
+
+  // 30.10.2019, 01.01.2020
+</script>
+</body>
+</html>
