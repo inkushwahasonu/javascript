@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>negative lookahead</title>
+</head>
+<body>
+  <script>
+    let str = "2 turkeys cost 60€";
+    alert(str.match(/\d+(?!€)/));  // 2  ( the price is skipped)
+  </script>
+</body>
+</html>
