@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>str.replace(str|regexp, str|func)</title>
+</head>
+<body>
+  <script>
+    // replace a dash by a colon
+    alert('12-34-56'.replace("-", ":"))   // 12:34-56
+
+    // replace all dashes by a colon
+    alert('12-34-56'.replace(/-/g, ":"))    // 12:34:56
+
+
+
+    // another example
+
+    let str = "John Smith";
+    // swap first and last name
+    alert(str.replace(/(john) (smith)/i, '$2, $1'))   // Smith, John
+  </script>
+
+<!-- -------------------------------------------------- -->
+
+<script>
+  let str2 = "html and css";
+  let result = str2.replace(/html|css/gi, str2 => str2.toUpperCase());
+  alert(result);    // HTML and CSS
+</script>
+
+<!-- ------------------------------------------------------- -->
+
+
+<script>
+  lert("Ho-Ho-ho". replace(/ho/gi, (match, offset) => ofset));  // 0-3-6
+</script>
+
+<!-- --------------------------------------------------- -->
+
+<script>
+  let str3 ="John Smith";
+  let result3 = str3.replace(/(\w+) (\w+)/, (match, name, surname) => `${surname}, ${name}`);
+
+  alert(result3);   // Smith, John
+</script>
+
+
+<!-- --------------------------------------- -->
+
+
+<script>
+  let str4 = "John  Smith";
+  let result4 = str4.replace(/(\w+)  (\w+)/, (...match) => `${match[2]}, ${match[1]}`);
+  alert(result4);   // Smith, John
+</script>
+
+
+<!-- --------------------------------------------- -->
+
+<script>
+  let str5 = "John Smith";
+
+  let result5 = str5.replace(/(?<name>\w+) (?<surname>\w+)/, (...match) =>{
+    let groups = match.pop();
+    return ` ${groups.surname},${groups.name}`;
+
+  });
+  alert(result5);   // Smith, John
+</script>
+</body>
+</html>
