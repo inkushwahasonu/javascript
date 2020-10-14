@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>str.match(regexp)</title>
+</head>
+<body>
+  
+
+  <script>
+    let str = "I love JavaScript";
+    let result = str.match(/Java(Script)/);
+    alert(result[0]);   // Jaascript (full match)
+    alert(result[1]);   // Script     (first chapturing group)
+    alert(result.length);   // 2
+
+    // additional information:
+    alert( result.index );      // 0 (match position)
+    alert(result.input);   // I love JavaScript (source string)
+
+
+
+    // ---------------------------------------
+
+    let result2 = str.match(/Java(Script)/g);
+    alert(result2[0]);    // JavaScript
+    alert(result2.length);   // 1
+
+
+    // -------------------------------------------
+    let result3 = str.match(/HTML/);
+    alert(result3);  // null
+    alert(result3.length);   // Error: Cannot read property 'length' of null
+  </script>
+
+
+<!-- ---------------------------------------------------- -->
+
+
+</body>
+</html>
