@@ -1,3 +1,6 @@
+// "use strict";
+
+
 //--fatch elements by DOM (document object model)
 
 const form = document.getElementById("form");
@@ -9,18 +12,12 @@ const cpassword = document.getElementById("cpassword");
 
 // add events
 
-form.addEventListener('submit', (event) => {
-  // to remove ? in url after submition of form
-  event.preventDefault(); // removed ? from url (and form not submited)
-  validate();
-});
-
 // more email validation
 
 const isEmail = (emailVal) => {
-  let atSymbol = emailVal.indexOf("@");
+  var atSymbol = emailVal.indexOf("@");
   if (atSymbol < 1) return false;
-  let dot = emailVal.lastIndexOf(".");
+  var dot = emailVal.lastIndexOf(".");
   if (dot <= atSymbol + 2) return false;
   if (dot === emailVal.length - 1) return false;
   return true;
@@ -28,6 +25,7 @@ const isEmail = (emailVal) => {
 
 // define the validate function
 const validate = () => {
+  alert('hi');
   const usernameVal = username.value.trim(); // remove space befor first charector and after last charactor
   const emailVal = email.value.trim(); // remove space befor first charector and after last charactor
   const phoneVal = phone.value.trime(); // remove space befor first charector and after last charactor
@@ -37,21 +35,21 @@ const validate = () => {
   // validate username
 
   if (usernameVal === "") {
-    setErrorMsg(usernameVal, "User name can not be blank");
+    setErrorMsg(username, "User name can not be blank");
   } else if (usernameVal.length <= 2) {
-    setErrorMsg(usernameVal, "username min 3 char");
+    setErrorMsg(username, "username min 3 char");
   } else {
-    setSuccessMsg(usernameVal);
+    setSuccessMsg(username);
   }
 
   // validate email
 
   if (emailVal === "") {
-    setErrorMsg(emailVal, "Email cal not be blank");
+    setErrorMsg(email, "Email cal not be blank");
   } else if (!isEmail(emailVal)) {
-    setErrorMsg(emailVal, "not a valid email");
+    setErrorMsg(email, "not a valid email");
   } else {
-    setSuccessMsg(emailVal)
+    setSuccessMsg(email);
   }
 };
 

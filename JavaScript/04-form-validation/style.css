@@ -96,9 +96,9 @@ body {
   visibility: visible;
 }
 
-.form-control small {
+/* .form-control small {
   visibility: hidden;
-}
+} */
 
 .form .btn {
   background: linear-gradient(to left, #74ebd5, #9face6);
