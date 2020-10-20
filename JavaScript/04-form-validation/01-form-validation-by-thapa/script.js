@@ -12,6 +12,11 @@ const cpassword = document.getElementById("cpassword");
 
 // add events
 
+form.addEventListener('submit', (event) => {
+  // to remove ? in url after submition of form
+  event.preventDefault() // removed ? from url (and form not submited)
+  validate();
+});
 // more email validation
 
 const isEmail = (emailVal) => {
