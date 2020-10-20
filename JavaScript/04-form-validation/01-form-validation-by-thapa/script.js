@@ -17,6 +17,11 @@ form.addEventListener('submit', (event) => {
   event.preventDefault() // removed ? from url (and form not submited)
   validate();
 });
+
+
+
+
+
 // more email validation
 
 const isEmail = (emailVal) => {
