@@ -1,44 +1,63 @@
-{/* <script>
-  function countRabbits() {
-    for(let i=1; i<=3; i++) {
-      alert("Rabbit number " + i);
-    }
-  }
-</script>
 
-<input type="button" onclick="countRabbits()" value="Count rabbits!"> */}
+function signup(){
+  addEventListener("click", (event) =>{
+    event.preventDefault() 
+    login();
+  });
+   
+}
+
+
+function login(){
+  let username = document.getElementById('username');
+  // let email = document.getElementById('email').value.trim();
+  // let phone = document.getElementById('phone').value.trim();
+  // let password = document.getElementById('password').value.trim();
+  // let cpassword = document.getElementById('cpassword').value.trim();
+
+  // email.value.trim();
+  // phone.value.trim();
+  // password.value.trim();
+  // cpassword.value.trim();
+  let usernameval = username.value;
+
+
+  if (usernameval === ""){
+    username.classList.add("invalid");
+  }
+  if(usernameval.length <= 2){
+    
+  }
+
+
+
+
+
+  // email.classList.add("invalid");
+  // phone.classList.add("invalid");
+  // password.classList.add("invalid");
+  // cpassword.classList.add("invalid");
+
+
+  
+};
+
+
 
  
 
-// --------------------------
-
-{/* <input id="elem" type="button" value="Click me">
-<script>
-  elem.onclick = function() {
-    alert('Thank you');
-  };
-</script> */}
 
 
 
 
-// --------------------------------
-{/* <input id="elem" type="button" value="Click me"/>
+{/* <body class="main page">
+  <script>
+    // add a class
+    document.body.classList.add('article');
 
-<script>
-  function handler1() {
-    alert('Thanks!');
-  };
+    alert(document.body.className); // main page article
+  </script>
+</body> */}
 
-  function handler2() {
-    alert('Thanks again!');
-  }
 
-  elem.onclick = () => alert("Hello");
-  elem.addEventListener("click", handler1); // Thanks!
-  elem.addEventListener("click", handler2); // Thanks again!
-</script> */}
 
-function sub(){
-  alert('sdlks');
-}

@@ -11,14 +11,15 @@
     <script src="script.js"></script>
     <title>Form validation in javascript.info</title>
   </head>
-  <body>
+  <body >
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-md-auto">
-          <form class="form" id="form" onsubmit="return sub()" >
-            <div class="mb-3">
+          <form class="form" id="form"  >
+            <div class="mb-3 form-controll">
               <label for="" class="form-label">Username</label>
               <input type="text" class="form-control  " id="username" />
+              <div class="error"></div>
               
             </div>
             <div class="mb-3">
@@ -44,16 +45,95 @@
             <input
               type="submit"
               class="form-control btn btn-primary"
-              id="submit"
+              id="elem"
               value="sign-up"
-             
+             onclick="signup()"
             />
           </form>
         </div>
       </div>
     </div>
+    <!-- <script>
+      function handler1() {
+        let div = document.getElementById('username');
+
+  div.className = "invalid";
+  div.innerHTML = "<strong>Hi there!</strong> You've read an important message.";
+
+  document.body.append(div);
+  }
+
+  elem.addEventListener("click", (event) =>{
+    event.preventDefault() 
+    handler1();
+  }); // Thanks!
+    </script> -->
+
 
     
    
   </body>
 </html>
+
+
+
+
+
+
+<!-- ------example of connection of submition..------------------------------------------------------ -->
+<!-- 
+// -- ----------usable only external javascript page -->
+
+<!-- <form action="" onsubmit="return login()">
+<input type="text">
+<input type="submit" value="submit" class="btn">
+</form>
+<script>
+  function login(){
+    alert('hi');
+  }
+</script> 
+
+//-- ----------usable only external javascript page -
+
+ /* <script>
+  function countRabbits() {
+    for(let i=1; i<=3; i++) {
+      alert("Rabbit number " + i);
+    }
+  }
+</script>
+
+<input type="button" onclick="countRabbits()" value="Count rabbits!"> */}
+
+ 
+
+// -------------------usable only inner html page-------
+
+{/* <input id="elem" type="button" value="Click me">
+<script>
+  elem.onclick = function() {
+    alert('Thank you');
+  };
+</script> */}
+
+
+
+
+// ----------------usable only inner html page----------------
+{/* <input id="elem" type="button" value="Click me"/>
+
+<script>
+  function handler1() {
+    alert('Thanks!');
+  };
+
+  function handler2() {
+    alert('Thanks again!');
+  }
+
+  elem.onclick = () => alert("Hello");
+  elem.addEventListener("click", handler1); // Thanks!
+  elem.addEventListener("click", handler2); // Thanks again!
+</script> */
+ -->
