@@ -14,7 +14,7 @@ function login(){
   let phone = document.getElementById('phone');
   let password = document.getElementById('password');
   let cpassword = document.getElementById('cpassword');
-
+  let error = document.getElementById('error');
   email.value.trim();
   phone.value.trim();
   password.value.trim();
@@ -24,6 +24,7 @@ function login(){
 
   if (usernameval === ""){
     username.classList.add("invalid");
+    error.innerHTML = 'Please enter a correct email.'
     return false;
   }
   if(usernameval.length <= 2){

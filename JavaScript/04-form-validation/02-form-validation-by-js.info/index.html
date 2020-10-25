@@ -16,10 +16,10 @@
       <div class="row justify-content-md-center">
         <div class="col-md-auto">
           <form class="form" id="form" onsubmit="signup()" >
-            <div class="mb-3 form-controll">
+            <div class="mb-3 ">
               <label for="" class="form-label">Username</label>
               <input type="text" class="form-control  " id="username" />
-              <div class="error"></div>
+              <div class="error" id="error"></div>
               
             </div>
             <div class="mb-3">
@@ -53,21 +53,34 @@
         </div>
       </div>
     </div>
-    <!-- <script>
-      function handler1() {
-        let div = document.getElementById('username');
+    
 
-  div.className = "invalid";
-  div.innerHTML = "<strong>Hi there!</strong> You've read an important message.";
 
-  document.body.append(div);
-  }
-
-  elem.addEventListener("click", (event) =>{
-    event.preventDefault() 
-    handler1();
-  }); // Thanks!
-    </script> -->
+    <style>
+      .invalid { border-color: red; }
+      #errorer { color: red }
+    </style>
+    
+    Your email please: <input type="email" id="input" class="form-control">
+    
+    <div id="errorer"></div>
+    
+    <script>
+    input.onblur = function() {
+      if (!input.value.includes('@')) { // not email
+        input.classList.add('invalid');
+        errorer.innerHTML = 'Please enter a correct email.'
+      }
+    };
+    
+    input.onfocus = function() {
+      if (this.classList.contains('invalid')) {
+        // remove the "error" indication, because the user wants to re-enter something
+        this.classList.remove('invalid');
+        errorer.innerHTML = "";
+      }
+    };
+    </script>
    
   </body>
 </html>
@@ -134,3 +147,6 @@
   elem.addEventListener("click", handler2); // Thanks again!
 </script> */
  -->
+
+
+ 
