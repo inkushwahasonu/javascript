@@ -1,6 +1,6 @@
 
 function signup(){
-  addEventListener("click", (event) =>{
+  addEventListener("submit", (event) =>{
     event.preventDefault() 
     login();
   });
@@ -10,20 +10,21 @@ function signup(){
 
 function login(){
   let username = document.getElementById('username');
-  // let email = document.getElementById('email').value.trim();
-  // let phone = document.getElementById('phone').value.trim();
-  // let password = document.getElementById('password').value.trim();
-  // let cpassword = document.getElementById('cpassword').value.trim();
+  let email = document.getElementById('email');
+  let phone = document.getElementById('phone');
+  let password = document.getElementById('password');
+  let cpassword = document.getElementById('cpassword');
 
-  // email.value.trim();
-  // phone.value.trim();
-  // password.value.trim();
-  // cpassword.value.trim();
+  email.value.trim();
+  phone.value.trim();
+  password.value.trim();
+  cpassword.value.trim();
   let usernameval = username.value;
 
 
   if (usernameval === ""){
     username.classList.add("invalid");
+    return false;
   }
   if(usernameval.length <= 2){
     

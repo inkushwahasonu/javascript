@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-md-auto">
-          <form class="form" id="form"  >
+          <form class="form" id="form" onsubmit="signup()" >
             <div class="mb-3 form-controll">
               <label for="" class="form-label">Username</label>
               <input type="text" class="form-control  " id="username" />
@@ -45,9 +45,9 @@
             <input
               type="submit"
               class="form-control btn btn-primary"
-              id="elem"
+              id="submit"
               value="sign-up"
-             onclick="signup()"
+             
             />
           </form>
         </div>
@@ -68,9 +68,6 @@
     handler1();
   }); // Thanks!
     </script> -->
-
-
-    
    
   </body>
 </html>
