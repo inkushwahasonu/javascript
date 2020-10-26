@@ -8,80 +8,27 @@
     <script src="js/bootstrap.js"></script>
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+   
     <title>Form validation in javascript.info</title>
   </head>
   <body >
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-md-auto">
-          <form class="form" id="form" onsubmit="signup()" >
+          <form class="form" id="form"  >
             <div class="mb-3 ">
               <label for="" class="form-label">Username</label>
               <input type="text" class="form-control  " id="username" />
               <div class="error" id="error"></div>
               
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" />
-              <div class="error"></div>
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label">Contact Number</label>
-              <input type="number" class="form-control " id="phone" />
-              <div class="error"></div>
-            </div>
-            <div class="mb-3 ">
-              <label for="" class="form-label">Password</label>
-              <input type="Password" class="form-control" id="password" />
-              <div class="error"></div>
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label">Confirm Password</label>
-              <input type="password" class="form-control" id="cpassword" />
-              <div class="error"></div>
-            </div>
-            <input
-              type="submit"
-              class="form-control btn btn-primary"
-              id="submit"
-              value="sign-up"
-             
-            />
+            
+            <button class="btn btn-primary" onclick="signup(event)">sign-up</button>
           </form>
         </div>
       </div>
     </div>
-    
 
-
-    <style>
-      .invalid { border-color: red; }
-      #errorer { color: red }
-    </style>
-    
-    Your email please: <input type="email" id="input" class="form-control">
-    
-    <div id="errorer"></div>
-    
-    <script>
-    input.onblur = function() {
-      if (!input.value.includes('@')) { // not email
-        input.classList.add('invalid');
-        errorer.innerHTML = 'Please enter a correct email.'
-      }
-    };
-    
-    input.onfocus = function() {
-      if (this.classList.contains('invalid')) {
-        // remove the "error" indication, because the user wants to re-enter something
-        this.classList.remove('invalid');
-        errorer.innerHTML = "";
-      }
-    };
-    </script>
-   
+    <script src="script.js"></script>
   </body>
 </html>
 
@@ -150,3 +97,29 @@
 
 
  
+
+ <!-- <style>
+      .invalid { border-color: red; }
+      #errorer { color: red }
+    </style>
+    
+    Your email please: <input type="email" id="input" class="form-control">
+    
+    <div id="errorer"></div>
+     -->
+    <!-- <script>
+    input.onblur = function() {
+      if (!input.value.includes('@')) { // not email
+        input.classList.add('invalid');
+        errorer.innerHTML = 'Please enter a correct email.'
+      }
+    };
+    
+    input.onfocus = function() {
+      if (this.classList.contains('invalid')) {
+        // remove the "error" indication, because the user wants to re-enter something
+        this.classList.remove('invalid');
+        errorer.innerHTML = "";
+      }
+    };
+    </script> -->
