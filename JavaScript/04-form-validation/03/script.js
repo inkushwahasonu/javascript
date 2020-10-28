@@ -27,40 +27,22 @@ function signup(event) {
   const cpasswordSuccessIcon = document.getElementById("cpasswordSuccessIcon");
   // ---------- username validation---------------------
   if (username.value === "") {
-    usernameError();
+    username.classList.add("invalid");
+    usernameErrorIcon.classList.add("errorIcon");
     usernameErrorMsg.innerHTML = "please fill user-name, it can't be empty!";
     return false;
-  } 
-  else {
+  } else {
     username.classList.remove("invalid");
     usernameErrorIcon.classList.remove("errorIcon");
     usernameSuccessIcon.classList.add("successIcon");
     usernameErrorMsg.innerHTML = "";
-
   }
 
   // ---------- email validation---------------------
 
-
   // ---------- phone validation---------------------
-
-  
 
   // ---------- password validation---------------------
 
-
-  
-  
-
   // ---------- confirm password validation---------------------
-
-
-  const usernameError = function() {
-    username.classList.add("invalid");
-    usernameErrorIcon.classList.add("errorIcon");
-  }
-  
-  
 }
-
-
