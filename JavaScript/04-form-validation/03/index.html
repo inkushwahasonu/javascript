@@ -11,11 +11,11 @@
   <body>
     <div class="container">
       <div class="row justify-content-md-center">
-        <div class="col-md-auto">
-          <form class="form" id="form">
-            <div class="mb-3">
+        <div class="col-md-6">
+          <form class="form " id="form">
+            <div>
               <label for="" class="form-label">Username</label>
-              <div class="input-group">
+              <div class="input-group ">
                 <input
                   type="text"
                   id="username"
@@ -30,9 +30,9 @@
                   ><img src="media/08.jpg" alt=""
                 /></i>
               </div>
-              <small class="error" id="usernameErrorMsg"></small>
+              <label class="usernameInstruction" id="usernameErrorMsg">eg. : Vinod Kumar Mehta</label>
             </div>
-            <div class="mb-3">
+            <div>
               <label for="" class="form-label">Email</label>
               <div class="input-group">
                 <input
@@ -49,9 +49,9 @@
                   ><img src="media/08.jpg" alt=""
                 /></i>
               </div>
-              <div class="error" id="emailErrorMsg"></div>
+              <label class="error" id="emailErrorMsg"></label>
             </div>
-            <div class="mb-3">
+            <div>
               <label for="" class="form-label">Contact Number</label>
               <div class="input-group">
                 <input
@@ -68,9 +68,9 @@
                   ><img src="media/08.jpg" alt=""
                 /></i>
               </div>
-              <div class="error" id="phoneErrorMsg"></div>
+              <label class="error" id="phoneErrorMsg"></label>
             </div>
-            <div class="mb-3">
+            <div>
               <label for="" class="form-label">Password</label>
               <div class="input-group">
                 <input
@@ -87,9 +87,9 @@
                   ><img src="media/08.jpg" alt=""
                 /></i>
               </div>
-              <div class="error" id="passwordErrorMsg"></div>
+              <label class="error" id="passwordErrorMsg"></label>
             </div>
-            <div class="mb-3">
+            <div>
               <label for="" class="form-label">Confirm Password</label>
               <div class="input-group">
                 <input
@@ -106,7 +106,7 @@
                   ><img src="media/08.jpg" alt=""
                 /></i>
               </div>
-              <div class="error" id="cpasswordErrorMsg"></div>
+              <label class="error" id="cpasswordErrorMsg"></label>
             </div>
             <button class="btn btn-primary" onclick="signup(event)">
               sign-up

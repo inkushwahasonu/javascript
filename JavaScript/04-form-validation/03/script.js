@@ -29,6 +29,8 @@ function signup(event) {
   if (username.value === "") {
     username.classList.add("invalid");
     usernameErrorIcon.classList.add("errorIcon");
+    usernameErrorMsg.classList.remove("usernameInstruction");
+    usernameErrorMsg.classList.add("error");
     usernameErrorMsg.innerHTML = "please fill user-name, it can't be empty!";
     return false;
   } else {

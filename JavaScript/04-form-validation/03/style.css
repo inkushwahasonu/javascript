@@ -26,4 +26,8 @@ i{
 .error{
   color: red;
   
+  
+}
+.usernameInstruction{
+  color: green;
 }
