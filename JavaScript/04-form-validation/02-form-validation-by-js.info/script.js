@@ -1,7 +1,13 @@
 function signup(event) {
-    event.preventDefault();
-    validate();
+  event.preventDefault();
+  validate();
 
+  username.addEventListener("blur", inputBlur, true);
+
+ 
+  function inputBlur() {
+    username.style.backgroundColor = " green";
+  }
 }
 
 const username = document.getElementById("username");
@@ -20,17 +26,11 @@ function validate() {
   if (username.value === "") {
     username.classList.add("invalid");
     error.innerHTML = "Please enter a correct username.";
+    username.addEventListener("focus", inputFocus, true);
+    inputFocus();
     return false;
   }
 }
-
-
-
-
-
-
-
-
 
 {
   /* <body class="main page">
@@ -41,4 +41,9 @@ function validate() {
     alert(document.body.className); // main page article
   </script>
 </body> */
+}
+
+
+function inputFocus() {
+  username.style.backgroundColor = "";
 }
