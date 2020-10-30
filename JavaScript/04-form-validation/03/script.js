@@ -41,49 +41,67 @@ function signup(event) {
   }
 
   // ---------- email validation---------------------
-
-  if(email.value === ""){
+  const emailRegExp = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-zA-Z]{2,20})(.[a-z]{2,8})?$/;
+  if (email.value === "") {
     email.classList.add("invalid");
     emailErrorIcon.classList.add("errorIcon");
     emailErrorMsg.classList.remove("instruction");
     emailErrorMsg.classList.add("error");
-    emailErrorMsg.innerHTML = "please fill email field, it can't be empty !"
+    emailErrorMsg.innerHTML = "please fill email field, it can't be empty !";
     return false;
-  }else{
+  }else if(emailRegExp.test(email.value) ) {
     email.classList.remove("invalid");
     emailErrorIcon.classList.remove("errorIcon");
     emailSuccessIcon.classList.add("successIcon");
     emailErrorMsg.innerHTML = "";
+    
+  }
+  else {
+    
+    email.classList.add("invalid");
+    emailErrorIcon.classList.add("errorIcon");
+    emailErrorMsg.classList.remove("instruction");
+    emailErrorMsg.classList.add("error");
+    emailErrorMsg.innerHTML = "invalid email!";
+    return false;
   }
 
-  // ---------- phone validation---------------------
 
-  if(phone.value === ""){
+
+  // ---------- phone validation---------------------
+  const phoneRegExp =/^[6-9]\d{9}$/;
+  if (phone.value === "") {
     phone.classList.add("invalid");
     phoneErrorIcon.classList.add("errorIcon");
     phoneErrorMsg.classList.remove("instruction");
     phoneErrorMsg.classList.add("error");
-    phoneErrorMsg.innerHTML = "please fill copassword field, it can't be empty !"
+    phoneErrorMsg.innerHTML ="please fill confirm password field, it can't be empty !";
     return false;
-  }else{
-    phone.classList.remove("invalid");
-    phoneErrorIcon.classList.remove("errorIcon");
-    phoneSuccessIcon.classList.add("successIcon");
-    phoneErrorMsg.innerHTML = "";
+  } else if(phoneRegExp.test(phone.value)){
+   phone.classList.remove("invalid");
+   phoneErrorIcon.classList.remove("errorIcon");
+   phoneSuccessIcon.classList.add("successIcon");
+   phoneErrorMsg.innerHTML = "";
   }
-
-
+  else{
+    phone.classList.add("invalid");
+    phoneErrorIcon.classList.add("errorIcon");
+    phoneErrorMsg.classList.remove("instruction");
+    phoneErrorMsg.classList.add("error");
+    phoneErrorMsg.innerHTML = "invalid contact number";
+  }
 
   // ---------- password validation---------------------
 
-  if(password.value === ""){
+  if (password.value === "") {
     password.classList.add("invalid");
     passwordErrorIcon.classList.add("errorIcon");
     passwordErrorMsg.classList.remove("instruction");
     passwordErrorMsg.classList.add("error");
-    passwordErrorMsg.innerHTML = "please fill password field, it can't be empty !"
+    passwordErrorMsg.innerHTML =
+      "please fill password field, it can't be empty !";
     return false;
-  }else{
+  } else {
     password.classList.remove("invalid");
     passwordErrorIcon.classList.remove("errorIcon");
     passwordSuccessIcon.classList.add("successIcon");
@@ -92,22 +110,30 @@ function signup(event) {
 
   // ---------- confirm password validation---------------------
 
-  if(cpassword.value === ""){
+  if (cpassword.value === "") {
     cpassword.classList.add("invalid");
     cpasswordErrorIcon.classList.add("errorIcon");
     cpasswordErrorMsg.classList.remove("instruction");
     cpasswordErrorMsg.classList.add("error");
-    cpasswordErrorMsg.innerHTML = "please fill password field, it can't be empty !"
-  }else if(password.value === cpassword.value){
-      cpassword.classList.remove("invalid");
-      cpasswordErrorIcon.classList.remove("errorIcon");
-      cpasswordSuccessIcon.classList.add("successIcon");
-      cpasswordErrorMsg.innerHTML = "";
-  }else {
+    cpasswordErrorMsg.innerHTML =
+      "please fill password field, it can't be empty !";
+  } else if (password.value === cpassword.value) {
+    cpassword.classList.remove("invalid");
+    cpasswordErrorIcon.classList.remove("errorIcon");
+    cpasswordSuccessIcon.classList.add("successIcon");
+    cpasswordErrorMsg.innerHTML = "";
+  } else {
     cpassword.classList.add("invalid");
     cpasswordErrorIcon.classList.add("errorIcon");
     cpasswordErrorMsg.classList.remove("instruction");
     cpasswordErrorMsg.classList.add("error");
-    cpasswordErrorMsg.innerHTML = "password invalid!"
+    cpasswordErrorMsg.innerHTML = "password invalid!";
   }
 }
+
+
+
+
+// ^[6-9]\d{9}$
+
+// ^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-zA-Z]{2,20})(.[a-z]{2,8})?$
