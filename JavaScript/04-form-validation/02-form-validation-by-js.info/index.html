@@ -4,25 +4,121 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
-
-    <link rel="stylesheet" href="style.css">
-   
+    <link rel="stylesheet" href="style.css" />
     <title>Form validation in javascript.info</title>
   </head>
-  <body >
+  <body>
     <div class="container">
       <div class="row justify-content-md-center">
-        <div class="col-md-auto">
-          <form class="form" id="form"  >
-            <div class="mb-3 ">
+        <div class="col-md-6">
+          <form class="form" id="form">
+            <div>
               <label for="" class="form-label">Username</label>
-              <input type="text" class="form-control  " id="username" />
-              <div class="error" id="error"></div>
-              
-            
-            <button class="btn btn-primary" onclick="signup(event)">sign-up</button>
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="username"
+                  class="form-control"
+                  placeholder="User Name"
+                  autocomplete="off"
+                />
+                <i class="check" id="usernameSuccessIcon"
+                  ><img src="media/09.jpg" alt=""
+                /></i>
+                <i class="exclamation" id="usernameErrorIcon"
+                  ><img src="media/08.jpg" alt=""
+                /></i>
+              </div>
+              <label class="instruction" id="usernameErrorMsg"
+                >eg. : Vinod Kumar Mehta</label
+              >
+            </div>
+            <div>
+              <label for="" class="form-label">Email</label>
+              <div class="input-group">
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="emial ID"
+                  autocomplete="off"
+                />
+                <i class="check" id="emailSuccessIcon"
+                  ><img src="media/09.jpg" alt=""
+                /></i>
+                <i class="exclamation" id="emailErrorIcon"
+                  ><img src="media/08.jpg" alt=""
+                /></i>
+              </div>
+              <label class="instruction" id="emailErrorMsg"
+                >eg. : inkushwahasonu@gmail.com</label
+              >
+            </div>
+            <div>
+              <label for="" class="form-label">Contact Number</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="phone"
+                  class="form-control"
+                  placeholder="Contact Number"
+                  autocomplete="off"
+                />
+                <i class="check" id="phoneSuccessIcon"
+                  ><img src="media/09.jpg" alt=""
+                /></i>
+                <i class="exclamation" id="phoneErrorIcon"
+                  ><img src="media/08.jpg" alt=""
+                /></i>
+              </div>
+              <label class="instruction" id="phoneErrorMsg"
+                >eg. : 9507141906</label
+              >
+            </div>
+            <div>
+              <label for="" class="form-label">Password</label>
+              <div class="input-group">
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  placeholder="Password"
+                  autocomplete="off"
+                />
+                <i class="check" id="passwordSuccessIcon"
+                  ><img src="media/09.jpg" alt=""
+                /></i>
+                <i class="exclamation" id="passwordErrorIcon"
+                  ><img src="media/08.jpg" alt=""
+                /></i>
+              </div>
+              <label class="instruction" id="passwordErrorMsg">password</label>
+            </div>
+            <div>
+              <label for="" class="form-label">Confirm Password</label>
+              <div class="input-group">
+                <input
+                  type="password"
+                  id="cpassword"
+                  class="form-control"
+                  placeholder="Confirm Password"
+                  autocomplete="off"
+                />
+                <i class="check" id="cpasswordSuccessIcon"
+                  ><img src="media/09.jpg" alt=""
+                /></i>
+                <i class="exclamation" id="cpasswordErrorIcon"
+                  ><img src="media/08.jpg" alt=""
+                /></i>
+              </div>
+              <label class="instruction" id="cpasswordErrorMsg"
+                >confirm password</label
+              >
+            </div>
+            <button class="btn btn-primary" onclick="signup(event)">
+              sign-up
+            </button>
           </form>
         </div>
       </div>
@@ -31,95 +127,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-<!-- ------example of connection of submition..------------------------------------------------------ -->
-<!-- 
-// -- ----------usable only external javascript page -->
-
-<!-- <form action="" onsubmit="return login()">
-<input type="text">
-<input type="submit" value="submit" class="btn">
-</form>
-<script>
-  function login(){
-    alert('hi');
-  }
-</script> 
-
-//-- ----------usable only external javascript page -
-
- /* <script>
-  function countRabbits() {
-    for(let i=1; i<=3; i++) {
-      alert("Rabbit number " + i);
-    }
-  }
-</script>
-
-<input type="button" onclick="countRabbits()" value="Count rabbits!"> */}
-
- 
-
-// -------------------usable only inner html page-------
-
-{/* <input id="elem" type="button" value="Click me">
-<script>
-  elem.onclick = function() {
-    alert('Thank you');
-  };
-</script> */}
-
-
-
-
-// ----------------usable only inner html page----------------
-{/* <input id="elem" type="button" value="Click me"/>
-
-<script>
-  function handler1() {
-    alert('Thanks!');
-  };
-
-  function handler2() {
-    alert('Thanks again!');
-  }
-
-  elem.onclick = () => alert("Hello");
-  elem.addEventListener("click", handler1); // Thanks!
-  elem.addEventListener("click", handler2); // Thanks again!
-</script> */
- -->
-
-
- 
-
- <!-- <style>
-      .invalid { border-color: red; }
-      #errorer { color: red }
-    </style>
-    
-    Your email please: <input type="email" id="input" class="form-control">
-    
-    <div id="errorer"></div>
-     -->
-    <!-- <script>
-    input.onblur = function() {
-      if (!input.value.includes('@')) { // not email
-        input.classList.add('invalid');
-        errorer.innerHTML = 'Please enter a correct email.'
-      }
-    };
-    
-    input.onfocus = function() {
-      if (this.classList.contains('invalid')) {
-        // remove the "error" indication, because the user wants to re-enter something
-        this.classList.remove('invalid');
-        errorer.innerHTML = "";
-      }
-    };
-    </script> -->
