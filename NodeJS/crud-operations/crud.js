@@ -8,4 +8,7 @@
  * delete the file and the folder.
  */
 
- 
+const fs = require("fs");
+
+// create a folder named sonu
+ fs.mkdirSync('sonu'); 
