@@ -11,4 +11,7 @@
 const fs = require("fs");
 
 // create a folder named sonu
- fs.mkdirSync('sonu'); 
+ //fs.mkdirSync("sonu"); 
+
+ // create a file in sonu folder
+ fs.writeFileSync("sonu/bio.txt", "this is a CRUD operation");
