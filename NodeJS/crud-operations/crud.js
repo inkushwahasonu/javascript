@@ -22,3 +22,7 @@ const fs = require("fs");
  // read datas of bio.txt without buffer 
  let read_data = fs.readFileSync("sonu/bio.txt","utf-8");        // utf-8 : for encripte
  console.log(read_data);
+
+
+ // rename file name 
+ fs.renameSync("sonu/bio.txt","sonu/myBio.txt");
