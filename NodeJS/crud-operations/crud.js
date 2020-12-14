@@ -17,4 +17,8 @@ const fs = require("fs");
  fs.writeFileSync("sonu/bio.txt", "this is a CRUD operation");
 
  // add some more data without over-riding in bio.txt
- fs.appendFileSync("sonu/bio.txt", "\nand append some another data in your CRUD.")
+ fs.appendFileSync("sonu/bio.txt", "\nand append some another data in your CRUD.");
+
+ // read datas of bio.txt without buffer 
+ let read_data = fs.readFileSync("sonu/bio.txt","utf-8");        // utf-8 : for encripte
+ console.log(read_data);
