@@ -28,3 +28,7 @@ let buf_data = fsys.readFileSync('read.txt');
 // print messages of file in string formate
  org_data = buf_data.toString();
 console.log(org_data);
+
+// rename the file (read.txt)
+
+fsys.renameSync('read.txt','read-write.txt');
