@@ -15,3 +15,6 @@ const fs = require("fs");
 
  // create a file in sonu folder
  fs.writeFileSync("sonu/bio.txt", "this is a CRUD operation");
+
+ // add some more data without over-riding in bio.txt
+ fs.appendFileSync("sonu/bio.txt", "\nand append some another data in your CRUD.")
