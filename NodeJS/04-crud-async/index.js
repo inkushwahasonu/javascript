@@ -41,3 +41,19 @@ fs.rename("sonu/bio.txt", "sonu/mybio.txt", (err) => {
   console.log("file renamed...");
   console.log(err);
 });
+
+/*
+
+// delete file
+fs.unlink("sonu/mybio.txt", (err) => {
+  console.log("file deleted...");
+  console.log(`error : ${err}.`);
+});
+
+// delete folder
+fs.rmdir("sonu", (err) => {
+  console.log("folder deleted...");
+  console.log(`error : ${err}`);
+});
+
+*/
