@@ -29,3 +29,9 @@ fs.appendFile(
     console.log(`error ${err}`);
   }
 );
+
+// read file data without bufferring
+fs.readFile("sonu/bio.txt", "UTF-8", (err, data) => {
+  console.log(data);
+  console.log(`error : ${err}`);
+});
