@@ -35,3 +35,9 @@ fs.readFile("sonu/bio.txt", "UTF-8", (err, data) => {
   console.log(data);
   console.log(`error : ${err}`);
 });
+
+// rename file
+fs.rename("sonu/bio.txt", "sonu/mybio.txt", (err) => {
+  console.log("file renamed...");
+  console.log(err);
+});
