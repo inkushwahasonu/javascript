@@ -15,7 +15,7 @@ fs.writeFile("read.txt","This is a asynchronous file system in core module in no
  })
 
  // read/print the file data
-fs.readFile("read.txt","utf-8", (err,data) => {
+fs.readFile("read.txt","UTF-8", (err,data) => {
   console.log(data);
   console.log(err);
 })
