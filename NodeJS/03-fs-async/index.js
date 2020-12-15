@@ -1,3 +1,4 @@
+const { createCipher } = require("crypto");
 const fs = require("fs");
 
 
@@ -8,7 +9,13 @@ fs.writeFile("read.txt","This is a asynchronous file system in core module in no
 })
 
 // add some more data in that file
- fs.appendFile("read.txt","\nappend/add some more data in asynchronous file system", (err) => {
+ fs.appendFile("read.txt","\nappend/add some more data in asynchronous file system.", (err) => {
  console.log("data added..");
  console.log(err);
  })
+
+ // read/print the file data
+fs.readFile("read.txt","utf-8", (err,data) => {
+  console.log(data);
+  console.log(err);
+})
