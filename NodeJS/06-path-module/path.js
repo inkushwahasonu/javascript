@@ -14,3 +14,10 @@ console.log(path.basename("/home/sonu/practices/javascript/NodeJS/06-path-module
 
 // work with multiple function of path module
 console.log(path.parse("/home/sonu/practices/javascript/NodeJS/06-path-module/path.js"));
+
+
+// call a single property of parse() method
+const myParse = path.parse("/home/sonu/practices/javascript/NodeJS/06-path-module/path.js");
+console.log(myParse.name);
+console.log(myParse.ext);
+console.log(myParse.root);
