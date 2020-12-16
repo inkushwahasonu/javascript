@@ -12,10 +12,13 @@ const mult = (e, f) => {
   return e * f;
 };
 
-// module.exports.add = add;
-// module.exports.sub = sub;
-// module.exports.mult = mult;
+// module.exports.add1 = add;
+// module.exports.sub3 = sub;
+// module.exports.mult2 = mult;
 
 // or
+//module.exports = { add, sub, mult };
 
-module.exports = { add, sub, mult };
+const name = "sonu kumar kushwaha."
+
+module.exports = { add, sub, mult, name };
