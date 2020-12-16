@@ -10,3 +10,7 @@ console.log(path.extname("/home/sonu/practices/javascript/NodeJS/06-path-module/
 
 // print file name if this file
 console.log(path.basename("/home/sonu/practices/javascript/NodeJS/06-path-module/path.js"));
+
+
+// work with multiple function of path module
+console.log(path.parse("/home/sonu/practices/javascript/NodeJS/06-path-module/path.js"));
