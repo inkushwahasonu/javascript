@@ -9,10 +9,13 @@ const server = http.createServer((req, res) => {
     res.end("ABOUT us...");
   } else if (req.url == "/contact") {
     res.end("CONTACT us....");
-  } else if (req.url == "/userApi") {
+
+  } else if (req.url == "/userApi") {               // access api data
     fs.readFile(`${__dirname}/api.json`, "UTF-8", (err, data) => {
       console.log(data);
-      res.end(data);
+      // res.end(data);
+      const objData = JSON.parse(data);
+      res.end(objData[0].name);
     });
     // res.end("user API....");
   } else {
