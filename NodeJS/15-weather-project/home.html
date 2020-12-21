@@ -2,7 +2,10 @@
 <!-- 
 my API key: a702e73e7280965d417fbbc9263ebc72
 city name : ramchi
-API code : api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+API code : api.openweathermap.org/data/2.5/weather?q={city name}&appid={Apt3sZROOuTTs9S89ykGZeu1XQgWKg3DVpu5tZALApsrWdd3tnVjTclUuVONaHM4O8GgCnjSbHlTKXrd2OWg=="
+      crossorigin="anonymous"
+    />
+    <title>Weather-inkushwahasPI key}
 
 full API : api.openweathermap.org/data/2.5/weather?q=ranchi&appid=a702e73e7280965d417fbbc9263ebc72       (past in chrome search-bar) 
 -->
@@ -18,8 +21,24 @@ full API : api.openweathermap.org/data/2.5/weather?q=ranchi&appid=a702e73e728096
       integrity="sha512-Dj9pt3sZROOuTTs9S89ykGZeu1XQgWKg3DVpu5tZALApsrWdd3tnVjTclUuVONaHM4O8GgCnjSbHlTKXrd2OWg=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
-    <title>Weather-home</title>
+    <title>Weather-inkushwahasonu</title>
+    <style>
+      * {
+        text-align: center;
+        font-family: sans-serif;
+      }
+      body {
+        margin-top: 10%;
+      }
+      #weathercon {
+        background-color: rgb(10, 197, 10);
+        margin-left: 45%;
+        margin-right: 45%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="box">
@@ -30,10 +49,14 @@ full API : api.openweathermap.org/data/2.5/weather?q=ranchi&appid=a702e73e728096
         <i class="fas fa-sun" style="color: #eccc68"></i>
       </div>
       <div class="info">
-        <h2 class="location"><i class="fas fa-street-view"></i>{%location%}, {%country%}</h2>
+        <h2 class="location">
+          <i class="fas fa-street-view"></i> {%location%}, {%country%}
+        </h2>
         <p id="date">WED | OCT 23 | 10:49AM</p>
-        <h1 class="temp">{%tempval%}</h1>
-        <h4 class="tempmin-max">Min {%tempmin%} | Max {%tempmax%}</h4>
+        <h1 class="temp">{%tempval%}&deg;C</h1>
+        <h4 class="tempmin-max">
+          Min {%tempmin%}&deg;C| Max {%tempmax%}&deg;C
+        </h4>
       </div>
     </div>
 
@@ -41,7 +64,21 @@ full API : api.openweathermap.org/data/2.5/weather?q=ranchi&appid=a702e73e728096
       const curDate = document.getElementById("date");
       let weathercon = document.getElementById("weathercon");
 
-      const tempStatus = "Clouds";
+      const tempStatus = "{%tempstatus%}";
+      if (tempStatus == "Sunny") {
+        weathercon.innerHTML =
+          "<i class='fas fa-sun' style='color: #eccc68;'></i>";
+      } else if (tempStatus == "Clouds") {
+        weathercon.innerHTML =
+          "<i class='fas fa-cloud' style='color: #f6f2f6;'></i>";
+      } else if (tempStatus == "Rainy") {
+        weathercon.innerHTML =
+          "<i class='fas fa-rain' style='color: #a4b0be;'></i>";
+      } else {
+        weathercon.innerHTML =
+          "<i class='fas fa-cloud' style='color: #f1f2f6;'></i>";
+      }
+
       const getCurrentDay = () => {
         let weekday = new Array(7);
         weekday[0] = "Sunday";

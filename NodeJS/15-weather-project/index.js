@@ -7,8 +7,9 @@ const replaceVal = (tempVal, orgVal) => {
   let tempreture = tempVal.replace("{%tempval%}", orgVal.main.temp);
   tempreture = tempreture.replace("{%tempmin%}", orgVal.main.temp_min);
   tempreture = tempreture.replace("{%tempmax%}", orgVal.main.temp_max);
-  tempreture = tempreture.replace("{%location%}", orgVal.main.name);
+  tempreture = tempreture.replace("{%location%}", orgVal.name);
   tempreture = tempreture.replace("{%country%}", orgVal.sys.country);
+  tempreture = tempreture.replace("{%tempstatus%}", orgVal.weather[0].main);
   return tempreture;
 };
 
@@ -33,4 +34,4 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(8000, "127.0.0.1");
+server.listen(9000, "127.0.0.1");
