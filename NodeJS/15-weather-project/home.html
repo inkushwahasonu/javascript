@@ -1,0 +1,103 @@
+<!-- https://openweathermap.org/about-us -->
+<!-- 
+my API key: a702e73e7280965d417fbbc9263ebc72
+city name : ramchi
+API code : api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+full API : api.openweathermap.org/data/2.5/weather?q=ranchi&appid=a702e73e7280965d417fbbc9263ebc72       (past in chrome search-bar) 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0-10/css/all.css"
+      integrity="sha512-Dj9pt3sZROOuTTs9S89ykGZeu1XQgWKg3DVpu5tZALApsrWdd3tnVjTclUuVONaHM4O8GgCnjSbHlTKXrd2OWg=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <div class="wave -one"></div>
+      <div class="wave -two"></div>
+      <div class="wave -three"></div>
+      <div id="weathercon">
+        <i class="fas fa-sun" style="color: #eccc68"></i>
+      </div>
+      <div class="info">
+        <h2 class="location"><i class="fas fa-street-view"></i>{%locction%}, {%country%}</h2>
+        <p id="date">WED | OCT 23 | 10:49AM</p>
+        <h1 class="temp">{%tempval%}</h1>
+        <h4 class="tempmin-max">{%tempmin%} | {%tempmax%}</h4>
+      </div>
+    </div>
+
+    <script>
+      const curDate = document.getElementById("date");
+      let weathercon = document.getElementById("weathercon");
+
+      const tempStatus = "Clouds";
+      const getCurrentDay = () => {
+        let weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+
+        let currentTime = new Date();
+        let day = weekday[currentTime.getDay()];
+        return day;
+      };
+
+      const getCurrentTime = () => {
+        let months = [
+          "January",
+          "Fabruary",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "Octuber",
+          "November",
+          "December",
+        ];
+        let now = new Date();
+        let month = months[now.getMonth()];
+        let day = now.getDate();
+        let year = now.getFullYear();
+
+        let hours = now.getHours();
+        let minuts = now.getMinutes();
+
+        let period = "AM";
+        if (hours > 12) {
+          period = "PM";
+        }
+        if (hours > 12) {
+          hours -= 12;
+        }
+        if (minuts < 10) {
+          minuts = "0" + minuts;
+        }
+        if (hours < 10) {
+          hours = "0" + hours;
+        }
+
+        return ` ${month} / ${day} / ${year} ||| ${hours} : ${minuts} ${period}`;
+      };
+
+      curDate.innerHTML = getCurrentTime() + " | " + getCurrentDay();
+    </script>
+  </body>
+</html>

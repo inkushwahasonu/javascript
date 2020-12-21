@@ -1,0 +1,18 @@
+{
+  "name": "15-weather-project",
+  "version": "1.0.0",
+  "description": "\"creating first node project.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "inkushwahasonu",
+  "license": "ISC",
+  "dependencies": {
+    "requests": "^0.3.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "inkushwahasonu"
+  ]
+}
