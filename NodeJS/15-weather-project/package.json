@@ -9,6 +9,7 @@
   "author": "inkushwahasonu",
   "license": "ISC",
   "dependencies": {
+    "request": "^2.88.2",
     "requests": "^0.3.0"
   },
   "devDependencies": {},
