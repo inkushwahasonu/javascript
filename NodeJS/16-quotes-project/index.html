@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+      crossorigin="anonymous"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- for zooming of div (data aos)-->
+    <title>quotation</title>
+    <style>
+      * {
+        text-align: center;
+        font-family: serif;
+      }
+      body {
+        padding-top: 7%;
+        padding-left: 20%;
+        padding-right: 20%;
+      }
+
+      .container {
+        border-radius: 20px;
+
+        padding: 7%;
+        background-color: rgb(255, 166, 0);
+      }
+      .inner {
+        padding: 3%;
+        border-radius: 20px;
+        background-color: rgb(68, 0, 255);
+      }
+      .box {
+        border-radius: 20px;
+        background-color: rgb(195, 223, 195);
+      }
+      .twitter {
+        text-align: right;
+      }
+      .twitter img {
+        height: 50px;
+        width: 70px;
+      }
+      .button h1 {
+        background-color: rgb(0, 255, 85);
+        color: red;
+      }
+      .author {
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner" data-aos="zoom-in">
+        <div class="box">
+          <p class="twitter">
+            <img src="logo.png" alt="tweetMe" title="TweetMe" id="tweetMe" />
+          </p>
+          <div class="text">
+            <i class="start-quote fas fI-quote-left"></i>
+            <p id="quotes" class="quote"></p>
+            <p id="author" class="author"></p>
+          </div>
+          <label class="button">
+            <h1 id="newQ">New Quotes...</h1>
+          </label>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- for zooming of div (data aos)-->
+    <script>
+      AOS.init(); // for aos initialization
+
+      const quotes = document.getElementById("quotes");
+      const author = document.getElementById("author");
+      const newQ = document.getElementById("newQ");
+      const tweetMe = document.getElementById("tweetMe");
+      let realData = "";
+      let quotesData = "";
+      const tweetNow = () => {
+        let tweetPost = `https://twitter.com/intent/tweet?text=${quotesData.text}`; // by quary paameter
+        window.open(tweetPost);
+      };
+
+      const getNewQuotes = () => {
+        let rnum = Math.floor(Math.random() * 1643);
+        quotesData = realData[rnum];
+
+        quotes.innerText = `${quotesData.text}`;
+        quotesData.author == null
+          ? (author.innerText = "Unknown")
+          : (author.innerText = `${quotesData.author}`);
+      };
+      const getQuotes = async () => {
+        const api = "https://type.fit/api/quotes";
+        try {
+          let data = await fetch(api);
+          realData = await data.json();
+          getNewQuotes();
+          // console.log(realData.length);
+        } catch (error) {}
+      };
+      tweetMe.addEventListener("click", tweetNow);
+      newQ.addEventListener("click", getNewQuotes);
+      getQuotes();
+    </script>
+  </body>
+</html>
