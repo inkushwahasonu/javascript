@@ -6,7 +6,7 @@ mongoose
     useUnifiedTopology: true,
     useNewUrlParser: true,
   })
-  .then(() => console.log("connection successfull"))
+  .then(() => console.log("connection successfull...."))
   .catch((err) => console.log(err));
 
 // schema
@@ -35,3 +35,22 @@ const playlistSchema = new mongoose.Schema({
 
 // collection creationst",playlistSchema);
 const Playlist = new mongoose.model("Playlist", playlistSchema);
+
+// create / insert a docuent
+const createDocument = async () => {
+  try{
+    const reactPlaylist = new Playlist({
+      name: "Node JS",
+      type: "Back End",
+      videos: 80,
+      author: "inkushwahasonu",
+      active: true,
+    });
+  
+    const result = await reactPlaylist.save();
+    console.log(result);
+  }catch(err){
+    console.log(err);
+  }
+};
+createDocument();
