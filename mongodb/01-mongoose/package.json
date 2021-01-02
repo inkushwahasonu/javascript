@@ -1,0 +1,15 @@
+{
+  "name": "mongooesjs",
+  "version": "1.0.0",
+  "description": "start mongodb ",
+  "main": "index.js",
+  "dependencies": {
+    "mongoose": "^5.11.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "inkushwahasonu",
+  "license": "ISC"
+}

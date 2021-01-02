@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 const hbs = require("hbs");
 const requests = require("requests");
-const port = 8000;
+const port =process.env.PORT || 8000;
 
 const staticPath = path.join(__dirname, "../public");
 const templatesPath = path.join(__dirname, "../templates/views");
@@ -36,18 +36,18 @@ app.get("/about", (req, res) => {
       const arrData = [objdata];
       console.log(`city name is ${arrData[0].name} and temp is ${arrData[0].main.temp}`);
       
-      res.write(`${arrData[0].name} : ${arrData[0].main.temp} deg`);
+      res.write(`${arrData[0].name} : ${arrData[0].main.temp} deg `);
     })
     .on("end", (err) => {
       if (err) return console.log("connection closed due to errors", err);
       res.end();
     });
-});
+}); 
 
 
 // for error page 404
 
-
+ 
 app.get("/about/*",(req, res) => {
   res.render("404",{
     errorcoment : "Oopps, this about page could't be found",
