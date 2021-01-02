@@ -39,7 +39,28 @@ const Playlist = new mongoose.model("Playlist", playlistSchema);
 // create / insert a docuent
 const createDocument = async () => {
   try{
-    const reactPlaylist = new Playlist({
+    const htmlPlaylist = new Playlist({
+      name: "html",
+      type: "front End",
+      videos: 80,
+      author: "inkushwahasonu",
+      active: true,
+    });
+    const cssPlaylist = new Playlist({
+      name: "css",
+      type: "front End",
+      videos: 80,
+      author: "inkushwahasonu",
+      active: true,
+    });
+    const jsPlaylist = new Playlist({
+      name: "javascript",
+      type: "Front End",
+      videos: 80,
+      author: "inkushwahasonu",
+      active: true,
+    });
+    const nodePlaylist = new Playlist({
       name: "Node JS",
       type: "Back End",
       videos: 80,
@@ -47,7 +68,7 @@ const createDocument = async () => {
       active: true,
     });
   
-    const result = await reactPlaylist.save();
+    const result = await Playlist.insertMany([htmlPlaylist,cssPlaylist,jsPlaylist,nodePlaylist]);
     console.log(result);
   }catch(err){
     console.log(err);
