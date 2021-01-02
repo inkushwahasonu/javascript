@@ -74,4 +74,11 @@ const createDocument = async () => {
     console.log(err);
   }
 };
-createDocument();
+// createDocument();
+
+
+const getDocument = async () =>{
+  const result = await Playlist.find({type:"front End"}).select({name:1}).limit(1);
+  console.log(result);
+}
+getDocument();
