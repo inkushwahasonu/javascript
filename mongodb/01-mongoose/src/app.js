@@ -20,6 +20,7 @@ const playlistSchema = new mongoose.Schema({
   },
   type: String,
   author: String,
+  // vodeos: Number,
   active: Boolean,
   date: {
     type: Date,
@@ -74,11 +75,47 @@ const createDocument = async () => {
     console.log(err);
   }
 };
-// createDocument();
+//  createDocument();
 
 
 const getDocument = async () =>{
-  const result = await Playlist.find({type:"front End"}).select({name:1}).limit(1);
-  console.log(result);
+  try{
+    // const result = await Playlist.find({type:"front End"}).select({name:1}).limit(1);
+    
+    // comparision operator
+
+    // const result = await Playlist.find({videos:{$gt:50}}).select({name:1}).limit(1);    // for greater than ( gt )
+    // const result = await Playlist.find({videos:{$gte:50}}).select({name:1}).limit(1);    // for greater than and equalto( gte )
+    // const result = await Playlist.find({videos:{$lt:50}}).select({name:1}).limit(1);    // for less than ( lt )
+    // const result = await Playlist.find({videos:{$lte:50}}).select({name:1}).limit(1);    // for less than and equal to ( lte )
+
+    const result = await Playlist.find({type: {$in : ["front End", "Back End"]}}).select({name:1});    // for in operator
+    const result = await Playlist.find({type: {$nin : ["front End", "Back End"]}}).select({name:1});    // for n
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    in operator
+
+
+
+    console.log(result);
+  }catch(err){
+    console.log(err);
+  }
 }
 getDocument();
+
+
