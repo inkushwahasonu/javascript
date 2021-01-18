@@ -4,7 +4,7 @@ import React from 'react';
 
 export const Greet = () => {       // stateless functional component
   return ( 
-    <h1 className='fc'>Functional component</h1>
+    <h1 className='fc'>Functional component Greet.js</h1>
    );
 }
 
