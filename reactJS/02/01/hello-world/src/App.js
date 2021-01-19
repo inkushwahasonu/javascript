@@ -12,6 +12,8 @@ import FunctionClick from "./components/FunctionClick";
 import EventBind from './components/EventBind';
 import ParentComponent from './components/parent/ParentComponent';
 import ConditionalRendring from './components/ConditionalRendring';
+import NameList from './components/map/NameList';
+import NameList2 from './components/map/NameList2';
 
 class App extends Component {
   render() {
@@ -30,6 +32,8 @@ class App extends Component {
         <EventBind/>
         <ParentComponent/>
         <ConditionalRendring />
+        <NameList />
+        <NameList2 />
       </div>
     );
   }
