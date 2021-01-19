@@ -30,9 +30,14 @@ class EventBind extends Component {
         <hr />
         <p>EventBind</p>
         <h1>{this.state.message}</h1>
+        {/*for bind approch*/}
         {/* <button onClick={this.clickHandler.bind(this)}>click here</button> */}
-        <button onClick={() => this.clickHandler()}>Click here</button>   {/*for constructor approch*/}
-        <button onClick={this.clickHandler}>Click Here</button>      {/*for arrow function approch*/}
+
+        {/*for constructor approch*/}
+        <button onClick={() => this.clickHandler()}>Click here</button>
+
+        {/*for arrow function approch*/}
+        <button onClick={this.clickHandler}>Click Here</button>
       </div>
     );
   }

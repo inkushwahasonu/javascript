@@ -10,6 +10,9 @@ import Counter from "./components/Counter";
 import Props2 from "./components/Props2";
 import FunctionClick from "./components/FunctionClick";
 import EventBind from './components/EventBind';
+import ParentComponent from './components/parent/ParentComponent';
+import ConditionalRendring from './components/ConditionalRendring';
+
 class App extends Component {
   render() {
     return (
@@ -25,6 +28,8 @@ class App extends Component {
         <Props2 name="Ankit Props" heroName="carli" />
         <FunctionClick/>
         <EventBind/>
+        <ParentComponent/>
+        <ConditionalRendring />
       </div>
     );
   }
