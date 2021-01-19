@@ -29,10 +29,10 @@ const NameList = () => {
   ];
 
   let personList = person.map((person) => (
-    <h1>
+    <h2>
       I am {person.name} and I am {person.age} years old. but I Have{" "}
       {person.skill}
-    </h1>
+    </h2>
   ));
 
   return (
