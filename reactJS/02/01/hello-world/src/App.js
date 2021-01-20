@@ -13,6 +13,8 @@ import EventBind from './components/EventBind';
 import ParentComponent from './components/parent/ParentComponent';
 import ConditionalRendring from './components/ConditionalRendring';
 import {NameList} from './components/map/NameList';
+import StyleSheet from './components/css/StyleSheet';
+import Inline from './components/css/Inline';
 
 class App extends Component {
   render() {
@@ -32,6 +34,8 @@ class App extends Component {
         <ParentComponent/>
         <ConditionalRendring />
         <NameList />
+        <StyleSheet primary={true}/>
+        <Inline />
       </div>
     );
   }
