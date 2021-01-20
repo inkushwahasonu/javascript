@@ -16,6 +16,7 @@ import {NameList} from './components/map/NameList';
 import StyleSheet from './components/css/StyleSheet';
 import Inline from './components/css/Inline';
 import Form from './components/Form';
+import LifecycleA from './components/mounting-lifecycle/LifecycleA';
 
 class App extends Component {
   render() {
@@ -38,6 +39,7 @@ class App extends Component {
         <StyleSheet primary={true}/>
         <Inline />
         <Form />
+        <LifecycleA />
       </div>
     );
   }
