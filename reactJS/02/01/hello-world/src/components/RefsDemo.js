@@ -62,6 +62,46 @@
 
 // ---OR -- third way, by calback refs-------
 
+// import React, { Component } from "react";
+
+// class RefsDemo extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.inputRef = React.createRef();
+//     this.cbRef = null;
+//     this.setCbRef = (element) => {
+//       this.cbRef = element;
+//     };
+//   }
+//   componentDidMount() {
+//     if (this.cbRef) {
+//       this.cbRef.focus();
+//     }
+//     // this.inputRef.current.focus();
+//     // console.log(this.inputRef);
+//   }
+//   clickHandler = () => {
+//     alert(this.inputRef.current.value);
+//   };
+
+//   render() {
+//     return (
+//       <div>
+//         <hr />
+//         <p>Refs Component</p>
+//         <input type="text" ref={this.inputRef} />
+//         <input type="text" ref={this.setCbRef} />
+//         <button onClick={this.clickHandler}>Click</button>
+//       </div>
+//     );
+//   }
+// }
+// export default RefsDemo;
+
+
+// ----- fourth Approach --- for componentDidMount-------
+
+
 import React, { Component } from "react";
 
 class RefsDemo extends Component {
@@ -74,7 +114,7 @@ class RefsDemo extends Component {
     };
   }
   componentDidMount() {
-    if (this.cbRef) {
+    if(this.cbRef){
       this.cbRef.focus();
     }
     // this.inputRef.current.focus();
@@ -97,3 +137,4 @@ class RefsDemo extends Component {
   }
 }
 export default RefsDemo;
+
