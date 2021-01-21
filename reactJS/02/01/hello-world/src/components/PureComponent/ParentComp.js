@@ -1,6 +1,7 @@
 import React from "react";
-import RegularComp from './RegularComp';
-import PureComp from './PureComp';
+// import RegularComp from './RegularComp';
+// import PureComp from './PureComp';
+import MemoComp from './MemoComp';
 
 class ParentComp extends React.Component {
   constructor(props){
@@ -14,7 +15,7 @@ class ParentComp extends React.Component {
      this.setState({
        name: 'VIswash'
      })
-   },3000)
+   },2000)
  }
   render() {
     console.log('******************Parent Component Render******************');
@@ -22,8 +23,9 @@ class ParentComp extends React.Component {
       <div>
         <hr />
         <p>Parent Component</p>
-        <RegularComp name={this.state.name}></RegularComp>
-        <PureComp name ={this.state.name}></PureComp>
+        <MemoComp name={this.state.name}/>
+        {/* <RegularComp name={this.state.name}></RegularComp>
+        <PureComp name ={this.state.name}></PureComp> */}
       </div>
     );
   }
