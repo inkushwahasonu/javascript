@@ -16,7 +16,9 @@ import {NameList} from './components/map/NameList';
 import StyleSheet from './components/css/StyleSheet';
 import Inline from './components/css/Inline';
 import Form from './components/Form';
-import LifecycleA from './components/mounting-lifecycle/LifecycleA';
+import LifecycleA from './components/lifecycle/LifecycleA';
+import FragmentDemo from './components/fragment/FragmentDemo';
+import Table from './components/fragment/Table';
 
 class App extends Component {
   render() {
@@ -40,6 +42,8 @@ class App extends Component {
         <Inline />
         <Form />
         <LifecycleA />
+        <FragmentDemo />
+        <Table />
       </div>
     );
   }
