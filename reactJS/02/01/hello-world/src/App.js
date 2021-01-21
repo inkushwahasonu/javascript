@@ -16,10 +16,11 @@ import {NameList} from './components/map/NameList';
 import StyleSheet from './components/css/StyleSheet';
 import Inline from './components/css/Inline';
 import Form from './components/Form';
-import LifecycleA from './components/mounting-lifecycle/LifecycleA';
+// import LifecycleA from './components/mounting-lifecycle/LifecycleA';
 import FragmentDemo from './components/fragment/FragmentDemo';
 import Table from './components/fragment/Table';
-import ParentComp from './components/PureComponent/ParentComp';
+// import ParentComp from './components/PureComponent/ParentComp';
+import RefsDemo from './components/RefsDemo';
 
 class App extends Component {
   render() {
@@ -42,10 +43,11 @@ class App extends Component {
         <StyleSheet primary={true}/>
         <Inline />
         <Form />
-        <LifecycleA />
+        {/* <LifecycleA /> */}
         <FragmentDemo />
         <Table />
-        <ParentComp /> 
+        {/* <ParentComp />  */}
+        <RefsDemo />
       </div>
     );
   }
