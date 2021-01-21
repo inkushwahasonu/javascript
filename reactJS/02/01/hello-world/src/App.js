@@ -22,9 +22,11 @@ import Table from "./components/fragment/Table";
 // import ParentComp from './components/PureComponent/ParentComp';
 import RefsDemo from "./components/Refs/RefsDemo";
 import FRParentInput from "./components/Refs/ForwardingRefs/FRParentInput";
-import PortalDemo from "./components/PortalDemo";
-import Hero from "./components/errorMethod/Hero";
-import ErrorBoundary from "./components/errorMethod/ErrorBoundary";
+// import PortalDemo from "./components/PortalDemo";
+// import Hero from "./components/errorMethod/Hero";
+// import ErrorBoundary from "./components/errorMethod/ErrorBoundary";
+import ClickCounter from './components/higherOrderComponent/ClickCounter';
+import HoverCounter from './components/higherOrderComponent/HoverCounter.js';
 
 class App extends Component {
   render() {
@@ -53,8 +55,8 @@ class App extends Component {
         {/* <ParentComp />  */}
         <RefsDemo />
         <FRParentInput />
-        <PortalDemo />
-        <ErrorBoundary>
+        {/* <PortalDemo /> */}
+        {/* <ErrorBoundary>
           <Hero heroName="Batman" />
         </ErrorBoundary>
         <ErrorBoundary>
@@ -62,7 +64,10 @@ class App extends Component {
         </ErrorBoundary>
         <ErrorBoundary>
           <Hero heroName="Joker" />
-        </ErrorBoundary>
+        </ErrorBoundary> */}
+        <ClickCounter />
+        <HoverCounter />
+
       </div>
     );
   }
