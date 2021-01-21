@@ -22,6 +22,7 @@ import Table from './components/fragment/Table';
 // import ParentComp from './components/PureComponent/ParentComp';
 import RefsDemo from './components/Refs/RefsDemo';
 import FRParentInput from './components/Refs/ForwardingRefs/FRParentInput';
+import PortalDemo from './components/PortalDemo';
 
 class App extends Component {
   render() {
@@ -50,6 +51,7 @@ class App extends Component {
         {/* <ParentComp />  */}
         <RefsDemo />
         <FRParentInput />
+        <PortalDemo />
       </div>
     );
   }
