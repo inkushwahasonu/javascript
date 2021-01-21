@@ -98,9 +98,7 @@
 // }
 // export default RefsDemo;
 
-
 // ----- fourth Approach --- for componentDidMount-------
-
 
 import React, { Component } from "react";
 
@@ -114,7 +112,7 @@ class RefsDemo extends Component {
     };
   }
   componentDidMount() {
-    if(this.cbRef){
+    if (this.cbRef) {
       this.cbRef.focus();
     }
     // this.inputRef.current.focus();
@@ -137,4 +135,3 @@ class RefsDemo extends Component {
   }
 }
 export default RefsDemo;
-
