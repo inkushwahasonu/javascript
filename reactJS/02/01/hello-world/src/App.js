@@ -27,6 +27,8 @@ import FRParentInput from "./components/Refs/ForwardingRefs/FRParentInput";
 // import ErrorBoundary from "./components/errorMethod/ErrorBoundary";
 import ClickCounter from "./components/higherOrderComponent/ClickCounter";
 import HoverCounter from "./components/higherOrderComponent/HoverCounter.js";
+import ClickCounterTwo from './components/ClickCounter2/ClickCounterTwo';
+import HoverCounterTwo from './components/ClickCounter2/HoverCounterTwo';
 
 class App extends Component {
   render() {
@@ -67,6 +69,8 @@ class App extends Component {
         </ErrorBoundary> */}
         <ClickCounter name="viswas" />
         <HoverCounter />
+        <ClickCounterTwo />
+        <HoverCounterTwo />
       </div>
     );
   }
