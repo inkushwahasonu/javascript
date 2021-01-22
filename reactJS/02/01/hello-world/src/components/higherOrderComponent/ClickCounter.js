@@ -6,9 +6,11 @@ class ClickCounter extends React.Component {
     return (
       <div>
         <hr />
-        <button onClick={incrementCount}>Clicked {count} times</button>
+        <button onClick={incrementCount}>
+          {this.props.name} Clicked {count} times
+        </button>
       </div>
     );
   }
 }
-export default UpdatedComponent(ClickCounter);
+export default UpdatedComponent(ClickCounter, 5);
