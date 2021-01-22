@@ -88,9 +88,9 @@ class App extends Component {
           )}
         </CounterTwo>
 
-        <UserProvider value="vishwas">
+        {/* <UserProvider value="vishwas"> */}
           <ComponentC />
-        </UserProvider>
+        {/* </UserProvider> */}
       </div>
     );
   }
