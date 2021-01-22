@@ -74,16 +74,16 @@ class App extends Component {
         {/*<ClickCounterTwo />
          <HoverCounterTwo />*/}
         <User render={(isLoggedIn) => (isLoggedIn ? "Vishwas" : "Guest")} />
-        <CounterTwo
-          render={(count, incrementCount) => (
+        <CounterTwo>
+          {(count, incrementCount) => (
             <ClickCounterTwo count={count} incrementCount={incrementCount} />
           )}
-        />
-        <CounterTwo
-          render={(count, incrementCount) => (
+        </CounterTwo>
+        <CounterTwo>
+          {(count, incrementCount) => (
             <HoverCounterTwo count={count} incrementCount={incrementCount} />
           )}
-        />
+        </CounterTwo>
       </div>
     );
   }
