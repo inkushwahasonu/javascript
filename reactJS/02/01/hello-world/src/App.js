@@ -27,8 +27,10 @@ import FRParentInput from "./components/Refs/ForwardingRefs/FRParentInput";
 // import ErrorBoundary from "./components/errorMethod/ErrorBoundary";
 import ClickCounter from "./components/higherOrderComponent/ClickCounter";
 import HoverCounter from "./components/higherOrderComponent/HoverCounter.js";
-import ClickCounterTwo from './components/ClickCounter2/ClickCounterTwo';
-import HoverCounterTwo from './components/ClickCounter2/HoverCounterTwo';
+import ClickCounterTwo from "./components/RenderProps/ClickCounterTwo";
+import HoverCounterTwo from "./components/RenderProps/HoverCounterTwo";
+import User from "./components/RenderProps/User";
+import CounterTwo from "./components/RenderProps/CounterTwo";
 
 class App extends Component {
   render() {
@@ -69,8 +71,19 @@ class App extends Component {
         </ErrorBoundary> */}
         <ClickCounter name="viswas" />
         <HoverCounter />
-        <ClickCounterTwo />
-        <HoverCounterTwo />
+        {/*<ClickCounterTwo />
+         <HoverCounterTwo />*/}
+        <User render={(isLoggedIn) => (isLoggedIn ? "Vishwas" : "Guest")} />
+        <CounterTwo
+          render={(count, incrementCount) => (
+            <ClickCounterTwo count={count} incrementCount={incrementCount} />
+          )}
+        />
+        <CounterTwo
+          render={(count, incrementCount) => (
+            <HoverCounterTwo count={count} incrementCount={incrementCount} />
+          )}
+        />
       </div>
     );
   }
