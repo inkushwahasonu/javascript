@@ -34,6 +34,7 @@ import CounterTwo from "./components/RenderProps/CounterTwo";
 import ComponentC from "./components/Context/ComponentC";
 import { UserProvider } from "./components/Context/userContext";
 import PostList from "./components/httpRequest/PostList";
+import PostForm from './components/httpRequest/PostForm';
 
 class App extends Component {
   render() {
@@ -94,6 +95,7 @@ class App extends Component {
         </UserProvider>
 
         <PostList />
+        <PostForm />
       </div>
     );
   }

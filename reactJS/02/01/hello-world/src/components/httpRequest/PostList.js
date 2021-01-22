@@ -27,7 +27,7 @@ class PostList extends Component {
     return (
       <div>
         <hr />
-        <p>GET Request</p>
+        <p>HTTP GET Request</p>
         List of Post
         {posts.length
           ? posts.map((post) => <div key={post.id}>{post.title}</div>)
