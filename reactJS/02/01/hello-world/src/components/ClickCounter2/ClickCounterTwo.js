@@ -7,7 +7,7 @@ class ClickCounterTwo extends React.Component {
       count: 0,
     };
   }
-  incrementCountet = () => {
+  incrementCount = () => {
     this.setState((prevState) => {
       return { count: prevState.count + 1 };
     });
@@ -18,7 +18,7 @@ class ClickCounterTwo extends React.Component {
     return (
       <div>
         <hr />
-        <button onClick={this.incrementCountet}>Clicked {count} times</button>
+        <button onClick={this.incrementCount}>Clicked {count} times</button>
       </div>
     );
   }
