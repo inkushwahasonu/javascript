@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+// import { AuthContext } from "../contexts/AuthContext";
 import { ThemeContext } from "../contexts/ThemeContext";
 class BookList extends Component {
   static contextType = ThemeContext;
+  // static contextType = AuthContext;
 
   render() {
     const { isLightTheme, light, dark } = this.context;
