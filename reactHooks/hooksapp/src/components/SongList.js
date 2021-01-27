@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import uuid from "uuid/v9"; // install package for create defrent id (npm install uuid)
+import  uuid from "uuid"; // install package for create defrent id (npm install uuid)
+import NewSongForm from "./NewSongForm";
 
 const SongList = () => {
   const [songs, setSongs] = useState([
@@ -7,8 +8,8 @@ const SongList = () => {
     { title: "memory gosip", id: 2 },
     { title: "this wild darkness", id: 3 },
   ]);
-  const addSong = () => {
-    setSongs([...songs, { title: "new song", id: uuid() }]);
+  const addSong = (title) => {
+    setSongs([...songs, { title, id: uuid() }]);
   };
 
   return (
@@ -18,7 +19,8 @@ const SongList = () => {
           return <li key={song.id}>{song.title}</li>;
         })}
       </ul>
-      <button onClick={addSong}>Add a song</button>
+<NewSongForm addSong = {addSong}/>
+
     </div>
   );
 };
